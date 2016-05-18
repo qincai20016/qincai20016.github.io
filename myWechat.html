@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+   	<link rel='stylesheet' href="css/animate.css" />
+
+    <!-- Demo styles -->
+    <style>
+    html, body {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        max-width: 640px;
+        font-size: 625%
+    }
+    body {
+        background: #eee;
+        margin: 0 auto;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+        max-width: 640px;
+    }
+    div,img{
+    	box-sizing: border-box;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    
+    .music_ico{
+    	width:44px;
+    	height: 44px;
+    	background:url(img/music_ico.png)no-repeat ;
+    	position: absolute;
+    	top: 10px;
+    	right: 10px;
+    	z-index: 9999;
+    	-webkit-animation: music_rotate 1.5s linear 0s normal none infinite;
+    }
+    @-webkit-keyframes music_rotate{
+    	0%{transform: rotate(0deg);}
+    	100%{transform: rotate(360deg);}
+    }
+    .music_ico2{
+    	width:44px;
+    	height: 44px;
+    	background:url(img/music_ico.png)no-repeat;
+    	position: absolute;
+    	top: 10px;
+    	right: 10px;
+    	z-index: 9999;s
+    }
+    .swiper-slide:nth-child(1){
+    	background: bisque;
+    }
+	.swiper-slide{
+		max-width:100%;
+		height: 100%;
+		position: relative;
+	}
+	
+/*------box01 篇-----------------------------------------------------------*/
+    .bg01{
+    	height: 100%;
+    	animation: fade-in;/*动画名称*/  
+	    animation-duration: 9s;/*动画持续时间*/  
+	    -webkit-animation:fade-in 9s;/*针对webkit内核*/  
+    }
+	@keyframes fade-in {  
+	    0% {opacity: 0;}/*初始状态 透明度为0*/  
+	    40% {opacity: 0.5;}/*过渡状态 透明度为0*/  
+	    100% {opacity: 1;}/*结束状态 透明度为1*/  
+	}  
+	@-webkit-keyframes fade-in {/*针对webkit内核*/  
+    0% {opacity: 0;}  
+    40% {opacity: 0.5;}  
+    100% {opacity: 1;}  
+}  
+
+    .ring{
+    	width: 250px;
+    	height: 197px;
+    	position:absolute;
+    	top: 0;
+    	left:15%;
+    	z-index: 999999;
+    	animation:top-in 2s;
+    	-webkit-animation:top-in 3s linear 0s normal forwards 1;
+    }
+    @keyframes top-in{
+    	0%{top: 0%;opacity: 0;}
+    	100%{top: 35%;opacity: 1;}
+    }
+    
+    .logo{
+    	width: 141px;
+    	height: 120px;
+    	position: absolute;
+    	top: 10%;
+    	left:30%;
+    	z-index: 999999;
+    	animation:logo-in 2s linear 0s normal none 3;
+    	-webkit-animation:logo-in 2s linear 0s normal none 3;
+    }
+    @keyframes logo-in{
+    	0%{ transform: rotateY(0deg);opacity: 0;}
+    	100%{ transform: rotateY(360deg);opacity: 1;}
+    }
+    .h2_01{
+    	position: absolute;
+    	top: 28%;
+    	left:30%;
+    	z-index: 999999;
+    	color:brown;
+    	opacity: 0;
+    	font-weight: bold;
+    	animation:h2-01-in 2s linear 3s forwards none 2;
+    	-webkit-animation:h2-01-in 2s linear 3s normal forwards 2;
+    }
+    @keyframes h2-01-in{
+    	0%{ transform: rotateX(0deg);opacity: 0;}
+    	100%{ transform: rotateX(360deg);opacity: 1;}
+    }
+        .h3_01{
+    	position: absolute;
+    	top: 35%;
+    	left:20%;
+    	z-index: 999999;
+    	color:brown;
+    	opacity: 0;
+    	animation:h3-01-in 2s linear 7s normal forwards 2;
+    	-webkit-animation:h2-01-in 2s linear 7s normal forwards 2;
+    }
+     @keyframes h3-01-in{
+    	0%{opacity: 0; transform: rotateX(0deg); }
+    	100%{ opacity: 1; transform: rotateX(360deg);}
+    }
+    
+    
+    
+    
+/*------box02 篇-----------------------------------------------------------*/
+    .bg02{
+    	height: 100%;
+    }
+    
+    .h2_02{
+   		z-index: 99999;
+   		color: brown;
+    	position: absolute;
+    	top: .01rem;
+    	left:-22rem;
+    	line-height: .2rem;
+    	animation:h2_02-in 3s linear 0s normal forwards 1;
+    	-webkit-animation:h2_02-in 3s linear 0s normal forwards 1;
+   	}
+    @keyframes h2_02-in{
+    	0%{left: -22rem;}
+    	100%{left: .2rem;}
+    }
+
+   
+    .h3_02{
+    	width:0;
+    	height:1px;
+    	background: brown;
+    	z-index: 99999;
+    	position: absolute;
+    	top: 6%;
+    	left:2.5%;
+    	animation:h2-02-in 2s linear 1s normal forwards 1 ;
+    	-webkit-animation:h2-02-in 2s linear 1s normal forwards 1 ;
+    }
+     @keyframes h2-02-in{
+    	0%{width: 0;}
+    	100%{width:95%;}
+    }
+    .box2_p{
+    	width:3.07rem;
+    	position: absolute;
+    	z-index: 99999;
+    	color: brown;
+    	font-size: .14rem;
+    	text-align: left;
+    	text-indent: .28rem;
+    	line-height: .24rem;
+    }
+   
+    .box2_p01{
+    	top: 11%;
+    	animation:box2_p01-in 2s linear 2s normal forwards 1;
+    	-webkit-animation:box2_p01-in 2s linear 2s normal forwards 1;
+    }
+     @keyframes box2_p01-in{
+    	0%{left: 10rem;}
+    	100%{left: .3rem;}
+    }
+    .box2_p02{
+    	top: 35% !important;
+    	animation:box2_p02-in 3s linear 2s normal forwards 1;
+    	-webkit-animation:box2_p02-in 3s linear 2s normal forwards 1;
+    }
+    @keyframes box2_p02-in{
+    	0%{left: -22rem;}
+    	100%{left: .3rem;}
+    }
+    .box2_p03{
+    	text-align: center;
+    	top: 55% !important;
+    	animation:box2_p03-in 3s linear 3s normal forwards 1;
+    	-webkit-animation:box2_p03-in 3s linear 3s normal forwards 1;
+    }
+     @keyframes box2_p03-in{
+    	0%{left: -22rem;}
+    	100%{left: .3rem;}
+    }
+    
+/*------box03 篇-----------------------------------------------------------*/    
+
+    .bg03{
+    	height: 100%;
+    }
+    .love{
+    	width: 150px;
+    	position: absolute;
+    	z-index: 99999;
+    	top: -2rem;
+    	left: 2rem;
+    	color: brown;
+    	font-size: .18rem;
+    	animation:love-in 2s linear 0s normal forwards 1;
+    	-webkit-animation:love-in 2s linear 0s normal forwards 1;
+    }
+     @keyframes love-in{
+    	0%{top: -2rem;}
+    	100%{top: .6rem;}
+    }
+    
+    .box03_h5{
+    	position: absolute;
+    	z-index: 99999;
+    	top: -2rem;
+    	left: 2.15rem;
+    	color: brown;
+    	font-size: .18rem;
+    	animation:box03_h6-in 2s linear 2s normal forwards 1;
+    	-webkit-animation:box03_h6-in 2s linear 2s normal forwards 1;
+    }
+     @keyframes box03_h6-in{
+    	0%{top: -2rem;}
+    	100%{top: 1.5rem;}
+    }
+    
+    .box03_h2{
+    	font-size: .32rem;
+    	position: absolute;
+    	top: -2rem;
+    	left: .5rem;
+    	color: brown;
+    	text-align: right;
+    	animation:box03_h5-in 2s linear 3s normal forwards 1;
+    	-webkit-animation:box03_h5-in 2s linear 3s normal forwards 1;
+    }
+     @keyframes box03_h5-in{
+    	0%{top: -2rem;}
+    	100%{top: 1.8rem;}
+    }
+    .box03_p1{
+    	position: absolute;
+    	top: 3rem;
+    	left: 22rem;
+    	font-size: .16rem;
+    	color: brown;
+    	animation:box03_p1-in 2s linear 3s normal forwards 1;
+    	-webkit-animation:box03_p1-in 2s linear 3s normal forwards 1;
+    }
+    @keyframes box03_p1-in{
+    	0%{left: 22rem;}
+    	100%{left: 1.4rem;}
+    }
+    .box03_p2{
+    	position: absolute;
+    	top: 3.3rem;
+    	left: -22rem;
+    	font-size: .16rem;
+    	color: brown;
+    	animation:box03_p2-in 2s linear 4s normal forwards 1;
+    	-webkit-animation:box03_p2-in 2s linear 4s normal forwards 1;
+    }
+    @keyframes box03_p2-in{
+    	0%{left: -22rem;}
+    	100%{left: 1.8rem;}
+    }
+    .lover{
+    	width: 1rem;
+    	width: 1rem;
+    	position: absolute;
+    	z-index: 99999;
+    	top: 3rem;
+    	border: 1px solid brown;
+    }
+    .lover01{
+    	left: -22rem;
+    	animation:lover01-in 2s linear 5s normal forwards 1;
+    	-webkit-animation:lover01-in 2s linear 5s normal forwards 1;
+    }
+    @keyframes lover01-in{
+    	0%{left: -22rem;}
+    	100%{left: .3rem;}
+    }
+     .lover03{
+     	top: 4rem;
+    	left: -22rem;
+    	animation:lover03-in 2s linear 6s normal forwards 1;
+    	-webkit-animation:lover03-in 2s linear 6s normal forwards 1;
+    }
+     @keyframes lover03-in{
+    	0%{left: -22rem;}
+    	100%{left: 1.3rem;}
+    }
+    .lover06{
+    	top:5rem;
+    	left: -22rem;
+    	animation:lover06-in 2s linear 7s normal forwards 1;
+    	-webkit-animation:lover06-in 2s linear 7s normal forwards 1;
+    }
+    @keyframes lover06-in{
+    	0%{left: -22rem;}
+    	100%{left: 2.3rem;}
+    }
+    .lover02{
+     	top: 4rem;
+    	left: -22rem;
+    	animation:lover02-in 2s linear 8s normal forwards 1;
+    	-webkit-animation:lover02-in 2s linear 8s normal forwards 1;
+    }
+    @keyframes lover02-in{
+    	0%{left: -22rem;}
+    	100%{left: .3rem;}
+    }
+    .lover05{
+    	top: 5rem;
+    	left: -22rem;
+    	animation:lover05-in 2s linear 9s normal forwards 1;
+    	-webkit-animation:lover05-in 2s linear 9s normal forwards 1;
+    }
+    @keyframes lover05-in{
+    	0%{left: -22rem;}
+    	100%{left: 1.3rem;}
+    }
+    .lover04{
+    	top: 5rem;
+    	left: -22srem;
+    	animation:lover04-in 2s linear 10s normal forwards 1;
+    	-webkit-animation:lover04-in 2s linear 10s normal forwards 1;
+    }
+    @keyframes lover04-in{
+    	0%{left: -22rem;}
+    	100%{left: .3rem;}
+    }
+  
+/*------box04 篇-----------------------------------------------------------*/    
+     .bg04{
+    	height: 100%;
+    	animation: fade-in;/*动画名称*/  
+	    animation-duration: 9s;/*动画持续时间*/  
+	    -webkit-animation:fade-in 9s;/*针对webkit内核*/  
+    }
+	@keyframes fade-in {  
+	    0% {opacity: 0;}/*初始状态 透明度为0*/  
+	    40% {opacity: 0.5;}/*过渡状态 透明度为0*/  
+	    100% {opacity: 1;}/*结束状态 透明度为1*/  
+	}  
+	@-webkit-keyframes fade-in {/*针对webkit内核*/  
+    0% {opacity: 0;}  
+    40% {opacity: 0.5;}  
+    100% {opacity: 1;}  
+}  
+    .txt{
+    	position: absolute;
+    	top: .2rem;
+    	left: .25rem;
+    	z-index: 999999;
+    	font-size:.16rem ;
+  		color: brown;
+  		text-align: left;
+    }
+    .txt input{
+    	display: block;
+    	border: 1px solid gainsboro;
+    	width: 2.5rem;
+    	height: .25rem;
+    	font-size: .14rem;
+    	margin-top: .05rem;
+    	padding-left:.05rem ;
+    }
+    .box04_div01{
+    	width: 1.68rem;
+    	height: 2rem;
+    	background: lavender;
+    	font-size: .14rem;
+    	position: absolute;
+    	bottom: .01rem;
+    	right:22rem;
+    	animation:box04_div01-in 2s linear 2s normal forwards 1;
+    	-webkit-animation:box04_div01-in 2s linear 2s normal forwards 1;
+    }
+     @keyframes box04_div01-in{
+    	0%{right: 22rem;}
+    	100%{right: .05rem;}
+    }
+    .box04_div01 p{
+    	color: brown;
+    }
+    .box04_Dl{
+    	width:1.5rem;
+    	height:1.5rem;
+    	margin-top: .1rem;
+    }
+    .box04_txt1{
+    	position: absolute;
+    	top: 2.5rem;
+    	left:-22rem;
+    	animation:box04_txt1-in 2s linear 4s normal forwards 1;
+    	-webkit-animation:box04_txt1-in 2s linear 4s normal forwards 1;
+    }
+    @keyframes box04_txt1-in{
+    	0%{left: -22rem;}
+    	100%{left: .2rem;}
+    }
+    .box04_txt2{
+    	width:172px;
+    	height:113.5px;
+    	position: absolute;
+    	bottom: 0.1rem;
+    	left:22rem;
+    	animation:box04_txt2-in 2s linear 5s normal forwards 1;
+    	-webkit-animation:box04_txt2-in 2s linear 5s normal forwards 1;
+    }
+     @keyframes box04_txt2-in{
+    	0%{left: 22rem;}
+    	100%{left: .2rem;}
+    }
+
+
+/*------box05 篇-----------------------------------------------------------*/    
+    
+    .box05_ico{
+    	position: absolute;
+    	left:.3rem;
+    	top: -5rem;
+    	animation:box05_ico 2s linear 0s normal forwards 1;
+    	-webkit-animation:box05_ico 2s linear 0s normal forwards 1;
+    }
+    @-webkit-keyframes box05_ico{
+		0%{top: -5rem;}
+    	100%{top: .5rem;}
+	}
+    .box05_ico2{
+    	position: absolute;
+    	left:1rem;
+    	top: 1rem;
+    	opacity: 0;
+    	animation:box05_ico2 2s linear 1s normal forwards 1;
+    	-webkit-animation:box05_ico2 2s linear 1s normal forwards 1;
+    }
+    @-webkit-keyframes box05_ico2{
+		0%{opacity: 0;transform: rotateY(0deg);}
+		50%{opacity: 1;}
+    	100%{opacity: 1;transform: rotateY(360deg);}
+	}
+	
+	.box05_img{
+    	position: absolute;
+    	left:.25rem;
+    	border:none;
+    	display: block;
+    }
+    .box05_img01{
+    	top: 2.2rem;
+    	opacity: 0;
+    	animation:box05_img01 2s linear 2s normal forwards 1;
+    	-webkit-animation:box05_img01 2s linear 2s normal forwards 1;
+    }
+    @-webkit-keyframes box05_img01{
+		0%{opacity: 0;transform: rotateX(0deg);}
+		50%{opacity: 1;}
+    	100%{opacity: 1;transform: rotateX(360deg);}
+	}
+    .box05_img02{
+    	top: 3.7rem;
+    	opacity: 0;
+    	animation:box05_img02 2s linear 3s normal forwards 1;
+    	-webkit-animation:box05_img02 2s linear 3s normal forwards 1;
+    }
+    @-webkit-keyframes box05_img02{
+		0%{opacity: 0;transform: rotateX(0deg);}
+		50%{opacity: 1;}
+    	100%{opacity: 1;transform: rotateX(360deg);}
+	}
+    .box05_img03{
+    	top: 5.2rem;
+    	opacity: 0;
+    	animation:box05_img03 2s linear 4s normal forwards 1;
+    	-webkit-animation:box05_img03 2s linear 4s normal forwards 1;
+    }
+    @-webkit-keyframes box05_img03{
+		0%{opacity: 0;transform: rotateX(0deg);}
+		50%{opacity: 1;}
+    	100%{opacity: 1;transform: rotateX(360deg);}
+	}
+    </style>
+</head>
+<body>
+    <!-- Swiper -->
+    <div class="swiper-container ">
+        <div id="music_ico" class="music_ico">
+        	<audio id="music"  src="img/齐晨 - 咱们结婚吧.mp3" autoplay="autoplay"></audio>
+        </div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide box01" id="box01">
+            	<img id="Obg01" class="bg01" src="img/bg01.png"/>
+            	<img id="Oring" class="ring" src="img/Ring02.png"/>
+            	<h2 id="Oh2_01" class="h2_01">绅士的品格</h2>
+            	<h3 id="h3_01" class="h3_01">男士一生仅能定制一枚</h3>
+            	<img id="logo" class="logo" src="img/drlogo.png"/>
+            </div>
+            <div class="swiper-slide box02" id="box02">
+            	<img id="bg02" class="bg02" src="img/bg02.png"/>
+            	<h2 id="h2_02" >一生仅能定制一枚</h2>
+            	<h3 id="h3_02" ></h3>
+            	<p id="box2_p01" class="box2_p">早于上个世纪90年代，戴瑞珠宝便在香港开始从事裸钻高级定制,以寻求、欣赏珍宝的眼光，苛刻的甄选标准，搜集来自世界各地的珍稀钻石。 这些卓越品质的钻石戴瑞珠宝只提供给少数专属的顶尖珠宝商,让钻石在不同珠宝艺术大师演绎绝美工艺创作。</p>
+           		<p id="box2_p02" class="box2_p">在Darry Ring，这里有着世间最独特的规定，每位男士凭身份证一生仅能定制一枚唯一的戒指，赠予此生唯一挚爱的女子，以示“一生只爱你一人”的至高承诺。</p>
+           		<p id="box2_p03" class="box2_p">此生真爱 仅此一枚……</p>
+            </div>
+            <div class="swiper-slide box03" id="box03">
+            	<img class="bg03" src="img/bg033.png"/>
+            	<img id="love" class="love" src="img/Love.png"/>
+            	<h5 id="box03_h5" class="box03_h5" >超级DR族专享</h5>
+            	<h2 id="box03_h2" class="box03_h2">为拥有DR<br />求婚钻戒的恋人打造</h4>
+            	<p id="box03_p1" class="box03_p1">见证每个浪漫感动时刻</p>
+            	<p id="box03_p2" class="box03_p2">DR只为让爱情长久幸福</p>
+            	<img id="lover01" class="lover lover01" src="img/lovers01.jpg" />
+            	<img id="lover02" class="lover lover02" src="img/lovers02.jpg" />
+            	<img id="lover03" class="lover lover03" src="img/lovers03.jpg" />
+            	<img id="lover04" class="lover lover04" src="img/lovers04.jpg" />
+            	<img id="lover05" class="lover lover05" src="img/lovers05.jpg" />
+            	<img id="lover06" class="lover lover06" src="img/lovers06.jpg" />
+            </div>
+            <div class="swiper-slide box04" id="box04">
+            	<div id="txt" class="txt">
+            		<label>写下你想到的最浪漫的一件事</label><br />
+            		<input id="inp" class="inp" type="text" placeholder="比如：去巴黎" />
+            	</div>
+            	<img id="bg04" src="img/bg04.jpg"/>
+            	<img id="box04_txt1" src="img/box04-txt1.png" />
+            	<img id="box04_txt2" src="img/box04-txt2.png" />
+            	<div id="box04_div01">
+            		<img class="box04_Dl" src="img/downLoad.png" />
+            		<p>[下载DR族APP，呵护爱]</p>
+            	</div>
+            </div>
+            <div class="swiper-slide box05" id="box05">
+            	<img id="box05_ico" class="box05_ico" src="img/drz.png" />
+            	<img id="box05_ico2" class="box05_ico2" src="img/drword.png" />
+            	<img id="box05_img01" class="box05_img box05_img01" src="img/box5_01.jpg"/>
+            	<img id="box05_img02" class="box05_img box05_img02" src="img/box5_02.jpg"/>
+            	<img id="box05_img03" class="box05_img box05_img03" src="img/box5_03.jpg"/>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="js/swiper.min.js"></script>
+    <script src="js/swiper.animate1.0.2.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        direction: 'vertical',
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 30,
+        mousewheelControl: true,
+        onSlideChangeStart: function(swiper){
+			/*-box01----------*/
+			selId("Obg01","bg01");
+			selId("Oring","ring");
+			selId("Oh2_01","h2_01");
+			selId("h3_01","h3_01");
+			selId("logo","logo");
+			
+			/*-box03----------*/
+			selId("box03_h5","box03_h5");
+			selId("box03_h2","box03_h2");			
+			selId("love","love");
+			selId("box03_p1","box03_p1");
+			selId("box03_p2","box03_p2");
+			selId("lover01","lover01");
+			selId("lover02","lover02");
+			selId("lover03","lover03");
+			selId("lover04","lover04");
+			selId("lover05","lover05");
+			selId("lover06","lover06");
+			
+			/*-box05----------*/
+			selId("box05_ico","box05_ico");
+			selId("box05_ico2","box05_ico2");
+			selId("box05_img01","box05_img01");
+			selId("box05_img02","box05_img02");
+			selId("box05_img03","box05_img03");
+		},
+		onSlideChangeEnd:function(swiper){
+			/*-box02----------*/
+			selId("h2_02","h2_02");
+			selId("h3_02","h3_02");
+			selId("box2_p01","box2_p01");
+			selId("box2_p02","box2_p02");
+			selId("box2_p03","box2_p03");
+			/*-box04----------*/
+			selId("bg04","bg04");
+			selId("box04_txt1","box04_txt1");
+			selId("box04_txt2","box04_txt2");
+			selId("box04_div01","box04_div01");
+		}
+    });
+    
+     function selId(c1,c2){
+		    	var getThis = document.querySelector("#"+c1);
+		    	//console.info(getThis);
+		    	getThis.classList.toggle(c2)
+		    }
+	
+	var music_ico=document.getElementById('music_ico');	
+	var music=document.getElementById('music');
+	 music_ico.onclick=function(){
+	 	if (music.paused) {
+	 		music.play();
+	 		music_ico.className='music_ico';
+	 	}else{
+	 		music.pause();
+	 		music_ico.className='music_ico2';
+	 	}
+	 }
+	 			
+       	var inp= document.getElementById('inp');
+     	inp.value='';
+     	inp.onblur=function(){
+       		window.localStorage.setItem("Romantic things",inp.value);
+       		console.info(inp.value);
+       	}				
+	
+    </script>
+    
+</body>
+</html>
