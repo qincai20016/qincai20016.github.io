@@ -19,11 +19,11 @@ div,img{
     height: 100%;
 }
 .music_ico{
-	width:44px;
-	height: 44px;
+	width:40px;
+	height: 40px;
 	border: 2px solid white;
 	border-radius: 50%;
-	background:url(../img/musicBtn.png)no-repeat center center;
+	background:url(../img/music_ico.png)no-repeat center center;
 	position: absolute;
 	top: 10px;
 	right: 10px;
@@ -39,7 +39,7 @@ div,img{
 	height: 44px;
 	border: 2px solid white;
 	border-radius: 50%;
-	background:url(../img/musicBtnOff.png)no-repeat center center;
+	background:url(../img/music_ico.png)no-repeat center center;
 	position: absolute;
 	top: 10px;
 	right: 10px;
@@ -69,7 +69,8 @@ div,img{
   height:80px;
   width:80px;
   border-radius:40px;
-  background:#0CF;
+  background:#0CF url(../img/me.jpg) no-repeat -0.3rem -.4rem;
+  background-size: 160%;
   
 }
 #caseBlanche #load  p{ line-height:80px;}
@@ -340,7 +341,7 @@ div,img{
 }
 .box03-img img:nth-child(4){
 	position: absolute;
-	top: 36.5%;
+	top: 38.5%;
 	left: 9%;
 	width: 5%;
 	z-index: 9999;
@@ -374,10 +375,9 @@ div,img{
 	font-size: .24rem;
 	line-height: .32rem;
 	width: 90%;
-	top: 35%;
+	top: 37%;
 	left: 4%;
 	transform: translate(-50%);
-	background-color:rgba(255,255,255,.7);
 	background-color:rgba(255,255,255,.7); 
 }
 .jy02{
