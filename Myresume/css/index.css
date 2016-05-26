@@ -136,7 +136,7 @@ div,img{
 	height: 2.4rem;
 	background:#fff; 
 	position: absolute;
-	top: 25%;
+	top: 27%;
 	left: 50%;
   	transform: translate(-50%);
 	background-color:rgba(255,255,255,.4);
@@ -144,9 +144,10 @@ div,img{
 }
 .name{
 	font-size: .6rem;
-	color:#0CF; 
+	color:#272822; 
+
 	padding: .4rem;
-	text-shadow: 2px 2px 2px #000,2px 2px 2px #0aa6ee;
+	text-shadow: 1px 1px 20px #CE636C,2px 2px 2px #fff;
 	font-weight: bold;
 }
 .grxxi{
@@ -176,6 +177,7 @@ div,img{
 	top: 0;
 	left: 0;
 	width: 60%;
+	z-index: 9999;
 }
 .box02-img img:nth-child(6){
 	position: absolute;
@@ -191,16 +193,18 @@ div,img{
 }
 .box02-img img:nth-child(7){
 	width: 26%;
-	top:32%;
+	top:30%;
 	left: 50%;
 	transform: translate(-50%);
 }
 .box02-img img:nth-child(8){
 	width: 26%;
-	top:68%;
+	top:70%;
 	left: 50%;
 	transform: translate(-50%);
+	z-index: 999;
 }
+
 .box02-img img:nth-child(9){
 	width: 26%;
 	top:59%;
@@ -212,6 +216,7 @@ div,img{
 	top:59%;
 	left: 78%;
 	transform: translate(-50%);
+	z-index: 999;
 }
 .box02-img img:nth-child(11){
 	width: 26%;
@@ -233,14 +238,26 @@ div,img{
 .liu_pig{
 	width: 35%;
 	position: absolute;
-	top: 48%;
+	top: 0%;
 	left: 50%;
 	transform: translate(-50%);
+	animation: liu_pig 1.5s linear 0s normal forwards 1;
+	-webkit-animation: liu_pig 1.5s linear 0s normal forwards 1;
 }
+@keyframes liu_pig {
+  0%{top: 0%;opacity: 0;}
+  100%{top: 48%;opacity: 1;}
+}
+
+@-webkit-keyframes liu_pig{
+  0%{top: 0%;opacity: 0;}
+  100%{top: 48%;opacity: 1;}
+}
+
 .wz01{
 	position: absolute;
 	top: 50%;
-	left: 50%;
+	left: 39%;
 	transform: translate(-50%);
 	text-align: center;
 	font-weight: bold;
@@ -250,17 +267,18 @@ div,img{
 .wz02{
 	position: absolute;
 	top: 62%;
-	left: 77%;
+	left: 69%;
 	transform: translate(-50%);
 	text-align: center;
 	font-weight: bold;
 	font-size: .24rem;
 	color: #fff;
+	z-index: 9999;
 }
 .wz03{
 	position: absolute;
 	top: 62%;
-	left: 23%;
+	left: 13%;
 	transform: translate(-50%);
 	text-align: center;
 	font-weight: bold;
@@ -269,8 +287,8 @@ div,img{
 }
 .wz04{
 	position: absolute;
-	top: 35%;
-	left: 50%;
+	top: 33%;
+	left: 42%;
 	transform: translate(-50%);
 	text-align: center;
 	font-weight: bold;
@@ -279,18 +297,19 @@ div,img{
 }
 .wz05{
 	position: absolute;
-	top: 70%;
-	left: 50%;
+	top: 72%;
+	left: 40%;
 	transform: translate(-50%);
 	text-align: center;
 	font-weight: bold;
 	font-size: .24rem;
 	color: #fff;
+	z-index:9999;
 }
 .wz06{
 	position: absolute;
 	top: 43%;
-	left: 77%;
+	left: 68%;
 	transform: translate(-50%);
 	text-align: center;
 	font-weight: bold;
@@ -300,7 +319,7 @@ div,img{
 .wz07{
 	position: absolute;
 	top: 43%;
-	left: 23%;
+	left: 15%;
 	transform: translate(-50%);
 	text-align: center;
 	font-weight: bold;
@@ -321,16 +340,17 @@ div,img{
 }
 .box03-img img:nth-child(4){
 	position: absolute;
-	top: 41.5%;
+	top: 36.5%;
 	left: 9%;
 	width: 5%;
 	z-index: 9999;
 }
 .box03-img img:nth-child(5){
-	width: 80%;
+	width: 70%;
 	position: absolute;
 	top: 12%;
 	left: 9%;
+	z-index: 9999;
 }
 .box03-img img:nth-child(7){
 	position: absolute;
@@ -340,7 +360,7 @@ div,img{
 }
 .box03-img img:nth-child(8){
 	position: absolute;
-	top: 76.5%;
+	top: 75%;
 	left: 9%;
 	width: 5%;
 	z-index: 9999;
@@ -354,8 +374,8 @@ div,img{
 	font-size: .24rem;
 	line-height: .32rem;
 	width: 90%;
-	top: 40%;
-	left: 50%;
+	top: 35%;
+	left: 4%;
 	transform: translate(-50%);
 	background-color:rgba(255,255,255,.7);
 	background-color:rgba(255,255,255,.7); 
@@ -366,8 +386,9 @@ div,img{
 	font-size: .24rem;
 	line-height: .32rem;
 	position: absolute;
-	top: 75%;
-	left: 50%;
+	top: 73%;
+	left: 4%;
 	transform: translate(-50%);
 	background-color:rgba(255,255,255,.7); 
 }
+
