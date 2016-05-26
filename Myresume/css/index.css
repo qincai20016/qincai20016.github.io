@@ -35,8 +35,8 @@ div,img{
 	100%{transform: rotate(360deg);}
 }
 .music_ico2{
-	width:44px;
-	height: 44px;
+	width:40px;
+	height: 40px;
 	border: 2px solid white;
 	border-radius: 50%;
 	background:url(../img/music_ico.png)no-repeat center center;
