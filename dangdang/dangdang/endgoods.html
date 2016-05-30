@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/plugins/jquery-2.2.1.min.js"></script>
+		<script src="js/jquery.SuperSlide.2.1.1.js"></script>
+		<style>
+			*{margin: 0; padding: 0;}
+			a{text-decoration: none;}
+			a:hover{text-decoration: underline;}
+			li{list-style: none;}
+			#endGoods{width: 1200px; height: 553px;margin: 0 auto;}
+			.endgood_top{height: 42px;}
+			.endgood_top_a{display:inline-block;float: right;margin-top:12px; color: #FC5259;}
+			.endgood_content{height:510px; background: honeydew;border-top: 1px solid gainsboro;border-left: 1px solid gainsboro;}
+			.endgood_con01{width: 189px;height: 305;float: left;}
+
+			.endgood_con02{width: 440px;height:510px;float: left;}
+			.endgood_con02Btm{width: 439px;float: left;overflow: hidden;}
+			.endgood_con02Btm a{display: inline-block;float: left;}
+			.endgood_con03{width: 570px; height: 509px; float: left;}
+			.endgd_con03{width:189px; float: left;position: relative;}
+			.endgd_con03:hover .endgd_con03_span{display:block;width:185px;height: 250px; border: 2px solid #E74D8D;position: absolute;top: 0;left: 0;}
+			.endgood_con01Top,.endgood_con01Bottom,.endgood_con02Top,.endgood_con02Btm,.endgd_con03{height:254px;border-bottom:1px solid gainsboro;border-right:1px solid gainsboro;}
+			
+		</style>
+		<style>
+			.fullSlide{width:189px;position:relative;height:254px;background:#000;}
+			.fullSlide .bd{margin:0 auto;position:relative;z-index:0;overflow:hidden;}
+			.fullSlide .bd ul{width:100% !important;}
+			.fullSlide .bd li{width:100% !important;height:254px;overflow:hidden;text-align:center;}
+			.fullSlide .bd li a{display:block;height:254px;}
+			.fullSlide .hd{width:100%;position:absolute;z-index:1;bottom:0;left:0;height:30px;line-height:30px;}
+			.fullSlide .hd ul{text-align:center;}
+			.fullSlide .hd ul li{cursor:pointer;display:inline-block;*display:inline;zoom:1;width:10px;height:10px; border-radius:50%; margin:1px;overflow:hidden;background:#000;filter:alpha(opacity=50);opacity:0.5;line-height:999px;}
+			.fullSlide .hd ul .on{background:#f00;}
+			.fullSlide .prev,.fullSlide .next{display:block;position:absolute;z-index:1;top:50%;margin-top:-30px;left:0;z-index:1;width:30px;height:40px;background:url(img/slider-arrow.png) -130px -147px #000 no-repeat;cursor:pointer;filter:alpha(opacity=50);opacity:0.5;display:none;}
+			.fullSlide .next{left:auto;right:0;background-position:-13px -147px;}
+		</style>
+		<script>
+			$(function(){
+				$(".fullSlide").hover(function(){
+				    $(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+				},
+				function(){
+				    $(this).find(".prev,.next").fadeOut()
+				});
+				$(".fullSlide").slide({
+				    titCell: ".hd ul",
+				    mainCell: ".bd ul",
+				    effect: "fold",
+				    autoPlay: true,
+				    autoPage: true,
+				    trigger: "click",
+				    startFun: function(i) {
+				        var curLi = jQuery(".fullSlide .bd li").eq(i);
+				        if ( !! curLi.attr("_src")) {
+				            curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+				        }
+				    }
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<div id="endGoods">
+			<div class="endgood_top"><img src="img/goods_01.jpg"/><a class="endgood_top_a" href="#">单件商品限量100件</a></div>
+			<div class="endgood_content">
+				<div class="endgood_con01">
+					<div class="endgood_con01Top"><a href="#"><img src="img/con01Top.jpg"/></a></div>
+					<div class="endgood_con01Bottom">
+						<div class="fullSlide">
+						<div class="bd">
+							<ul>
+								<li _src="url(img/Btm01.jpg)" style="background:#E2025E center 0 no-repeat;"><a href="#"></a></li>
+								<li _src="url(img/Btm02.jpg)" style="background:#DED5A1 center 0 no-repeat;"><a href="#"></a></li>
+								<li _src="url(img/Btm03.jpg)" style="background:#B8CED1 center 0 no-repeat;"><a href="#"></a></li>
+								<li _src="url(img/Btm04.jpg)" style="background:#98918E center 0 no-repeat;"><a href="#"></a></li>
+							</ul>
+						</div>
+						<div class="hd"><ul></ul></div>
+							<span class="prev"></span>
+							<span class="next"></span>
+						</div><!--fullSlide end-->
+					</div>
+				</div>
+				<div class="endgood_con02">
+					<div class="endgood_con02Top"><a href="#"><img src="img/con02Top.jpg"/></a></div>
+					<div class="endgood_con02Btm">
+						<a class="endgood_con02Btm01" href="#"><img src="img/con02Btm01.jpg"/></a>
+						<a class="endgood_con02Btm02" href="#"><img src="img/con02Btm02.jpg"/></a>
+						<a class="endgood_con02Btm03" href="#"><img src="img/con02Btm03.jpg"/></a>
+					</div>
+					
+				</div>
+				<ul class="endgood_con03">
+					<li class="endgd_con03"><span class="endgd_con03_span"></span><a href="#"><img src="img/con03li_01.jpg"/></a></li>
+					<li class="endgd_con03"><span class="endgd_con03_span"></span><a href="#"><img src="img/con03li_01.jpg"/></a></li>
+					<li class="endgd_con03"><span class="endgd_con03_span"></span><a href="#"><img src="img/con03li_01.jpg"/></a></li>
+					<li class="endgd_con03 endgd_con03_4"><span class="endgd_con03_span"></span><a href="#"><img src="img/con03li_01.jpg"/></a></li>
+					<li class="endgd_con03"><span class="endgd_con03_span"></span><a href="#"><img src="img/con03li_01.jpg"/></a></li>
+					<li class="endgd_con03"><span class="endgd_con03_span"></span><a href="#"><img src="img/con03li_01.jpg"/></a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

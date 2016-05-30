@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="css/lanrenzhijia.css" rel="stylesheet" type="text/css" />
+		<script src="js/plugins/jquery-2.2.1.min.js"></script>
+		<script src="js/jquery.jqzoom.js"></script>
+		<script src="js/lanrenzhijia.js"></script>
+		<script src="js/jquery.SuperSlide.2.1.1.js"></script>
+		<script>
+			$(function(){
+				$.ajax({
+					type:"get",
+					url:"top_Public2.html",
+					async:false,
+					success:function(e){
+						$('#header').html(e);
+					}
+				});
+				
+				$.ajax({
+					type:"get",
+					url:"footer_Public.html",
+					async:true,
+					success:function(e){
+						$('#footer').html(e);
+					}
+				});
+			})
+			$(function(){
+				setInterval(time,1000);
+				function time(){
+					var now=new Date();
+					var mingNian=new Date('2016-04-02 00:00:00');
+					var zongMiaoshu=Math.floor((mingNian-now)/1000);
+					var date=Math.floor(zongMiaoshu/(60*60*24));
+					var hours=Math.floor(zongMiaoshu%(60*60*24)/(60*60));
+					var minutes=Math.floor(zongMiaoshu%(60*60*24)%(60*60)/60);
+					var seconds=Math.floor(zongMiaoshu%60);
+					
+					var msg=date+'天'+(hours<10?'0':'')+hours+'时'+(minutes<10?'0':'')+minutes+'分'+(seconds<10?'0':'')+seconds+'秒';
+					var myTime=$('.CCright_Countdown');
+					myTime.html('剩余：'+msg);
+					
+				}
+			})
+			$(function(){
+				$('.free').on('mouseover',function(){
+					$('.free_ul').show();
+				}).on('mouseout',function(){
+					$('.free_ul').hide();
+				});
+			})
+			$(function(){
+				//加的效果
+				$(".add").click(function(){
+				var n=$(this).prev().val();
+				var num=parseInt(n)+1;
+				if(num==0){ return;}
+				$(this).prev().val(num);
+				});
+				//减的效果
+				$(".jian").click(function(){
+				var n=$(this).next().val();
+				var num=parseInt(n)-1;
+				if(num==0){ return}
+				$(this).next().val(num);
+				});
+			})
+			
+			
+		</script>
+		
+		<style>
+			html, body, div, span, applet, object, iframe, b h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, 
+			fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+				margin: 0;padding: 0;border: 0;outline:0;
+			}
+			a{text-decoration: none;}
+			.cart_toppic{width: 1198px;height: 63px; margin: 15px auto; border: 2px solid #DCDDDD;}
+			.bread_div{width:1200px; height:30px; margin:0 auto; font-size: 12px;}
+			.bread_div a{text-decoration: none;font-size: 12px;color:black;}
+			.bread_div .bread_a01{font-size: 14px;font-weight: bold;}
+			.bread_div a:hover{text-decoration:underline}
+			.bread_gapspan{display: inline-block;padding:0 5px;}
+			
+			.cart_content{width: 1200px;height: 449px;margin: 0 auto;}
+			.cartCon_left{width: 449px;height: 449px;text-align: center;float: left;}
+			.jqzoom{position: relative;}
+			.cart_price{z-index:999; display: block; position: absolute; top: 0;right: 0; width: 68px;height: 68px;background: url(img/cart_01.png);}
+			.cartCon_right{width: 750px;height: 449px;float: right;}
+			.CCright_title{height: 65px;font-size: 18px; border-bottom: 1px solid gainsboro;}
+			.CCright_writer{height: 55px; padding: 10px 0;}
+			.CCright_price{height:90px; background:gainsboro; padding: 10px;}
+			.CCright_price_p{height: 30px;line-height: 30px;}
+			.CCright_price_span01{display: inline-block;width: 150px;}
+			.CCright_Countdown{background:antiquewhite; text-align: center;}
+			.CCright_deliveryaddress{height:45px;font-size: 14px; padding: 10px;}
+			.address_div01{float: left; margin-right: 10px;}
+			.address_div02{float: left;}
+			.address_span{display:inline-block;width: 50px;height: 20px;border:1px solid gainsboro;text-align: center;line-height: 20px;}
+			.free{display:inline-block;position: relative; margin-bottom: 10px;}
+			.free_ul{display: none;position: absolute;top:15px;left:35px; width: 160px;border: 1px solid gainsboro;background: ghostwhite;}
+			.free_ul li{width:200px; height:20px; line-height: 20px; font-size: 10px;}
+			
+			.CCright_add_minus{height: 84px;padding-top: 20px;}
+			.gw_num{float:left; border: 1px solid gainsboro;width: 56px;height:36px; overflow: hidden;}
+			.gw_num em{display: block;font-style: normal; height: 18px;width: 20px;float:right;color:black;text-align: center;cursor: pointer;background: gainsboro;}
+			.gw_num .num{display: block;float: left;text-align: center;width: 36px; height:36px; font-style: normal;font-size: 14px;line-height: 36px;border: 0;}
+			.gw_num em.add{float: right; border-top: 1px solid white;}
+			
+			.CCright_addcart{margin-left:20px; display:inline-block;width:134px;height: 36px; background:#FF2832; border-radius: 5px;text-align: center;color: white;font-weight: bold;line-height: 36px;}
+			.CCright_addcart:hover{background: #F00000;}
+			.CCright_oneClickBuy{margin-left:10px; display:inline-block;width:100px;height: 34px; background:#FFD7D7; border-radius: 5px;text-align: center;color: red; border: 1px solid red; font-weight: bold;line-height: 36px;}
+			.CCright_oneClickBuy:hover{background:#FFEFD5;}
+			.CCright_e-book{margin-left:10px;display:inline-block;width:120px;height: 34px; background:ghostwhite; border-radius: 5px;text-align: center;color: gray; border: 1px solid gray; font-weight: bold;line-height: 36px;}
+			.CCright_e-book:hover{background: gainsboro;}
+			
+			#Product{width: 1160px;height:600px; margin: 0 auto; padding:0 20px;}
+			.Product_left{width:208px; padding-left:12px;border: 1px solid gainsboro;float: left;}
+			.Product_left h4{font-size: 12px;font-weight: bold; height: 30px;line-height: 30px;}
+			.Product_left img{width: 100px;}
+			.Product_left li{padding:10px; width:174px;height: 159px;border-bottom: 1px dashed gainsboro; margin-bottom: 10px;}
+			.Product_left li p{font-size: 12px;}
+			.Product_left_a{margin-left:35px ;}
+			
+			.Product_right{width: 900px; float: right;}
+			.notice-b {width:900px; border:1px solid #d5d5d5;overflow:hidden}
+			.notice-b .tab-hd {height:40px;background-color:#eee;margin-bottom:-1px;color:#404040}
+			.notice-b .tab-hd ul{padding-top:4px;margin-left:7px}
+			.notice-b .tab-hd li{float:left;height:35px;line-height:30px;border-top:1px solid #eee;padding:0 14px; cursor: pointer;}
+			.notice-b .tab-hd li:hover{color:#f60;}
+			.notice-b .tab-hd li.on{border:1px solid #d5d5d5;border-bottom:none;background-color:#fff;font-weight:bold;position:relative;margin-left:-1px;margin-right:-1px}
+			.notice-b .tab-bd{border-top:1px solid #e8e8e8;padding:5px}
+			.notice-b .tab-bd ul{overflow:hidden;zoom:1}
+			.notice-b .tab-bd li {line-height:30px;padding:0 10px 0 5px; }
+			.notice-b .tab-bd li p{font-size: 12px; line-height: 16px;}
+		
+		
+		
+		</style>
+		
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="cart_toppic"><a href="#"><img src="http://img63.ddimg.cn/2016/3/25/2016032518501086123.jpg"/></a></div>
+		<div class="bread_div">
+			<a class="bread_a01" href="#">图书</a><span class="bread_gapspan">&gt</span>
+			<a href="#">成功/励志</a><span class="bread_gapspan">&gt</span>
+			<a href="#">人生哲学</a><span class="bread_gapspan">&gt</span>
+			<a href="#">人生智慧</a><span class="bread_gapspan">&gt</span>
+			<span>做你自己--股神巴菲特送给儿子的人生礼物！克林顿、比尔·盖茨、</span>
+		</div>
+		<div class="cart_content">
+			<div class="cartCon_left">
+				<div class="lanrenzhijia">
+				<!-- 大图begin -->
+				<div id="preview" class="spec-preview"> 
+					<span class="jqzoom"><span class="cart_price"></span><img jqimg="http://img3x0.ddimg.cn/36/13/21037140-1_u_2.jpg" src="http://img3x0.ddimg.cn/36/13/21037140-1_w_2.jpg"/></span> 
+				</div>
+				<!-- 大图end -->
+				<!-- 缩略图begin -->
+				<div class="spec-scroll"> <a class="prev">&lt;</a> <a class="next">&gt;</a>
+				  <div class="items">
+				    <ul>
+				      <li><img bimg="http://img3x0.ddimg.cn/36/13/21037140-1_u_2.jpg" src="http://img3x0.ddimg.cn/36/13/21037140-1_w_2.jpg" onmousemove="preview(this);"></li>
+				      <li><img bimg="http://img3x6.ddimg.cn/82/9/23806216-1_u_5.jpg" src="http://img3x6.ddimg.cn/82/9/23806216-1_w_5.jpg" onmousemove="preview(this);"></li>
+				      <li><img bimg="http://img3x3.ddimg.cn/72/15/22876893-1_u_3.jpg" src="http://img3x3.ddimg.cn/72/15/22876893-1_w_3.jpg" onmousemove="preview(this);"></li>
+				      <li><img bimg="http://img3x6.ddimg.cn/21/10/23491236-1_u_1.jpg" src="http://img3x6.ddimg.cn/21/10/23491236-1_w_1.jpg" onmousemove="preview(this);"></li>
+				      <li><img bimg="http://img3x8.ddimg.cn/17/16/23721308-1_u_1.jpg" src="http://img3x8.ddimg.cn/17/16/23721308-1_w_1.jpg" onmousemove="preview(this);"></li>
+				      <li><img bimg="http://img3x3.ddimg.cn/46/25/22916863-1_u_4.jpg" src="http://img3x3.ddimg.cn/46/25/22916863-1_w_4.jpg" onmousemove="preview(this);"></li>
+				      <li><img bimg="http://img3x1.ddimg.cn/21/32/23340261-1_u_1.jpg" src="http://img3x1.ddimg.cn/21/32/23340261-1_w_1.jpg" onmousemove="preview(this);"></li>
+				      <li><img bimg="http://img3x1.ddimg.cn/58/0/23620171-1_u_1.jpg" src="http://img3x1.ddimg.cn/58/0/23620171-1_w_1.jpg" onmousemove="preview(this);"></li>
+				    </ul>
+				  </div>
+				</div>
+				<!-- 缩略图end -->
+				</div>
+			</div>
+			
+			
+			<div class="cartCon_right">
+				<h1 class="CCright_title">做你自己--股神巴菲特送给儿子的人生礼物！克林顿、比尔·盖茨、李开复、杨澜、徐小平等逾30位政商界领袖自发推荐！一本彻底改变你工作、生活、财富观的心灵成长之书！</h1>
+				<div class="CCright_writer">
+					<span>作者:（美）<a href="#">巴菲特</a>　著，<a href="#">赵亚男</a>　译</span>
+					<span> 出版社:<a href="#">新世界出版社</a></span><span>出版时间:2011年3月 </span>
+					<div>
+						<span>在 <a href="#">当当成功/励志榜</a>  排名  221 位</span>
+						<span><span></span><a href="#">46838</a>评论条数</span>
+					</div>
+				</div>
+				
+				<div class="CCright_price">
+					<p class="CCright_price_p"><span class="CCright_price_span01">定价</span><span class="CCright_price_span02">¥28.00</span></p>
+					<p class="CCright_price_p">
+						<span class="CCright_price_span01">当当抢购价</span>
+						<span class="CCright_price_span02" style="font-size: 24px;color: red;">¥18.70</span>
+						<span>(6.68折)</span>
+						<span style="color: red;">钻石VIP价：¥17.80</span>
+						<span class="CCright_Countdown"></span></p>
+					<p class="CCright_price_p"><span class="CCright_price_span01">电子书价</span><span class="CCright_price_span02">¥1.89</span></p>
+				</div>
+				
+				<div class="CCright_deliveryaddress">
+					<div class="address_div01">配送至</div>
+					<div class="address_div02">
+						<span class="address_span">北京</span>
+						<span class="free">有货
+							<a class="free_a" href="#">满49元免运费</a>
+							<ul class="free_ul">
+								<li>普通地区满49元(含)包邮</li>
+								<li>偏远地区满59元(含)包邮</li>
+								<li>不足金额订单收取运费5元起</li>
+							</ul>
+						</span>
+						<p>明日00:45前完成下单，预计明天(3月28日)可送达</p>
+					</div>
+				</div>
+				
+				<div class="CCright_add_minus">
+					<div class="gw_num">
+						<em class="jian">-</em>
+						<input type="text" value="1" class="num"/>
+						<em class="add">+</em>
+					</div>
+					<a class="CCright_addcart" href="#">加入购物车</a>
+					<a class="CCright_oneClickBuy" href="#">一键购买</a>
+					<a class="CCright_e-book" href="#">购买电子书</a>
+				</div>
+			</div>
+		</div>
+		
+		<div id="Product">
+			<div class="Product_left">
+				<h4>看过本商品的人还看了</h4>
+				<ul>
+					<li>
+						<a class="Product_left_a" href="#"><img src="http://img3x0.ddimg.cn/36/13/21037140-1_w_2.jpg"/></a>
+						<p>当当价¥18.70</p>
+						<p><a href="#">做你自己--股神巴菲特送给儿子的人生礼物</a></p>
+						<p>作者:（美）巴菲特　著</p>
+					</li>
+					<li>
+						<a class="Product_left_a" href="#"><img src="http://img3x6.ddimg.cn/82/9/23806216-1_w_5.jpg"/></a>
+						<p>当当价¥18.70</p>
+						<p><a href="#">做你自己--股神巴菲特送给儿子的人生礼物</a></p>
+						<p>作者:（美）巴菲特　著</p>
+					</li>
+					<li>
+						<a class="Product_left_a" href="#"><img src="http://img3x6.ddimg.cn/21/10/23491236-1_w_1.jpg"/></a>
+						<p>当当价¥18.70</p>
+						<p><a href="#">做你自己--股神巴菲特送给儿子的人生礼物</a></p>
+						<p>作者:（美）巴菲特　著</p>
+					</li>
+				</ul>
+				
+				
+			</div>
+			
+			
+			<div class="Product_right">
+				<div class="notice-b" style="margin:0 auto">		
+					<div class="tab-hd">				
+						<ul class="tab-nav">				
+							<li>商品详情</li>
+							<li>商品评论(46029条)</li>				
+							<li>商品问答(0条)</li>			
+						</ul>		
+					</div>		
+					<div class="tab-bd">			
+						<div class="tab-pal">					
+							<ul>							
+								<li><a href="#">商品详情</a></li>							
+								<li><a href="#">版 次：1页 数：214字 数：150000印刷时间：2011-3-1开 本：32开纸 张：胶版纸印 次：1包 装：平装丛书名：国际标准书号ISBN：9787510413407所属分类：图书>成功/励志>人生哲学>人生智慧</a></li>	
+								<li>
+									<h6>编辑推荐</h6>
+									<p>一本彻底改变你工作、生活、财富观的心灵成长之书！　　创新工场董事长李开复、阳光媒体集团主席杨澜亲自为《做你自己》作序推荐！　　比尔·克林顿、比尔·盖茨、李开复、杨澜、徐小平……从未有一本书，让如此多的***政商领袖及精英们激烈讨论、自发推荐！　　你想成为什么样的人，就能成为什么样的人！引爆全球3600万青年人的“立志”大变革！    彼得·巴菲特：股神父亲教我的12件事    ◎ 会赚钱，还要会经营人生。    ◎ 别把优势当成挡箭牌。      ◎ 起点不重要，重要的是如何实现梦想。    ◎ 游荡的人，未必是迷路的人。    ◎ 追寻志向能激发我们**的潜能。    ◎ 停下来审视内心，是对时间和人生的投资。    ◎ 找到真正喜欢做、世界也愿意为此付钱的事。    ◎ 每一次错误都是学习的机会。    ◎ 从心出发，思考什么才是自己真正想要的。    ◎ 成功离不开能力、热情和坚持。    ◎ 金钱不是*重要的，重要的是工作的实质。    ◎ 我们无法选择人生从哪里开始，但可以选择要成为什么样的人。    《做你自己》将告诉你怎样超越自我，如何实现自己的梦想，活出*充实的人生。    【美国前总统】克林顿：   彼得·巴菲特为我们带来了这本睿智又引人深思的好书。对于每一个正在世界中寻找自己定位的年轻人和每一个希望给予子女*好人生开端的家庭，这本书都应是必读之物。    【微软创始人】比尔·盖茨夫妇：   正如我们对彼得的了解和欣赏，《做你自己》出色地传达了他的精神、理想和价值观。站在为人父母的角度，这本书好像是我们与孩子之间正在展开的一场有关人生意义和机遇的对话。我们家里每一个人都会阅读并探讨这本书。     【新东方创始人之一】徐小平：   它给我*珍贵的启示在于：你需要设定自己的目标，而不是以别人的目标为目标；你需要自己定义成功的内含，而不是因别人的成功而沮丧，甚至被压得喘不过气来。它是每一个向往美好生活的朋友的宝典——不仅适合富二代，也适合穷二代。    【U2乐队主唱】波诺：    很少有人拥有彼得·巴菲特的成长经历……我并非指物质优势，而是指优势的限用。与其他家庭一样，这个家庭非常真实地存在着各种纠结，但它对服务理念和整个人类社会有着不同寻常的信仰，这种信仰通过慈善、歌曲或谈话……或写给大众看的智慧之书表现出来。     【女权运动先锋】格洛丽亚·斯泰纳姆：     这是一本讲述寻常道理的必读经典，但这本书却并不寻常。因为彼得?巴菲特在本可以承接一种身份的情况下并未这样选择，所以当他告诉我们如何通过做我所爱的事来找寻那个独特的自我时，他的观点便具有震撼力和公信力。我想不出有谁不会受益于这本激扬、睿智、友善的读物。     【CNN创办人】特德·特纳：     彼得·巴菲特以他朴素、真诚的智慧思考了如何活出一个有意义的人生。《做你自己》发人深省，值得一读。 </p>
+								</li>
+							</ul>			
+						</div>			
+						<div class="tab-pal">					
+							<ul>							
+								<li><a href="#">商品评论(46029条)</a></li>							
+								<li><a href="#">商品评论(46029条)</a></li>							
+								<li><a href="#">商品评论(46029条)</a></li>							
+								<li><a href="#">商品评论(46029条)</a></li>					
+							</ul>			
+						</div>			
+						<div class="tab-pal">					
+							<ul>							
+								<li><a href="#">商品问答(0条)</a></li>							
+								<li><a href="#">商品问答(0条)</a></li>							
+								<li><a href="#">商品问答(0条)</a></li>							
+								<li><a href="#">商品问答(0条)</a></li>					
+							</ul>			
+						</div>			
+					</div>
+				</div>
+			</div>
+		
+		
+		</div>
+		<div id="footer"></div>
+		
+		<script>
+			jQuery(".notice-b").slide({ titCell:".tab-hd li", mainCell:".tab-bd",delayTime:0, trigger:"click" });
+		</script>
+	</body>
+</html>

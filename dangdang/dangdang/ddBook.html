@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.ddbook a {
+				text-decoration: none;
+			}
+			
+			.ddbook li {
+				list-style: none;
+			}
+			
+			.ddbook {
+				width: 1200px;
+				height: 499px;
+				margin: 38px auto 0;
+			}
+			
+			.ddbook_right {
+				width: 281px;
+				height: 497px;
+				float: right;
+			}
+			
+			.bookRight_title {
+				width: 280px;
+				height: 43px;
+				background: #f5f5f5;
+				border-top: 1px solid gainsboro;
+				border-right: 1px solid gainsboro;
+			}
+			
+			.RT_span {
+				display: inline-block;
+				width: 139px;
+				height: 43px;
+				text-align: center;
+				line-height: 43px;
+				border-bottom: 1px solid gainsboro;
+				border-left: 1px solid gainsboro;
+			}
+			
+			.RTspan_show {
+				background: white;
+				border-bottom: none;
+			}
+			
+			.RT_a {
+				color: gray;
+			}
+			
+			.RT_a:hover {
+				text-decoration: underline;
+			}
+			
+			.bookR_ul {
+				padding: 10px;
+				width: 259px;
+				height: 432px;
+				border: 1px solid gainsboro;
+				border-top: none;
+			}
+			
+			.bookR_li01 {
+				width: 258px;
+				height: 33px;
+				border-bottom: 1px solid gainsboro;
+			}
+			
+			.bookR_li01_hide {
+				display: none;
+			}
+			
+			.bookR_li01 .num1 {
+				display: inline-block;
+				float: left;
+				width: 25px;
+				height: 33px;
+				background: white;
+				margin-bottom: -1px;
+				line-height: 33px;
+			}
+			
+			.BRli_p01 {
+				height: 33px;
+				line-height: 33px;
+			}
+			
+			.bookR_li02 {
+				display: none;
+				width: 258px;
+				height: 133px;
+				border-bottom: 1px solid gainsboro;
+			}
+			
+			.bookR_li02_show {
+				display: block;
+			}
+			
+			.bookR_li02 .num2 {
+				display: inline-block;
+				float: left;
+				width: 25px;
+				height: 133px;
+				background: white;
+				margin-bottom: -1px;
+				line-height: 33px;
+			}
+			
+			.bookR_li02 img {
+				width: 90px;
+				height: 90px;
+				margin-top: 20px;
+				float: left;
+			}
+			
+			.BRli_p02 {
+				float: left;
+				font-size: 10px;
+				width: 140px;
+				height: 110px;
+				padding-top: 23px;
+			}
+			
+			.BRli_p02 a {
+				display: block;
+			}
+			
+			.ddbook_left {
+				width: 914px;
+				height: 499px;
+				float: left;
+				position: relative;
+			}
+			
+			.BL_top {
+				height: 44px;
+				border-bottom: 2px solid black;
+				margin-bottom: 10px;
+			}
+			
+			.BL_top_title {
+				width: 250px;
+				height: 44px;
+				line-height: 44px;
+			}
+			
+			.BL_top_title_a {
+				font-size: 20px;
+				color: black;
+				font-weight: bold;
+			}
+			
+			.BL_top_title_a:hover {
+				color: #FF2832;
+			}
+			
+			.BLtop_tab_ul {
+				height: 44px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				border-right: 1px solid gainsboro;
+			}
+			
+			.BLtop_tab_li {
+				float: left;
+				width: 114px;
+				height: 43px;
+				text-align: center;
+				line-height: 43px;
+				border: 1px solid gainsboro;
+				border-width: 1px 0 0 1px;
+				background: #f5f5f5;
+			}
+			
+			.lishow {
+				border: 2px solid black;
+				border-bottom: white;
+				width: 112px;
+				height: 44px;
+				background: white;
+				font-weight: bold;
+			}
+			
+			.BL_conLeft {
+				float: left;
+				position: relative;
+				width: 238px;
+				height: 441px;
+				border: 1px solid gainsboro;
+			}
+			
+			.BL_conLeft_ul {
+				padding: 5px;
+				width: 228px;
+				height: 102px;
+				background: white;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				z-index: 999;
+			}
+			
+			.BL_conLeft_ul li {
+				float: left;
+				font-size: 12px;
+				padding: 5px 5px;
+			}
+			
+			.BL_conright {
+				float: left;
+				width: 672px;
+				height: 442px;
+				border-top: 1px solid gainsboro;
+			}
+			
+			.BL_conright_div {
+				width: 674px;
+				height: 442px;
+			}
+			
+			.CRtop_lunbo {
+				float: left;
+				width: 335px;
+				height: 220px;
+				border-right: 1px solid gainsboro;
+				border-bottom: 1px solid gainsboro;
+			}
+			
+			.CRtop_ul {
+				float: left;
+			}
+			
+			.CR_li {
+				float: left;
+				width: 167px;
+				height: 220px;
+				border-right: 1px solid gainsboro;
+				border-bottom: 1px solid gainsboro;
+			}
+			
+			.CRli_a {
+				display: inline-block;
+				text-align: center;
+				width: 166px;
+				height: 166px;
+			}
+			
+			.CRli_span {
+				display: inline-block;
+				vertical-align: middle;
+				width: 0;
+				height: 100%;
+				overflow: hidden;
+			}
+			
+			.CRli_a img {
+				display: inline-block;
+				vertical-align: middle;
+			}
+			
+			.CR_li .CRli_p {
+				width:130px;
+				font-size: 10px;
+				margin-left: 20px;
+			}
+			
+			.CRli_p01 .CRlip_a {
+				font-size: 10px;
+				color: gray;
+			}
+			
+			.CRli_p01 .CRlip_a:hover {
+				color: red;
+			}
+			
+			.CRli_p02_span01 {
+				color: red;
+				margin-right: 10px;
+				font-size: 14px;
+			}
+			
+			.CRli_p02_span02 {
+				text-decoration: line-through;
+				color: gray;
+			}
+		</style>
+		<style>
+			.fullSlide1 {
+				width: 335px;
+				position: relative;
+				height: 220px;
+				background: #000;
+			}
+			
+			.fullSlide1 .bd {
+				margin: 0 auto;
+				position: relative;
+				z-index: 0;
+				overflow: hidden;
+			}
+			
+			.fullSlide1 .bd ul {
+				width: 100% !important;
+			}
+			
+			.fullSlide1 .bd li {
+				width: 100% !important;
+				height: 220px;
+				overflow: hidden;
+				text-align: center;
+			}
+			
+			.fullSlide1 .bd li a {
+				display: block;
+				height: 220px;
+			}
+			
+			.fullSlide1 .hd {
+				width: 100%;
+				position: absolute;
+				z-index: 1;
+				bottom: 0;
+				left: 0;
+				height: 20px;
+				line-height: 20px;
+			}
+			
+			.fullSlide1 .hd ul {
+				text-align: center;
+			}
+			
+			.fullSlide1 .hd ul li {
+				cursor: pointer;
+				display: inline-block;
+				*display: inline;
+				zoom: 1;
+				width: 20px;
+				height: 5px;
+				margin: 1px;
+				overflow: hidden;
+				background: #000;
+				filter: alpha(opacity=50);
+				opacity: 0.5;
+				line-height: 999px;
+			}
+			
+			.fullSlide1 .hd ul .on {
+				background: white;
+			}
+			
+			.fullSlide1 .prev,
+			.fullSlide1 .next {
+				position: absolute;
+				z-index: 1;
+				top: 50%;
+				margin-top: -30px;
+				left: 0;
+				z-index: 1;
+				width: 30px;
+				height: 40px;
+				background: #A9DC8D;
+				display: none;
+				font-size: 30px;
+				font-weight: bold;
+				color: white;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			.fullSlide1 .next {
+				left: auto;
+				right: 0;
+				background-position: -13px -147px;
+			}
+		</style>
+		<style>
+			.fullSlide2 {
+				width: 335px;
+				position: relative;
+				height: 220px;
+				background: #000;
+			}
+			
+			.fullSlide2 .bd {
+				margin: 0 auto;
+				position: relative;
+				z-index: 0;
+				overflow: hidden;
+			}
+			
+			.fullSlide2 .bd ul {
+				width: 100% !important;
+			}
+			
+			.fullSlide2 .bd li {
+				width: 100% !important;
+				height: 220px;
+				overflow: hidden;
+				text-align: center;
+			}
+			
+			.fullSlide2 .bd li a {
+				display: block;
+				height: 220px;
+			}
+			
+			.fullSlide2 .hd {
+				width: 100%;
+				position: absolute;
+				z-index: 1;
+				bottom: 0;
+				left: 0;
+				height: 20px;
+				line-height: 20px;
+			}
+			
+			.fullSlide2 .hd ul {
+				text-align: center;
+			}
+			
+			.fullSlide2 .hd ul li {
+				cursor: pointer;
+				display: inline-block;
+				*display: inline;
+				zoom: 1;
+				width: 20px;
+				height: 5px;
+				margin: 1px;
+				overflow: hidden;
+				background: #000;
+				filter: alpha(opacity=50);
+				opacity: 0.5;
+				line-height: 999px;
+			}
+			
+			.fullSlide2 .hd ul .on {
+				background: white;
+			}
+			
+			.fullSlide2 .prev,
+			.fullSlide2 .next {
+				position: absolute;
+				z-index: 1;
+				top: 50%;
+				margin-top: -30px;
+				left: 0;
+				z-index: 1;
+				width: 30px;
+				height: 40px;
+				background: #A9DC8D;
+				display: none;
+				font-size: 30px;
+				font-weight: bold;
+				color: white;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			.fullSlide2 .next {
+				left: auto;
+				right: 0;
+				background-position: -13px -147px;
+			}
+		</style>
+		<style>
+			.fullSlide3 {
+				width: 335px;
+				position: relative;
+				height: 220px;
+				background: #000;
+			}
+			
+			.fullSlide3 .bd {
+				margin: 0 auto;
+				position: relative;
+				z-index: 0;
+				overflow: hidden;
+			}
+			
+			.fullSlide3 .bd ul {
+				width: 100% !important;
+			}
+			
+			.fullSlide3 .bd li {
+				width: 100% !important;
+				height: 220px;
+				overflow: hidden;
+				text-align: center;
+			}
+			
+			.fullSlide3 .bd li a {
+				display: block;
+				height: 220px;
+			}
+			
+			.fullSlide3 .hd {
+				width: 100%;
+				position: absolute;
+				z-index: 1;
+				bottom: 0;
+				left: 0;
+				height: 20px;
+				line-height: 20px;
+			}
+			
+			.fullSlide3 .hd ul {
+				text-align: center;
+			}
+			
+			.fullSlide3 .hd ul li {
+				cursor: pointer;
+				display: inline-block;
+				*display: inline;
+				zoom: 1;
+				width: 20px;
+				height: 5px;
+				margin: 1px;
+				overflow: hidden;
+				background: #000;
+				filter: alpha(opacity=50);
+				opacity: 0.5;
+				line-height: 999px;
+			}
+			
+			.fullSlide3 .hd ul .on {
+				background: white;
+			}
+			
+			.fullSlide3 .prev,
+			.fullSlide3 .next {
+				position: absolute;
+				z-index: 1;
+				top: 50%;
+				margin-top: -30px;
+				left: 0;
+				z-index: 1;
+				width: 30px;
+				height: 40px;
+				background: #A9DC8D;
+				display: none;
+				font-size: 30px;
+				font-weight: bold;
+				color: white;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			.fullSlide3 .next {
+				left: auto;
+				right: 0;
+				background-position: -13px -147px;
+			}
+		</style>
+		<style>
+			.fullSlide4 {
+				width: 335px;
+				position: relative;
+				height: 220px;
+				background: #000;
+			}
+			
+			.fullSlide4 .bd {
+				margin: 0 auto;
+				position: relative;
+				z-index: 0;
+				overflow: hidden;
+			}
+			
+			.fullSlide4 .bd ul {
+				width: 100% !important;
+			}
+			
+			.fullSlide4 .bd li {
+				width: 100% !important;
+				height: 220px;
+				overflow: hidden;
+				text-align: center;
+			}
+			
+			.fullSlide4 .bd li a {
+				display: block;
+				height: 220px;
+			}
+			
+			.fullSlide4 .hd {
+				width: 100%;
+				position: absolute;
+				z-index: 1;
+				bottom: 0;
+				left: 0;
+				height: 20px;
+				line-height: 20px;
+			}
+			
+			.fullSlide4 .hd ul {
+				text-align: center;
+			}
+			
+			.fullSlide4 .hd ul li {
+				cursor: pointer;
+				display: inline-block;
+				*display: inline;
+				zoom: 1;
+				width: 20px;
+				height: 5px;
+				margin: 1px;
+				overflow: hidden;
+				background: #000;
+				filter: alpha(opacity=50);
+				opacity: 0.5;
+				line-height: 999px;
+			}
+			
+			.fullSlide4 .hd ul .on {
+				background: white;
+			}
+			
+			.fullSlide4 .prev,
+			.fullSlide4 .next {
+				position: absolute;
+				z-index: 1;
+				top: 50%;
+				margin-top: -30px;
+				left: 0;
+				z-index: 1;
+				width: 30px;
+				height: 40px;
+				background: #A9DC8D;
+				display: none;
+				font-size: 30px;
+				font-weight: bold;
+				color: white;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			.fullSlide4 .next {
+				left: auto;
+				right: 0;
+				background-position: -13px -147px;
+			}
+		</style>
+
+		<script src="js/plugins/jquery-2.2.1.min.js"></script>
+		<script src="js/jquery.SuperSlide.2.1.1.js"></script>
+		<script>
+			$(function() {
+				//左边tab边框切换
+				$('.BLtop_tab_li').mouseover(function() {
+					var index = $(this).index();
+					$('.BLtop_tab_li').removeClass('lishow');
+					$(this).addClass('lishow');
+					$('.BL_conright_div').css('display', 'none')
+					$('.BL_conright_div').eq(index).css('display', 'block');
+				})
+				//右边边tab切换
+				$('.RT_span').mouseover(function() {
+						var index = $(this).index();
+						$('.RT_span').removeClass('RTspan_show');
+						$('.bookR_ul').css('display', 'none');
+						$(this).addClass('RTspan_show');
+						$('.bookR_ul').eq(index).css('display', 'block');
+					})
+					//右边边手风琴
+				$('.bookR_li01').mouseover(function() {
+					$('.bookR_li01').removeClass('bookR_li01_hide');
+					$('.bookR_li01').next().removeClass('bookR_li02_show');
+					$(this).addClass('bookR_li01_hide');
+					$(this).next().addClass('bookR_li02_show');
+				})
+			})
+		</script>
+		<script>
+			$(function() {
+				$(".fullSlide1").hover(function() {
+						$(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+					},
+					function() {
+						$(this).find(".prev,.next").fadeOut()
+					});
+				$(".fullSlide1").slide({
+					titCell: ".hd ul",
+					mainCell: ".bd ul",
+					effect: "fold",
+					autoPlay: true,
+					autoPage: true,
+					trigger: "click",
+					startFun: function(i) {
+						var curLi = jQuery(".fullSlide1 .bd li").eq(i);
+						if (!!curLi.attr("_src")) {
+							curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+						}
+					}
+				});
+			})
+			$(function() {
+				$(".fullSlide2").hover(function() {
+						$(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+					},
+					function() {
+						$(this).find(".prev,.next").fadeOut()
+					});
+				$(".fullSlide2").slide({
+					titCell: ".hd ul",
+					mainCell: ".bd ul",
+					effect: "fold",
+					autoPlay: true,
+					autoPage: true,
+					trigger: "mouseover",
+					startFun: function(i) {
+						var curLi = jQuery(".fullSlide2 .bd li").eq(i);
+						if (!!curLi.attr("_src")) {
+							curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+						}
+					}
+				});
+			})
+			$(function() {
+				$(".fullSlide3").hover(function() {
+						$(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+					},
+					function() {
+						$(this).find(".prev,.next").fadeOut()
+					});
+				$(".fullSlide3").slide({
+					titCell: ".hd ul",
+					mainCell: ".bd ul",
+					effect: "fold",
+					autoPlay: true,
+					autoPage: true,
+					trigger: "click",
+					startFun: function(i) {
+						var curLi = jQuery(".fullSlide3 .bd li").eq(i);
+						if (!!curLi.attr("_src")) {
+							curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+						}
+					}
+				});
+			})
+			$(function() {
+				$(".fullSlide4").hover(function() {
+						$(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+					},
+					function() {
+						$(this).find(".prev,.next").fadeOut()
+					});
+				$(".fullSlide4").slide({
+					titCell: ".hd ul",
+					mainCell: ".bd ul",
+					effect: "fold",
+					autoPlay: true,
+					autoPage: true,
+					trigger: "click",
+					startFun: function(i) {
+						var curLi = jQuery(".fullSlide4 .bd li").eq(i);
+						if (!!curLi.attr("_src")) {
+							curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+						}
+					}
+				});
+			})
+		</script>
+	</head>
+
+	<body>
+		<div class="ddbook">
+			<div class="ddbook_left">
+				<div class="BL_top">
+					<div class="BL_top_title">
+						<a class="BL_top_title_a" href="#">图书</a>
+						<span>·</span>
+						<a class="BL_top_title_a" href="#">童书</a>
+						<span>·</span>
+						<a class="BL_top_title_a" href="#">电子书</a>
+					</div>
+				</div>
+				<ul class="BLtop_tab_ul">
+					<li class="BLtop_tab_li lishow"><span class="tab_li_sp">重点推荐</span></li>
+					<li class="BLtop_tab_li"><span>独家畅品</span></li>
+					<li class="BLtop_tab_li"><span>童书</span></li>
+					<li class="BLtop_tab_li tab_lastli"><span>电子书</span></li>
+				</ul>
+
+				<div class="BL_conLeft">
+					<a href="#"><img src="http://img60.ddimg.cn/upload_img/00348/ln/jg_dt_0324.jpg" /></a>
+					<ul class="BL_conLeft_ul">
+						<li>中小学教辅</li>
+						<li>成功/励志</li>
+						<li>青春文学</li>
+						<li>中小学教辅</li>
+						<li>中小学教辅</li>
+						<li>中小学教辅</li>
+						<li>全部分类>></li>
+					</ul>
+				</div>
+				<div class="BL_conright">
+					<div class="BL_conright_div CR01" style="display: block;">
+						<div class="CR01_top">
+							<div class="CRtop_lunbo">
+								<div class="fullSlide1">
+									<div class="bd">
+										<ul>
+											<li _src="url(http://img60.ddimg.cn/upload_img/00348/ln/jgbanner_0315.jpg)">
+												<a href="#"></a>
+											</li>
+											<li _src="url(http://img63.ddimg.cn/upload_img/00367/fyf/316shekezhongdianguanzhubanner.jpg)">
+												<a href="#"></a>
+											</li>
+											<li _src="url(http://img63.ddimg.cn/upload_img/00577/whn924/335x220_hr_0219.jpg)">
+												<a href="#"></a>
+											</li>
+											<li _src="url(http://img62.ddimg.cn/47b5d668-69b9-4f40-b1d4-97dfe009f155.hp9j5UHa)">
+												<a href="#"></a>
+											</li>
+										</ul>
+									</div>
+									<div class="hd">
+										<ul></ul>
+									</div>
+									<span class="prev">&lt;</span>
+									<span class="next">&gt;</span>
+								</div>
+								<!--fullSlide end-->
+							</div>
+							<ul class="CRtop_ul">
+								<li class="CR_li">
+									<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x0.ddimg.cn/23/31/23544500-1_l_1.jpg"/></a>
+									<p class="CRli_p CRli_p01"><a class="CRlip_a" href="#">卢思浩暖文治愈套装（全二册）</a></p>
+									<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+								</li>
+								<li class="CR_li">
+									<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x0.ddimg.cn/23/31/23544500-1_l_1.jpg"/></a>
+									<p class="CRli_p CRli_p01"><a class="CRlip_a" href="#">卢思浩暖文治愈套装（全二册）</a></p>
+									<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+								</li>
+							</ul>
+						</div>
+						<ul class="CR01_bottom">
+							<li class="CR_li">
+								<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x0.ddimg.cn/23/31/23544500-1_l_1.jpg"/></a>
+								<p class="CRli_p CRli_p01"><a class="CRlip_a" href="#">卢思浩暖文治愈套装（全二册）</a></p>
+								<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+							</li>
+							<li class="CR_li">
+								<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x0.ddimg.cn/23/31/23544500-1_l_1.jpg"/></a>
+								<p class="CRli_p CRli_p01"><a class="CRlip_a" href="#">卢思浩暖文治愈套装（全二册）</a></p>
+								<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+							</li>
+							<li class="CR_li">
+								<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x0.ddimg.cn/23/31/23544500-1_l_1.jpg"/></a>
+								<p class="CRli_p CRli_p01"><a class="CRlip_a" href="#">卢思浩暖文治愈套装（全二册）</a></p>
+								<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+							</li>
+							<li class="CR_li">
+								<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x0.ddimg.cn/23/31/23544500-1_l_1.jpg"/></a>
+								<p class="CRli_p CRli_p01"><a class="CRlip_a" href="#">卢思浩暖文治愈套装（全二册）</a></p>
+								<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+							</li>
+						</ul>
+
+					</div>
+
+					<div class="BL_conright_div CR02" style="display: none;">
+
+						<div class="CR01_top">
+							<div class="CRtop_lunbo">
+								<div class="fullSlide2">
+									<div class="bd">
+										<ul>
+											<li _src="url(http://img61.ddimg.cn/upload_img/00588/sunqingqing/dangdang123.jpg)">
+												<a href="#"></a>
+											</li>
+											<li _src="url(http://img63.ddimg.cn/83b4f8c3-08f2-43b2-88d4-0c6a75b0c891.hpeSkKu2)">
+												<a href="#"></a>
+											</li>
+											<li _src="url(http://img63.ddimg.cn/upload_img/00594/xulili/banner-0218.jpg)">
+												<a href="#"></a>
+											</li>
+											<li _src="url(http://img61.ddimg.cn/upload_img/00367/fyf/dujiategongbannner324.jpg)">
+												<a href="#"></a>
+											</li>
+										</ul>
+									</div>
+									<div class="hd">
+										<ul></ul>
+									</div>
+									<span class="prev">&lt;</span>
+									<span class="next">&gt;</span>
+								</div>
+								<!--fullSlide end-->
+							</div>
+							<ul class="CRtop_ul">
+								<li class="CR_li">
+									<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x1.ddimg.cn/93/21/23912751-1_l_1.jpg"/></a>
+									<p class="CRli_p CRli_p01"><a href="#">卢思浩暖文治愈套装（全二册）</a></p>
+									<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+								</li>
+								<li class="CR_li">
+									<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x1.ddimg.cn/93/21/23912751-1_l_1.jpg"/></a>
+									<p class="CRli_p CRli_p01"><a href="#">卢思浩暖文治愈套装（全二册）</a></p>
+									<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+								</li>
+							</ul>
+						</div>
+						<ul class="CR01_bottom">
+							<li class="CR_li">
+								<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x1.ddimg.cn/93/21/23912751-1_l_1.jpg"/></a>
+								<p class="CRli_p CRli_p01"><a href="#">卢思浩暖文治愈套装（全二册）</a></p>
+								<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+							</li>
+							<li class="CR_li">
+								<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x1.ddimg.cn/93/21/23912751-1_l_1.jpg"/></a>
+								<p class="CRli_p CRli_p01"><a href="#">卢思浩暖文治愈套装（全二册）</a></p>
+								<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+							</li>
+							<li class="CR_li">
+								<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x1.ddimg.cn/93/21/23912751-1_l_1.jpg"/></a>
+								<p class="CRli_p CRli_p01"><a href="#">卢思浩暖文治愈套装（全二册）</a></p>
+								<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+							</li>
+							<li class="CR_li">
+								<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x1.ddimg.cn/93/21/23912751-1_l_1.jpg"/></a>
+								<p class="CRli_p CRli_p01"><a href="#">卢思浩暖文治愈套装（全二册）</a></p>
+								<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+							</li>
+						</ul>
+
+					</div>
+					<div class="BL_conright_div CR03" style="display: none;">
+
+						<div class="CR01_top">
+							<div class="CRtop_lunbo">
+								<div class="fullSlide3">
+									<div class="bd">
+										<ul>
+											<li _src="url(http://img62.ddimg.cn/upload_img/00415/ertongwenxue/lsmy_335x220ts1f_gs160322.jpg)">
+												<a href="#"></a>
+											</li>
+											<li _src="url(http://img61.ddimg.cn/upload_img/00547/yingyukatong/qm_335x220ts1f_dzy160322.jpg)">
+												<a href="#"></a>
+											</li>
+											<li _src="url(http://img61.ddimg.cn/upload_img/00114/tszyd/sm_335x220ts1f.jpg)">
+												<a href="#"></a>
+											</li>
+											<li _src="url(http://img63.ddimg.cn/upload_img/00115/tongshu/bb_335x220ts1f_160322.jpg)">
+												<a href="#"></a>
+											</li>
+										</ul>
+									</div>
+									<div class="hd">
+										<ul></ul>
+									</div>
+									<span class="prev">&lt;</span>
+									<span class="next">&gt;</span>
+								</div>
+								<!--fullSlide end-->
+							</div>
+							<ul class="CRtop_ul">
+								<li class="CR_li">
+									<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x8.ddimg.cn/29/22/23426498-1_l_1.jpg"/></a>
+									<p class="CRli_p CRli_p01"><a href="#">卢思浩暖文治愈套装（全二册）</a></p>
+									<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+								</li>
+								<li class="CR_li">
+									<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x8.ddimg.cn/29/22/23426498-1_l_1.jpg"/></a>
+									<p class="CRli_p CRli_p01"><a href="#">卢思浩暖文治愈套装（全二册）</a></p>
+									<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+								</li>
+							</ul>
+						</div>
+						<ul class="CR01_bottom">
+							<li class="CR_li">
+								<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x8.ddimg.cn/29/22/23426498-1_l_1.jpg"/></a>
+								<p class="CRli_p CRli_p01"><a href="#">卢思浩暖文治愈套装（全二册）</a></p>
+								<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+							</li>
+							<li class="CR_li">
+								<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x8.ddimg.cn/29/22/23426498-1_l_1.jpg"/></a>
+								<p class="CRli_p CRli_p01"><a href="#">卢思浩暖文治愈套装（全二册）</a></p>
+								<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+							</li>
+							<li class="CR_li">
+								<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x8.ddimg.cn/29/22/23426498-1_l_1.jpg"/></a>
+								<p class="CRli_p CRli_p01"><a href="#">卢思浩暖文治愈套装（全二册）</a></p>
+								<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+							</li>
+							<li class="CR_li">
+								<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x8.ddimg.cn/29/22/23426498-1_l_1.jpg"/></a>
+								<p class="CRli_p CRli_p01"><a href="#">卢思浩暖文治愈套装（全二册）</a></p>
+								<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+							</li>
+						</ul>
+
+					</div>
+					<div class="BL_conright_div CR04" style="display: none;">
+
+						<div class="CR01_top">
+							<div class="CRtop_lunbo">
+								<div class="fullSlide4">
+									<div class="bd">
+										<ul>
+											<li _src="url(http://img63.ddimg.cn/upload_img/00421/pcsz/0120lz1.jpg)">
+												<a href="#"></a>
+											</li>
+											<li _src="url(http://img62.ddimg.cn/upload_img/00421/pcsz/0318lz3.jpg)">
+												<a href="#"></a>
+											</li>
+											<li _src="url(http://img61.ddimg.cn/upload_img/00421/pcsz/0318lz2.jpg)">
+												<a href="#"></a>
+											</li>
+											<li _src="url(http://img60.ddimg.cn/upload_img/00421/pcsz/0318lz4.jpg)">
+												<a href="#"></a>
+											</li>
+										</ul>
+									</div>
+									<div class="hd">
+										<ul></ul>
+									</div>
+									<span class="prev">&lt;</span>
+									<span class="next">&gt;</span>
+								</div>
+								<!--fullSlide end-->
+							</div>
+							<ul class="CRtop_ul">
+								<li class="CR_li">
+									<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x7.ddimg.cn/10/1/1900544887-1_l_1.jpg"/></a>
+									<p class="CRli_p CRli_p01"><a href="#">卢思浩暖文治愈套装（全二册）</a></p>
+									<p class="CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+								</li>
+								<li class="CR_li">
+									<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x7.ddimg.cn/10/1/1900544887-1_l_1.jpg"/></a>
+									<p class="CRli_p CRli_p01"><a href="#">卢思浩暖文治愈套装（全二册）</a></p>
+									<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+								</li>
+							</ul>
+						</div>
+						<ul class="CR01_bottom">
+							<li class="CR_li">
+								<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x7.ddimg.cn/10/1/1900544887-1_l_1.jpg"/></a>
+								<p class="CRli_p CRli_p01"><a href="#">卢思浩暖文治愈套装（全二册）</a></p>
+								<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+							</li>
+							<li class="CR_li">
+								<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x7.ddimg.cn/10/1/1900544887-1_l_1.jpg"/></a>
+								<p class="CRli_p CRli_p01"><a href="#">卢思浩暖文治愈套装（全二册）</a></p>
+								<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+							</li>
+							<li class="CR_li">
+								<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x7.ddimg.cn/10/1/1900544887-1_l_1.jpg"/></a>
+								<p class="CRli_p CRli_p01"><a href="#">卢思浩暖文治愈套装（全二册）</a></p>
+								<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+							</li>
+							<li class="CR_li">
+								<a class="CRli_a" href="#"><span class="CRli_span"></span><img src="http://img3x7.ddimg.cn/10/1/1900544887-1_l_1.jpg"/></a>
+								<p class="CRli_p CRli_p01"><a href="#">卢思浩暖文治愈套装（全二册）</a></p>
+								<p class="CRli_p CRli_p02"><span class="CRli_p02_span01">¥47.20</span><span class="CRli_p02_span02">¥68.60</span></p>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+			<div class="ddbook_right">
+				<div class="bookRight_title">
+					<span class="RT_span RTspan_show"><a class="RT_a" href="#">当当图书榜</a></span><span class="RT_span"><a class="RT_a" href="#">当当童书榜</a></span>
+				</div>
+				<ul class="bookR_ul" style="display: block;">
+					<li class="bookR_li01 bookR_li01_hide">
+						<span class="num num1">1</span>
+						<p class="BRli_p01">
+							<a href="#">追风筝的人</a>
+						</p>
+					</li>
+					<li class="bookR_li02 bookR_li02_show">
+						<span class="num num2">1</span>
+						<a href="#"><img src="http://img3x8.ddimg.cn/35/10/23274638-1_l.jpg" /></a>
+
+						<p class="BRli_p02">
+							<a href="#">追风筝的人</a>
+							<span>快乐大本营高圆圆感动推荐，奥巴马送给女儿的新年礼物。全球两千万读者口耳相传，*想与友人分享的终身五星小说。为你，千千万万遍！</span>
+						</p>
+					</li>
+
+					<li class="bookR_li01">
+						<span class="num num1">2</span>
+						<p class="BRli_p01">
+							<a href="#">岛上书店</a>
+						</p>
+					</li>
+					<li class="bookR_li02">
+						<span class="num num2">2</span>
+						<a href="#"><img src="http://img3x9.ddimg.cn/74/1/23685329-1_l.jpg" /></a>
+
+						<p class="BRli_p02">
+							<a href="#">岛上书店</a>
+							<span>岛上书店全球两千万读者口耳相传，*想与友人分享的终身五星小说。为你，千千万万遍！</span>
+						</p>
+					</li>
+
+					<li class="bookR_li01">
+						<span class="num num1">3</span>
+						<p class="BRli_p01">
+							<a href="#">解忧杂货店</a>
+						</p>
+					</li>
+					<li class="bookR_li02">
+						<span class="num num2">3</span>
+						<a href="#"><img src="http://img3x8.ddimg.cn/92/3/23464478-1_l.jpg" /></a>
+
+						<p class="BRli_p02">
+							<a href="#">解忧杂货店</a>
+							<span>解忧杂货店全球两千万读者口耳相传，*想与友人分享的终身五星小说。为你，千千万万遍！</span>
+						</p>
+					</li>
+
+					<li class="bookR_li01">
+						<span class="num num1">4</span>
+						<p class="BRli_p01">
+							<a href="#">从你的全世界路过</a>
+						</p>
+					</li>
+					<li class="bookR_li02">
+						<span class="num num2">4</span>
+						<a href="#"><img src="http://img3x2.ddimg.cn/34/15/23353342-1_l.jpg" /></a>
+
+						<p class="BRli_p02">
+							<a href="#">从你的全世界路过</a>
+							<span>从你的全世界路过 2014中国好书榜获奖图书</span>
+						</p>
+					</li>
+
+					<li class="bookR_li01">
+						<span class="num num1">5</span>
+						<p class="BRli_p01">
+							<a href="#">摆渡人</a>
+						</p>
+					</li>
+					<li class="bookR_li02">
+						<span class="num num2">5</span>
+						<a href="#"><img src="http://img3x7.ddimg.cn/86/32/23694647-1_l.jpg" /></a>
+
+						<p class="BRli_p02">
+							<a href="#">摆渡人</a>
+							<span>畅销欧美33个国家，荣获多项图书大奖。如果命运是一条孤独的河流，谁会是你灵魂的摆渡人？如果我真的存在，也是因为你需要我。白马时光</span>
+						</p>
+					</li>
+
+					<li class="bookR_li01">
+						<span class="num num1">6</span>
+						<p class="BRli_p01">
+							<a href="#">白岩松：白说</a>
+						</p>
+					</li>
+					<li class="bookR_li02">
+						<span class="num num2">6</span>
+						<a href="#"><img src="http://img3x1.ddimg.cn/57/1/23763621-1_l.jpg" /></a>
+
+						<p class="BRli_p02">
+							<a href="#">白岩松：白说</a>
+							<span>新闻人白岩松：言语中的心灵之路，与我和我们的未来有关，限量签名本随机发放</span>
+						</p>
+					</li>
+
+					<li class="bookR_li01">
+						<span class="num num1">7</span>
+						<p class="BRli_p01">
+							<a href="#">白岩松：白说77</a>
+						</p>
+					</li>
+					<li class="bookR_li02">
+						<span class="num num2">7</span>
+						<a href="#"><img src="http://img3x1.ddimg.cn/57/1/23763621-1_l.jpg" /></a>
+
+						<p class="BRli_p02">
+							<a href="#">白岩松：白说77</a>
+							<span>新闻人白岩松：言语中的心灵之路，与我和我们的未来有关，限量签名本随机发放</span>
+						</p>
+					</li>
+
+					<li class="bookR_li01">
+						<span class="num num1">8</span>
+						<p class="BRli_p01">
+							<a href="#">白岩松：白说88</a>
+						</p>
+					</li>
+					<li class="bookR_li02">
+						<span class="num num2">8</span>
+						<a href="#"><img src="http://img3x1.ddimg.cn/57/1/23763621-1_l.jpg" /></a>
+
+						<p class="BRli_p02">
+							<a href="#">白岩松：白说88</a>
+							<span>新闻人白岩松：言语中的心灵之路，与我和我们的未来有关，限量签名本随机发放</span>
+						</p>
+					</li>
+
+					<li class="bookR_li01">
+						<span class="num num1">9</span>
+						<p class="BRli_p01">
+							<a href="#">白岩松：白说99</a>
+						</p>
+					</li>
+					<li class="bookR_li02">
+						<span class="num num2">9</span>
+						<a href="#"><img src="http://img3x1.ddimg.cn/57/1/23763621-1_l.jpg" /></a>
+
+						<p class="BRli_p02">
+							<a href="#">白岩松：白说99</a>
+							<span>新闻人白岩松：言语中的心灵之路，与我和我们的未来有关，限量签名本随机发放</span>
+						</p>
+					</li>
+
+				</ul>
+				<ul class="bookR_ul" style="display: none;">
+
+					<li class="bookR_li01 bookR_li01_hide">
+						<span class="num num1">1</span>
+						<p class="BRli_p01">
+							<a href="#">手绘世界地图·儿童百科绘本。</a>
+						</p>
+					</li>
+					<li class="bookR_li02 bookR_li02_show">
+						<span class="num num2">1</span>
+						<a href="#"><img src="http://img3x8.ddimg.cn/19/18/23523508-1_l.jpg" /></a>
+
+						<p class="BRli_p02">
+							<a href="#">手绘世界地图·儿童百科绘本。</a>
+							<span>快乐大本营高圆圆感动推荐，奥巴马送给女儿的新年礼物。</span>
+						</p>
+					</li>
+
+					<li class="bookR_li01">
+						<span class="num num1">2</span>
+						<p class="BRli_p01">
+							<a href="#">手绘世界地图·儿童百科绘本。</a>
+						</p>
+					</li>
+					<li class="bookR_li02">
+						<span class="num num2">2</span>
+						<a href="#"><img src="http://img3x8.ddimg.cn/19/18/23523508-1_l.jpg" /></a>
+
+						<p class="BRli_p02">
+							<a href="#">手绘世界地图·儿童百科绘本。</a>
+							<span>岛上书店全球两千万读者口耳相传，*想与友人分享的终身五星小说。为你，千千万万遍！</span>
+						</p>
+					</li>
+
+					<li class="bookR_li01">
+						<span class="num num1">3</span>
+						<p class="BRli_p01">
+							<a href="#">解忧杂货店</a>
+						</p>
+					</li>
+					<li class="bookR_li02">
+						<span class="num num2">3</span>
+						<a href="#"><img src="http://img3x8.ddimg.cn/19/18/23523508-1_l.jpg" /></a>
+
+						<p class="BRli_p02">
+							<a href="#">解忧杂货店</a>
+							<span>解忧杂货店全球两千万读者口耳相传，*想与友人分享的终身五星小说。为你，千千万万遍！</span>
+						</p>
+					</li>
+
+					<li class="bookR_li01">
+						<span class="num num1">4</span>
+						<p class="BRli_p01">
+							<a href="#">从你的全世界路过</a>
+						</p>
+					</li>
+					<li class="bookR_li02">
+						<span class="num num2">4</span>
+						<a href="#"><img src="http://img3x8.ddimg.cn/19/18/23523508-1_l.jpg" /></a>
+
+						<p class="BRli_p02">
+							<a href="#">从你的全世界路过</a>
+							<span>从你的全世界路过 2014中国好书榜获奖图书</span>
+						</p>
+					</li>
+
+					<li class="bookR_li01">
+						<span class="num num1">5</span>
+						<p class="BRli_p01">
+							<a href="#">摆渡人</a>
+						</p>
+					</li>
+					<li class="bookR_li02">
+						<span class="num num2">5</span>
+						<a href="#"><img src="http://img3x8.ddimg.cn/19/18/23523508-1_l.jpg" /></a>
+
+						<p class="BRli_p02">
+							<a href="#">摆渡人</a>
+							<span>畅销欧美33个国家，荣获多项图书大奖。如果命运是一条孤独的河流，谁会是你灵魂的摆渡人？如果我真的存在，也是因为你需要我。白马时光</span>
+						</p>
+					</li>
+
+					<li class="bookR_li01">
+						<span class="num num1">6</span>
+						<p class="BRli_p01">
+							<a href="#">白岩松：白说</a>
+						</p>
+					</li>
+					<li class="bookR_li02">
+						<span class="num num2">6</span>
+						<a href="#"><img src="http://img3x8.ddimg.cn/19/18/23523508-1_l.jpg" /></a>
+
+						<p class="BRli_p02">
+							<a href="#">白岩松：白说</a>
+							<span>新闻人白岩松：言语中的心灵之路，与我和我们的未来有关，限量签名本随机发放</span>
+						</p>
+					</li>
+
+					<li class="bookR_li01">
+						<span class="num num1">7</span>
+						<p class="BRli_p01">
+							<a href="#">白岩松：白说77</a>
+						</p>
+					</li>
+					<li class="bookR_li02">
+						<span class="num num2">7</span>
+						<a href="#"><img src="http://img3x8.ddimg.cn/19/18/23523508-1_l.jpg" /></a>
+
+						<p class="BRli_p02">
+							<a href="#">白岩松：白说77</a>
+							<span>新闻人白岩松：言语中的心灵之路，与我和我们的未来有关，限量签名本随机发放</span>
+						</p>
+					</li>
+
+					<li class="bookR_li01">
+						<span class="num num1">8</span>
+						<p class="BRli_p01">
+							<a href="#">白岩松：白说88</a>
+						</p>
+					</li>
+					<li class="bookR_li02">
+						<span class="num num2">8</span>
+						<a href="#"><img src="http://img3x8.ddimg.cn/19/18/23523508-1_l.jpg" /></a>
+
+						<p class="BRli_p02">
+							<a href="#">白岩松：白说88</a>
+							<span>新闻人白岩松：言语中的心灵之路，与我和我们的未来有关，限量签名本随机发放</span>
+						</p>
+					</li>
+
+					<li class="bookR_li01">
+						<span class="num num1">9</span>
+						<p class="BRli_p01">
+							<a href="#">白岩松：白说99</a>
+						</p>
+					</li>
+					<li class="bookR_li02">
+						<span class="num num2">9</span>
+						<a href="#"><img src="http://img3x8.ddimg.cn/19/18/23523508-1_l.jpg" /></a>
+
+						<p class="BRli_p02">
+							<a href="#">白岩松：白说99</a>
+							<span>新闻人白岩松：言语中的心灵之路，与我和我们的未来有关，限量签名本随机发放</span>
+						</p>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>

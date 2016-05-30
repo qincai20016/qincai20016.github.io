@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html, body, div, span, applet, object, iframe, b h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, 
+			fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+				margin: 0;padding: 0;border: 0;outline:0;
+			}
+			
+			body {
+				width: 100%;
+				height: 100%;
+				background: #F6F9FB;
+				font-size: 12px;
+			}
+			
+			img {
+				border: none;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			a {
+				text-decoration: none;
+				font-size: 12px;
+			}
+			
+			a:hover {
+				text-decoration: underline;
+			}
+			
+			.reg_head,
+			#Form2,
+			.public_footer {
+				width: 962px;
+				margin: 0 auto;
+			}
+			
+			.reg_head {
+				background: white;
+				height: 73px;
+				border-top: 2px solid gainsboro;
+				border-bottom: 3px solid #FF3228;
+				margin-bottom: 10px;
+			}
+			
+			.reg_head img {
+				float: left;
+			}
+			
+			.right_list {
+				float: right;
+				position: relative;
+			}
+			
+			.right_list a {
+				color: gray;
+			}
+			
+			.right_list a:hover {
+				color: #FF3228;
+			}
+			
+			.right_list ul {
+				float: right;
+				margin-top: 10px;
+			}
+			
+			.right_list li {
+				float: left;
+			}
+			
+			.right_list li a {
+				display: block;
+				border-right: 1px solid gainsboro;
+				padding: 0 5px;
+			}
+			
+			.right_list li.last_li a {
+				border: none;
+			}
+			
+			.right_wel {
+				position: absolute;
+				top: 35px;
+				right: 5px;
+			}
+			
+			#Form2 {
+				margin: 30px auto 0;
+			}
+			
+			#Form2 .reg_content_box {
+				margin-left: 12px;
+				width: 950px;
+				height: 576px;
+				background: white;
+				box-shadow: -12px 12px gainsboro;
+			}
+			
+			.reg_content_box .reg_titlebox {
+				width: 930px;
+				height: 50px;
+				padding-top: 25px;
+				line-height: 45px;
+				padding-left: 20px;
+			}
+			
+			.reg_title {
+				width: 910px;
+				height: 46px;
+				border-bottom: 1px solid gainsboro;
+				position: absolute;
+			}
+			
+			.reg_user {
+				display: inline-block;
+				width: 137px;
+				height: 45px;
+				font-size: 16px;
+				font-weight: bold;
+				text-align: center;
+				line-height: 45px;
+			}
+			
+			.reg_newuser {
+				margin-left: 25px;
+				position: absolute;
+				border: 1px solid gainsboro;
+				border-bottom: 1px solid white;
+				;
+				z-index: 9999;
+			}
+			
+			.reg_ENT {
+				margin-left: 174px;
+				position: absolute;
+				border: 1px solid gainsboro;
+				background: #F5F5F5;
+			}
+			
+			.reg_homelink {
+				display: inline-block;
+				position: absolute;
+				right: 0;
+			}
+			
+			.reg_homelink a {
+				margin-left: 10px;
+			}
+			
+			.reg_homelink a.DDhome {
+				display: inline-block;
+				width: 58px;
+				padding-left: 10px;
+			}
+			
+			.reg_homelink i {
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				background: bisque;
+				position: absolute;
+				left: 5px;
+				top: 13px;
+				background: url(img/icon_more.png)no-repeat 0px 3px;
+			}
+			
+			.reg_tips {
+				width: 672px;
+				height: 24px;
+				border: 1px solid #FEDBD1;
+				line-height: 24px;
+				padding-left: 20px;
+				margin: 16px auto 0;
+				background: #FEF7F5 url(img/warn_tip.png)no-repeat 2px 4px;
+			}
+			
+			.input_div {
+				width: 475px;
+				margin: 30px auto 0;
+				font-size: 14px;
+				font-weight: bold;
+				color: grey;
+			}
+			
+			.input_div .input_outbox {
+				width: 475px;
+				height: 70px;
+				position: relative;
+			}
+			
+			.input_div label {
+				display: inline-block;
+				text-align: right;
+				width: 120px;
+				margin-bottom: 30px;
+				margin-right: 10px;
+			}
+			
+			.input_div .reg_txtBox {
+				padding-left: 10px;
+				width: 300px;
+				height: 35px;
+				border-radius: 5px;
+				border: 1px solid gainsboro;
+				color: #969696;
+				outline: 0;
+			}
+			.input_div .reg_inputColor{border: 1px solid gray;}
+			.input_div .reg_inputColor_red{border: 1px solid red;}
+			.nameSpan {
+				display: inline-block;
+				width: 13px;
+				height: 13px;
+				margin-left: 5px;
+			}
+			
+			.nameSpan_tip1 {
+				background: url(img/icon_more.png)no-repeat 0px -18px;
+			}
+			
+			.nameSpan_tip2 {
+				background: url(img/icon_more.png)no-repeat 0px -38px;
+			}
+			
+			.error-info {
+				width: 330px;
+				height: 25px;
+				line-height: 25px;
+				font-size: 10px;
+				font-weight: normal;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				top: 37px;
+			}
+			
+			.error_color_red {
+				color: red;
+			}
+			.error_color_green{
+				color:green;
+				font-weight: bold;
+			}
+			#picpass {
+				width: 165px;
+			}
+			
+			.picarea {
+				display: inline-block;
+				position: absolute;
+				top: 1px;
+				width: 70px;
+				height: 35px;
+				background: gainsboro;
+				margin-right: 5px;
+				text-align: center;
+				line-height: 35px;
+			}
+			
+			.pic_a {
+				margin-left: 75px;
+			}
+			
+			.reg_btn {
+				display: block;
+				margin: 0 auto;
+				width: 150px;
+				height: 35px;
+				border-radius: 20px;
+				border: none;
+				background: #FF3228;
+				color: white;
+				font-size: 14px;
+				font-weight: bold;
+			}
+			
+			.in_agreement {
+				text-align: center;
+				font-size: 12px;
+				font-weight: normal;
+				margin: 30px 0;
+			}
+			
+			.public_footer {
+				height: 120px;
+				text-align: center;
+			}
+			
+			.public_footer .lo_copyright {
+				font-size: 10px;
+				color: 666666;
+				margin-top: 42px;
+			}
+			
+			.public_footer .lo_copyright_pic a {
+				display: inline-block;
+				width: 128px;
+				height: 48px;
+				margin-top: 12px;
+				margin-left: 9px;
+				margin-right: 9px;
+			}
+		</style>
+		<script src="js/plugins/jquery-2.2.1.min.js"></script>
+		<script>
+			//var vName;
+			$(function() {
+				//input边框
+				$('.reg_txtBox').focus(function(){
+					$(this).addClass('reg_inputColor');
+				})
+				$('.reg_txtBox').blur(function(){
+					$(this).removeClass('reg_inputColor');
+				})
+				
+				
+				
+				//点击提交按钮的时候
+				$('#reg_btn').click(function() {
+					ckName();
+					if ($('#uesrname').val().trim()=='') {
+						$('#nameError').html('邮箱/手机号不能为空').addClass('error_color_red');
+						$('#uesrname').next().addClass('nameSpan_tip1');
+					}
+
+					if ($('#pass').val().trim()=='') {
+						$('#passError').html('登录密码不能为空').addClass('error_color_red');
+						$('#pass').next().addClass('nameSpan_tip1');
+						$(this).addClass('reg_inputColor_red')
+					}
+					if ($('#repass').val().trim()=='') {
+						$('#repassError').html('密码不能为空').addClass('error_color_red');
+						$('#repass').next().addClass('nameSpan_tip1');
+					}
+					if ($('#picpass').val().trim()=='') {
+						$('#picpassError').html('请输入图形验证码').addClass('error_color_red');
+						$('#picpass').next().addClass('nameSpan_tip1');
+					}
+					
+					ckajax();
+					
+					if ($(".error_color_red").size() > 0) {
+						return;
+					}
+					
+					
+				})
+				
+				
+				
+				
+				//用户名
+				$('#uesrname').focus(function() {
+					$('#nameError').html('邮箱/手机号可用于登录、找回密码、接收订单通知等服务').removeClass('error_color_red');
+					$('#uesrname').next().removeClass('nameSpan_tip1');
+				})
+				$('#uesrname').blur(function() {
+					$('#nameError').html('邮箱/手机号可用于登录、找回密码、接收订单通知等服务');
+					ckName();
+				});
+
+				//密码
+				$('#pass').focus(function() {
+					$('#passError').html('密码为6-20个字符，可由英文、数字及符号组成').removeClass('error_color_red');
+					$('#pass').next().removeClass('nameSpan_tip1');
+				})
+				$('#pass').blur(function() {
+						$('#passError').html('');
+						ckPass();
+					})
+				
+				
+				//验证密码
+				$('#repass').focus(function() {
+					$('#repassError').html('请再次输入密码!').removeClass('error_color_red');
+					$('#repass').next().removeClass('nameSpan_tip2');
+				})
+				$('#repass').blur(function() {
+					$('#repassError').html('');
+					var vrePass = $('#repass').val();
+					var vPass = $('#pass').val();
+					//输入为空的时候 判断
+					if (vrePass == "" || undefined) {
+						$('#repass').next().hide();
+						return;
+					}
+					$('#repass').next().show();
+					//判断两次密码是否一致
+					if (vrePass == vPass) {
+						$('#repass').next().addClass('nameSpan_tip2');
+					} else {
+						$('#repassError').html('两次输入的密码不一致，请重新输入!').addClass('error_color_red');
+						$('#repass').next().removeClass('nameSpan_tip2').addClass('nameSpan_tip1');
+						return;
+					}
+				})
+				
+				
+				
+				//图形验证码
+				$('#picpass').focus(function() {
+					$('#picpassError').html('请填写图片中的字符，不去分大小写');
+					var vPicpass=$(this).val();
+					var vFourCode=$('#picarea').html();
+					//输入内容跟验证码一致：再点击输入框 ，内容不清空
+					//输入内容跟验证码不一致：再点击输入框 ，内容清空
+					if (vPicpass.toLowerCase()==vFourCode.toLowerCase()) {
+						$('#picpassError').html('');
+						$('#picpass').next().removeClass('nameSpan_tip1').addClass('nameSpan_tip2');
+					}else{
+						$('#picpass').val('');
+						$('#picpass').next().removeClass('nameSpan_tip1').removeClass('nameSpan_tip2');
+					}
+				})
+				
+				$('#picpass').blur(function() {
+					$('#picpassError').html('');
+					//图形验证码输入错误，请重新输入
+					var vPicpass=$(this).val();
+					var vFourCode=$('#picarea').html();
+					if (!vPicpass.toLowerCase()==vFourCode.toLowerCase()) {
+						$('#pic_a').click();
+						$('#picpassError').html('图形验证码输入错误，请重新输入').addClass('error_color_red');
+						$('#picpass').next().addClass('nameSpan_tip1');
+					}else{
+						$('#picpassError').html('');
+						$('#picpass').next().removeClass('nameSpan_tip1').addClass('nameSpan_tip2');
+					}
+				})
+				
+				//点击换一张的时候，重新获取新是验证码
+				$('#pic_a').click(function(){
+					ckPicpass();
+				})
+				$('#pic_a').trigger('click');
+			
+			
+			
+			})
+
+			
+				function ckPicpass(){
+					var count=0;//个数
+					var fourCode=''; //保存字符串
+					//取范围是所有的数组，大小写字母
+					var picpassArr=['0','1','2','3','4','5','6','7','8','9',
+					'a','b','c','d','e','f','g','h','i','j','k','l','n','m',
+					'o','p','q','r','s','t','u','v','w','x','y','z','A','B',
+					'C','D','E','F','G','H','I','J','K','L','M','N','O','P',
+					'Q','R','S','T','U','V','W','X','Y','Z'];
+					//4个字符
+					for(var i=0;i<4;i++){
+						//数组的随机索引
+						var iCode=Math.floor(Math.random()*62);
+						//验证是否是数字
+						var regNum=/^\d$/;
+						if(regNum.test(picpassArr[iCode])){
+							count++;
+						}
+						fourCode+=picpassArr[iCode];
+					}
+					if (count==2&&fourCode.length==4) {
+						$('#picarea').html(fourCode);
+					}else{
+						ckPicpass();
+					}
+				}
+				ckPicpass();
+				
+				
+
+
+
+			function ckName() {
+				var vName = $('#uesrname').val();
+				var regEmail = /^\w+@\w+\.(com)(\.cn)?$/; //正则里 ? 表示前面的正则可以出现0次或者1次
+				var regPhone = /^[1]\d{10}$/;
+				//输入为空的时候 判断
+				if (vName == "" || undefined || null) {
+					res = -1;
+				} else {
+					if (regEmail.test(vName)) {
+						res = 1;
+					} else if (regPhone.test(vName)) {
+						res = 1;
+					} else {
+						res = 0;
+					}
+				}
+				//console.info(vName)
+				if (res == 1) {
+					$('#nameError').html('');
+					$('#uesrname').next().addClass('nameSpan_tip2');
+				} else if (res == 0) {
+					$('#nameError').html('邮箱/手机格式不正确，请重新输入').addClass('error_color_red');
+					$('#uesrname').next().removeClass('nameSpan_tip2').addClass('nameSpan_tip1');
+				} else if (res == -1) {
+					$('#nameError').html('邮箱/手机号不能为空').addClass('error_color_red');
+					$('#uesrname').next().addClass('nameSpan_tip1');
+				}
+				return res;
+			}
+
+			function ckajax() {
+				$.ajax({
+					type: 'get',
+					async: true,
+					url: "js/registerJson.json",
+					success: function(str) {
+						//console.info(str.data[0].name);
+						//console.info(vName)
+						var vName = $('#uesrname').val();
+						console.info(str);
+						for(var i=0;i<str.data.length;i++) {
+							if (vName!= str.data[i].name) {
+								var res = ckName();
+								if (res == 1) {
+									$('#nameError').html('可以注册');
+									window.location='login.html';
+								}
+							} else {
+								$('#nameError').html('用户名已存在！').addClass('error_color_red');
+								$('#uesrname').next().removeClass('nameSpan_tip2').addClass('nameSpan_tip1');
+								return false;
+							}
+						}
+						/*$.each(str.data, function(i, val) {
+							console.info(val,vName,res);
+							if (vName.trim() != val.name.trim()) {
+								if (res == 1) {
+									
+									$('#nameError').html('可以注册');
+									
+								}
+							} else {
+								$('#nameError').html('用户名已存在！').addClass('error_color_red');
+								$('#uesrname').next().removeClass('nameSpan_tip2').addClass('nameSpan_tip1');
+								return;
+							}
+							
+						})*/
+					}
+				})
+			}
+
+			function ckPass() {
+				var vPass = $('#pass').val();
+				var regPass = /^.{6,20}$/;
+				//输入为空的时候 判断
+				if (vPass == "" || undefined) {
+					$('#pass').next().hide();
+					return;
+				}
+				$('#pass').next().show();
+				if (!regPass.test(vPass)) {
+					$('#passError').html('密码长度6-20个字符，请重新输入!').addClass('error_color_red');
+					$('#pass').next().removeClass('nameSpan_tip2').addClass('nameSpan_tip1');
+					return false;
+				}
+				$('#pass').next().addClass('nameSpan_tip2');
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="reg_head">
+			<a href="http://www.dangdang.com">
+				<img src="img/reg_head_logo.gif" />
+			</a>
+			<div class="right_list">
+				<ul>
+					<li><a href="shopping_cart_ list.html">购物车</a></li>
+					<li><a href="#">我的订单</a></li>
+					<li><a href="#">当当自出版</a></li>
+					<li><a href="#">手机当当</a></li>
+					<li><a href="mydangdang.html">我的当当</a></li>
+					<li><a href="#">企业销售</a></li>
+					<li class="last_li"><a href="#">帮助</a></li>
+				</ul>
+				<div class="right_wel">
+					<span>
+					<span>欢迎光临当当，请</span>
+					<a class="login_a" href="login.html">登录</a>
+					<a class="register_a" href="register.html">免费注册</a>
+					</span>
+				</div>
+			</div>
+
+		</div>
+		<form id="Form2">
+
+			<div class="reg_content_box">
+				<div class="reg_titlebox">
+					<p class="reg_title"><span class="reg_user reg_newuser">新用户注册</span><span class="reg_user reg_ENT">企业用户注册</span><span class="reg_homelink"><i></i><a class="DDhome" href="index.html">当当首页</a><a href="#">注册帮助</a></span></p>
+				</div>
+				<p class="reg_tips">贴心提示：请勿设置与邮箱密码相同的账户登录密码或支付密码，防止不法分子窃取您的当当账户信息，<a href="#">谨防诈骗</a></p>
+				
+				<div class="input_div">
+					<div class="input_outbox">
+						<label for="uesrname">邮箱/手机号码:</label>
+						<input class="reg_txtBox" type="text" id="uesrname" name="uesrname" value placeholder="请输入您的邮箱或手机号码" /><span class="nameSpan"></span>
+						<p id='nameError' class='error-info'></p>
+					</div>
+					<div class="input_outbox">
+						<label for="pass">登陆密码:</label>
+						<input class="reg_txtBox" type="password" id="pass" name="pass" /><span class="nameSpan"></span>
+						<p id='passError' class='error-info'></p>
+					</div class="input_outbox">
+					<div class="input_outbox">
+						<label for="repasss">确认密码:</label>
+						<input class="reg_txtBox" type="password" id="repass" name="repass" /><span class="nameSpan"></span>
+						<p id='repassError' class='error-info'></p>
+					</div>
+					<div class="input_outbox">
+						<label for="picpasss">图形验证码:</label>
+						<input class="reg_txtBox " type="text" id="picpass" name="picpass" value placeholder="请输入验证码" /><span class="nameSpan"></span>
+						<span id="picarea" class="picarea"></span><a id="pic_a" class="pic_a" href="#">换张图</a>
+						<p id='picpassError' class='error-info'></p>
+					</div>
+
+					<p class="in_agreement">
+						<input class="CK_agree" type="checkbox" />我已阅读并同意 <a href="#">《当当交易条款》</a>和 <a href="#">《当当社区条款》</a></p>
+					<div class="input_outbox">
+						<input id="reg_btn" style="outline: 0;" class="reg_btn" type="button" value="立即注册" />
+					</div>
+				</div>
+			</div>
+
+		</form>
+
+		<div class="public_footer">
+			<p class="lo_copyright">Copyright (C) 当当网 2004-2012, All Rights Reserved | 京ICP证041189号音像制品经营许可证 京音网8号</p>
+			<p class="lo_copyright_pic">
+				<a href=" "><img src="img/validate.gif" /></a>
+				<a href=" "><img src="img/knetseallogo.png" /></a>
+			</p>
+		</div>
+	</body>
+
+</html>

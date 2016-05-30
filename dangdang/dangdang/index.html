@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/plugins/jquery-2.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/returnTop.js"></script>
+		<script src="js/jquery.kxbdMarquee.js"></script>
+		<script src="js/jquery.SuperSlide.2.1.1.js"></script>
+
+		<style>
+			html,
+			body,
+			div,
+			span,
+			applet,
+			object,
+			iframe,
+			b h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			p,
+			blockquote,
+			pre,
+			a,
+			abbr,
+			acronym,
+			address,
+			big,
+			cite,
+			code,
+			del,
+			dfn,
+			em,
+			font,
+			img,
+			ins,
+			kbd,
+			q,
+			samp,
+			small,
+			strike,
+			strong,
+			sub,
+			sup,
+			tt,
+			var,
+			b,
+			u,
+			i,
+			center,
+			dl,
+			dt,
+			dd,
+			ol,
+			ul,
+			li,
+			fieldset,
+			form,
+			label,
+			legend,
+			table,
+			caption,
+			tbody,
+			tfoot,
+			thead,
+			tr,
+			th,
+			td {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				outline: 0;
+			}
+			
+			body {
+				width: 100%;
+				height: 100%;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			p {
+				font-size: 10px;
+				line-height: 12px;
+			}
+			
+			#rightside {
+				width: 42px;
+				height: 100%;
+				background: #323232;
+				position: fixed;
+				right: 0;
+				bottom: 0;
+				z-index: 9999999;
+			}
+			
+			.rightside_li02 {
+				position: relative;
+				margin-top: 10px;
+			}
+			
+			.rightside_li02 span {
+				display: inline-block;
+				width: 42px;
+				height: 28px;
+				background: url(img/rightside_icon.png)no-repeat 0px 0px;
+			}
+			
+			.DD_twocode {
+				position: absolute;
+				top: 0;
+				left: -100px;
+				display: none;
+			}
+			
+			.rightside_li03 {
+				width: 42px;
+				height: 133px;
+				margin-top: 10px;
+			}
+			
+			.rightside_li03_hover {
+				background: #FF2832 !important;
+			}
+			
+			.rightside_li03 a span {
+				display: inline-block;
+				margin: 5px 0;
+				width: 42px;
+				height: 24px;
+				background: url(img/rightside_icon.png)no-repeat 0px -49px;
+			}
+			
+			.rightside_li03 a span_hover {
+				display: inline-block;
+				background: url(img/rightside_icon.png)no-repeat -42px -49px !important;
+			}
+			
+			.rightside_li03 a {
+				display: block;
+				color: white;
+				width: 42px;
+				text-align: center;
+			}
+			
+			.rightside_li03 a:hover {
+				text-decoration: none;
+			}
+			
+			.rightside_li03 a em {
+				display: inline-block;
+				font-style: normal;
+				font-weight: bold;
+				margin-top: 5px;
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				text-align: center;
+				line-height: 30px;
+				background: #FF3228;
+			}
+			
+			.rightside_ul02 {
+				position: fixed;
+				right: 0;
+				bottom: 40px;
+			}
+			
+			.rightside_ul02 li {
+				width: 42px;
+				height: 40px;
+			}
+			
+			.RSul_li01 {
+				background: url(img/rightside_icon.png) no-repeat 0px -85px;
+			}
+			
+			.RSul_li02 {
+				background: url(img/rightside_icon.png) no-repeat 0px -126px;
+			}
+			
+			.RSul_li03 {
+				background: url(img/rightside_icon.png) no-repeat 0px -168px;
+			}
+			
+			.RSul_li03 .stick_a {
+				display: block;
+				width: 42px;
+				height: 40px;
+			}
+			
+			.RSul_li04 {
+				text-align: center;
+			}
+			
+			.RSul_li04 a {
+				color: white;
+				font-size: 14px;
+				font-weight: bold;
+			}
+			
+			.RSul_li01 span {
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 43px;
+				width: 89px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				color: white;
+				font-size: 12px;
+				font-weight: bold;
+				background: #FF3228;
+			}
+			
+			.RSul_li02 div {
+				display: none;
+				position: absolute;
+				top: 40px;
+				left: -189px;
+				background: #323232;
+				width: 89px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				font-size: 12px;
+				font-weight: bold;
+			}
+			
+			.RSul_li02 div a {
+				color: white;
+			}
+			
+			.RSul_li02 div em {
+				width: 5px;
+				height: 9px;
+				display: inline-block;
+				position: absolute;
+				top: 15px;
+				right: -5px;
+				background: url(img/rightside.png)no-repeat 0px -234px;
+			}
+			
+			#leftside {
+				width: 48px;
+				height: 440px;
+				background: #F6F6F6;
+				position: fixed;
+				top: 110px;
+				left: -20px;
+				z-index: 99999;
+			}
+			
+			.leftside_ul li {
+				width: 28px;
+				height: 40px;
+				margin-left: 20px;
+			}
+			
+			.leftside_li01 {
+				background: url(img/leftside_icon.png)no-repeat -5px -35px;
+			}
+			
+			.leftside_li02 {
+				background: url(img/leftside_icon.png)no-repeat -5px -320px;
+			}
+			
+			.leftside_li03 {
+				background: url(img/leftside_icon.png)no-repeat -5px 0px;
+			}
+			
+			.leftside_ul li span {
+				display: none;
+				width: 50px;
+				height: 40px;
+				position: absolute;
+				top: 0;
+				left: 48px;
+				color: white;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			.leftside_li01 span {
+				background: #FB98A9;
+			}
+			
+			.leftside_li02 span {
+				background: #B6C619;
+				top: 40px !important;
+			}
+			
+			.leftside_li03 span {
+				background: #BA99ED;
+				top: 80px !important;
+			}
+			
+			#header {
+				position: relative;
+			}
+			
+			#bannerPicBox {
+				width: 796px;
+				height: 458px;
+				margin: 0 auto;
+				border-right: 1px solid gainsboro;
+				position: relative;
+			}
+			
+			.banner_left_div {
+				width: 204px;
+				height: 458px;
+				position: absolute !important;
+				top: 0;
+				right: -204px;
+				border-left: 1px solid gainsboro;
+			}
+			
+			.left_topPic {
+				width: 204px;
+				height: 195px;
+			}
+			
+			.left_tab01 {
+				width: 204px !important;
+				height: 142px;
+				border-bottom: 1px solid gainsboro;
+			}
+			
+			.left_tab02 {
+				width: 204px !important;
+				height: 119px;
+				border-bottom: 1px solid gainsboro;
+			}
+			
+			#tabSpan1,
+			#tabSpan2 {
+				background: #F0F0F0;
+				display: inline-block;
+				width: 99px;
+				height: 29px;
+				line-height: 29px;
+				text-align: center;
+				border: 1px solid gainsboro;
+			}
+			
+			.active {
+				background: white !important;
+				width: 98px;
+				border-bottom: white !important;
+			}
+			
+			.tabBox {
+				width: 201px;
+				height: 112px;
+				display: none;
+				font-size: 12px;
+				border-right: 1px solid gainsboro;
+			}
+			
+			.tabBox li {
+				width: 190px;
+				height: 25px;
+				margin-left: 20px;
+				line-height: 25px;
+			}
+			
+			.tabBox li {
+				color: black;
+			}
+			
+			.tabBox li:hover {
+				color: red;
+			}
+			
+			#tabOutBox2 {
+				width: 204px;
+				height: 120px;
+			}
+			
+			#tabSpan01,
+			#tabSpan02,
+			#tabSpan03 {
+				display: inline-block;
+				background: #F0F0F0;
+				font-size: 12px;
+				width: 67px;
+				border-right: 1px solid gainsboro;
+				border-bottom: 1px solid gainsboro;
+				height: 26px;
+				line-height: 26px;
+				text-align: center;
+			}
+			
+			.tabshow {
+				background: white !important;
+				border-bottom: white !important;
+			}
+			
+			.tabBox2 {
+				width: 202px;
+				height: 93px;
+				display: none;
+				font-size: 12px;
+				border-right: 1px solid gainsboro;
+			}
+			
+			.endDDgoods {
+				width: 1200px;
+				height: 553px;
+				margin: 38px auto 0;
+			}
+			
+			.salesDDgoods {
+				width: 1200px;
+				height: 492px;
+				margin: 38px auto 0;
+			}
+			
+			.DDbook {
+				width: 1200px;
+				height: 519px;
+				margin: 38px auto 0;
+			}
+		</style>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.fullSlide11 {
+				width: 796px;
+				position: relative;
+				height: 296px;
+				background: #000;
+			}
+			
+			.fullSlide11 .bd {
+				margin: 0 auto;
+				position: relative;
+				z-index: 0;
+				overflow: hidden;
+			}
+			
+			.fullSlide11 .bd ul {
+				width: 100% !important;
+			}
+			
+			.fullSlide11 .bd li {
+				width: 100% !important;
+				height: 296px;
+				overflow: hidden;
+				text-align: center;
+			}
+			
+			.fullSlide11 .bd li a {
+				display: block;
+				height: 296px;
+			}
+			
+			.fullSlide11 .hd {
+				width: 100%;
+				position: absolute;
+				z-index: 1;
+				bottom: 5px;
+				right: 0;
+				height: 20px;
+				line-height: 20px;
+			}
+			
+			.fullSlide11 .hd ul {
+				text-align: center;
+			}
+			
+			.fullSlide11 .hd ul li {
+				cursor: pointer;
+				display: inline-block;
+				*display: inline;
+				zoom: 1;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				margin: 1px;
+				overflow: hidden;
+				background: #646464;
+				text-align: center;
+				line-height: 20px;
+				color: white;
+				font-weight: bold;
+			}
+			
+			.fullSlide11 .hd ul .on {
+				background: red;
+			}
+			
+			.fullSlide11 .prev,
+			.fullSlide11 .next {
+				position: absolute !important;
+				z-index: 1;
+				top: 50%;
+				margin-top: -30px;
+				left: 0;
+				z-index: 1;
+				width: 30px;
+				height: 40px;
+				background: white;
+				display: none;
+				font-size: 30px;
+				font-weight: bold;
+				color: black;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			.fullSlide11 .next {
+				left: auto;
+				right: 0;
+			}
+		</style>
+		<style>
+			li {
+				list-style: none;
+			}
+			
+			.smallbanner {
+				overflow: hidden;
+				width: 796px;
+				height: 160px;
+				border-top: 1px solid gainsboro;
+				border-bottom: 1px solid gainsboro;
+			}
+			
+			.smallbanner .sbanner_ul {
+				width: 2376px;
+				height: 160px;
+			}
+			
+			.smallbanner .sbanner_ul .sbanner_li {
+				width: 198px;
+				height: 160px;
+				float: left;
+				border-left: 1px solid gainsboro;
+				position: relative;
+			}
+			
+			.smallbanner .sbanner_ul .sbanner_li .mask_span {
+				display: block;
+				width: 198px;
+				height: 160px;
+				opacity: 0.05;
+				background: black;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			
+			.smallbanner .sbanner_ul .sbanner_li:hover .mask_span {
+				display: none !important;
+			}
+		</style>
+		<script>
+			$(function() {
+				//大的轮播图
+				$(".fullSlide11").hover(function() {
+						$(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+					},
+					function() {
+						$(this).find(".prev,.next").fadeOut()
+					});
+				
+				$(".fullSlide11").slide({
+					titCell: ".hd ul",
+					mainCell: ".bd ul",
+					effect: "fold",
+					autoPlay: true,
+					autoPage: true,
+					trigger: "click",
+					startFun: function(i) {
+						var curLi = jQuery(".fullSlide11 .bd li").eq(i);
+						if (!!curLi.attr("_src")) {
+							curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+						}
+					}
+				});
+			})
+		    //大轮播图左侧的tab切换
+			$(function() {
+				$('#tabOutBox').find('span').mouseover(function() {
+					$('#tabOutBox').find('span').attr('class', '');
+					$('#tabOutBox').find('.tabBox').css('display', 'none');
+					$(this).attr('class', 'active');
+					$('#tabOutBox').find('.tabBox').eq($(this).index()).css({
+						'display': 'block'
+					});
+				});
+			})
+			$(function() {
+				$('#tabOutBox2').find('span').mouseover(function() {
+					$('#tabOutBox2').find('.tabBox2').css('display', 'none');
+					$('#tabOutBox2').find('span').removeClass('tabshow');
+					$(this).addClass('tabshow');
+					$('#tabOutBox2').find('.tabBox2').eq($(this).index()).css({
+						'display': 'block'
+					});
+				});
+			})
+		</script>
+
+		<script>
+			$(function() {
+				
+				//右边侧边栏
+				$('.rightside_li02').mouseover(function() {
+					$('.DD_twocode').css('display', 'block');
+				}).mouseout(function() {
+					$('.DD_twocode').css('display', 'none');
+				});
+				$('.rightside_li03').mouseover(function() {
+					$(this).addClass('rightside_li03_hover');
+					$(this).find('span').css('background-position', '-42px -49px');
+				}).mouseout(function() {
+					$(this).removeClass('rightside_li03_hover');
+					$(this).find('span').css('background-position', '0px -49px');
+				});
+				//右侧边栏的收藏页面
+				$('.RSul_li01').mouseenter(function() {
+					$(this).css('background-position', '-42px -85px');
+					$(this).find('span').animate({
+						left: '-89px'
+					});
+				}).mouseleave(function() {
+					$(this).css('background-position', '0px -85px');
+					$(this).find('span').animate({
+						left: '43px'
+					});
+				});
+				
+				//右侧边栏的我的收藏
+				$('.RSul_li02').mouseenter(function() {
+					$(this).css('background-position', '-42px -126px');
+					$(this).find('div').show().animate({
+						left: '-89px'
+					});
+				}).mouseleave(function() {
+					$(this).css('background-position', '0px -126px');
+					$(this).find('div').hide().animate({
+						left: '-189px'
+					});
+				});
+				//右侧边栏的回到顶部
+				$('.RSul_li03').mouseover(function() {
+					$(this).css('background', '#FF3228 url(img/rightside_icon.png) no-repeat -42px -168px');
+				}).mouseout(function() {
+					$(this).css('background', '#323232 url(img/rightside_icon.png) no-repeat 0px -168px');
+				});
+				$(".stick_a").click(function() {
+					$('html,body').animate({
+						'scrollTop': 0
+					}, 500);
+				});
+				
+				//右侧边栏的意见反馈
+				$('.RSul_li04').mouseover(function() {
+					$(this).css('background', '#FF3228');
+				}).mouseout(function() {
+					$(this).css('background', '#323232');
+				});
+				
+				//左侧楼梯
+				$('.leftside_li01').mouseenter(function() {
+					$(this).css('background-color', '#FB98A9');
+					$(this).find('span').css('display', 'block');
+				}).mouseleave(function() {
+					$(this).css('background-color', '#F6F6F6');
+					$(this).find('span').css('display', 'none');
+				});
+				$('.leftside_li02').mouseenter(function() {
+					$(this).css('background-color', '#B6C619');
+					$(this).find('span').css('display', 'block');
+				}).mouseleave(function() {
+					$(this).css('background-color', '#F6F6F6');
+					$(this).find('span').css('display', 'none');
+				});
+				$('.leftside_li03').mouseenter(function() {
+					$(this).css('background-color', '#BA99ED');
+					$(this).find('span').css('display', 'block');
+				}).mouseleave(function() {
+					$(this).css('background-color', '#F6F6F6');
+					$(this).find('span').css('display', 'none');
+				});
+				//左侧楼梯 当滚动条轮动大于200 时显示
+				$(window).scroll(function() {
+					if ($(window).scrollTop() > 200) {
+						$("#leftside").fadeIn();
+					} else {
+						$("#leftside").hide();
+					}
+				});
+			})
+		</script>
+		<script type="text/javascript">
+			window.onload=function(){
+				$.ajax({
+					type: "get",
+					url: "top_Public.html",
+					async: true,
+					success: function(e) {
+						$('#header').html(e);
+					}
+				});
+				$.ajax({
+					type: "get",
+					url: "endgoods.html",
+					async: true,
+					success: function(e) {
+						$('.endDDgoods').html(e);
+					}
+				});
+				$.ajax({
+					type: "get",
+					url: "salesgoods.html",
+					async: true,
+					success: function(e) {
+						$('.salesDDgoods').html(e);
+					}
+				});
+				$.ajax({
+					type: "get",
+					url: "ddBook.html",
+					async: true,
+					success: function(e) {
+						$('.DDbook').html(e);
+					}
+				});
+				$.ajax({
+					type: "get",
+					url: "footer_Public.html",
+					async: true,
+					success: function(e) {
+						$('#footer').html(e);
+					}
+				});
+			}
+		</script>
+
+	</head>
+
+	<body id="top">
+		<!--右侧边-->
+		<div id="rightside">
+			<ul>
+				<li class="rightside_li01">
+					<a href="#"><img src="http://img59.ddimg.cn/177030021412489_y.jpg" /></a>
+				</li>
+				<li class="rightside_li02">
+					<span></span>
+					<div class="DD_twocode"><img src="http://img60.ddimg.cn/4afa2037-8c78-4a22-ba84-21990c7e26d6.hpHx1DEI?" />"/></div>
+				</li>
+				<li class="rightside_li03">
+					<a href="#"><span></span>购<br/>物<br/>车<br/><em>0</em></a>
+				</li>
+			</ul>
+			<ul class="rightside_ul02">
+				<li class="RSul_li01">
+					<a href="#"></a><span>收藏页面</span></li>
+				<li class="RSul_li02">
+					<div><a href="#">我的收藏</a><em></em></div>
+				</li>
+				<li class="RSul_li03">
+					<a class="stick_a" href="#top"></a>
+				</li>
+				<li class="RSul_li04"><a href="#">意见反馈</a></li>
+			</ul>
+		</div>
+		<!--左侧边-->
+		<div id="leftside" style="display: none;">
+			<ul class="leftside_ul">
+				<li class="leftside_li01"><a href="#endDDgoods01"><span>女装</span></a></li>
+				<li class="leftside_li02"><a href="#salesDDgoods01"><span>家生活</span></a></li>
+				<li class="leftside_li03"><a href="#DDbook"><span>图书</span></a></li>
+			</ul>
+		</div>
+
+		<div id="header"></div>
+		<div id="bannerPicBox">
+			<div id="bannerPicDiv">
+				<div class="fullSlide11">
+					<div class="bd">
+						<ul>
+							<li _src="url(http://a.dangdang.com/api/data/cpx/img/39290001/1)">
+								<a href="#"></a>
+							</li>
+							<li _src="url(http://a.dangdang.com/api/data/cpx/img/39380001/1)">
+								<a href="#"></a>
+							</li>
+							<li _src="url(http://a.dangdang.com/api/data/cpx/img/39410001/1)">
+								<a href="#"></a>
+							</li>
+							<li _src="url(http://a.dangdang.com/api/data/cpx/img/39440001/1)">
+								<a href="#"></a>
+							</li>
+							<li _src="url(http://a.dangdang.com/api/data/cpx/img/39500001/1)">
+								<a href="#"></a>
+							</li>
+							<li _src="url(http://a.dangdang.com/api/data/cpx/img/39470001/1)">
+								<a href="#"></a>
+							</li>
+							<li _src="url(http://a.dangdang.com/api/data/cpx/img/39350001/1)">
+								<a href="#"></a>
+							</li>
+							<li _src="url(http://a.dangdang.com/api/data/cpx/img/39320001/1)">
+								<a href="#"></a>
+							</li>
+						</ul>
+					</div>
+					<div class="hd">
+						<ul></ul>
+					</div>
+					<span class="prev">&lt;</span>
+					<span class="next">&gt;</span>
+				</div>
+				<!--fullSlide end-->
+				<div id="smallbanner" class="smallbanner">
+					<ul id="sbanner_ul" class="sbanner_ul">
+						<li class="sbanner_li"><a href="#"><span class="mask_span"></span><img src="img/sbanner01.jpg"/></a></li>
+						<li class="sbanner_li"><a href="#"><span class="mask_span"></span><img src="img/sbanner02.jpg"/></a></li>
+						<li class="sbanner_li"><a href="#"><span class="mask_span"></span><img src="img/sbanner03.jpg"/></a></li>
+						<li class="sbanner_li"><a href="#"><span class="mask_span"></span><img src="img/sbanner04.jpg"/></a></li>
+						<li class="sbanner_li"><a href="#"><span class="mask_span"></span><img src="img/sbanner05.jpg"/></a></li>
+						<li class="sbanner_li"><a href="#"><span class="mask_span"></span><img src="img/sbanner06.jpg"/></a></li>
+						<li class="sbanner_li"><a href="#"><span class="mask_span"></span><img src="img/sbanner07.jpg"/></a></li>
+						<li class="sbanner_li"><a href="#"><span class="mask_span"></span><img src="img/sbanner08.jpg"/></a></li>
+						<li class="sbanner_li"><a href="#"><span class="mask_span"></span><img src="img/sbanner09.jpg"/></a></li>
+						<li class="sbanner_li"><a href="#"><span class="mask_span"></span><img src="img/sbanner10.jpg"/></a></li>
+						<li class="sbanner_li"><a href="#"><span class="mask_span"></span><img src="img/sbanner11.jpg"/></a></li>
+						<li class="sbanner_li"><a href="#"><span class="mask_span"></span><img src="img/sbanner12.jpg"/></a></li>
+					</ul>
+				</div>
+			</div>
+
+			<script>
+				(function() {
+					$("#smallbanner").kxbdMarquee({
+						direction: "left"
+					});
+				})();
+			</script>
+
+			<div class="banner_left_div">
+				<div class="left_topPic">
+					<a href="#"><img src="img/left_topPic.jpg" /></a>
+				</div>
+				<div class="left_tab01">
+					<div id="tabOutBox">
+						<span id="tabSpan1" class="tabSpan active"><a href="#">促销信息</a></span><span id="tabSpan2" class="tabSpan"><a href="#">服务公告</a></span>
+						<div class="tabBox" style="display: block;">
+							<ul>
+								<li>季末清仓，10万图书3.9折封顶</li>
+								<li>季末清仓，10万图书3.9折封顶</li>
+								<li>季末清仓，10万图书3.9折封顶</li>
+								<li>季末清仓，10万图书3.9折封顶</li>
+							</ul>
+						</div>
+						<div class="tabBox" style="display: none;">
+							<ul>
+								<li>积分支付上线了，直接当钱用！</li>
+								<li>积分支付上线了，直接当钱用！</li>
+								<li>积分支付上线了，直接当钱用！</li>
+								<li>积分支付上线了，直接当钱用！</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="left_tab02">
+					<div id="tabOutBox2">
+						<span id="tabSpan01" class="tabSpan tabshow"><a href="#">当当读书</a></span><span id="tabSpan02" class="tabSpan"><a href="#">当当优品</a></span><span id="tabSpan03" class="tabSpan"><a href="#">礼品卡</a></span>
+						<div class="tabBox2" style="display: block;">
+							<a href="#"><img src="img/tab02_01.jpg" /></a>
+						</div>
+						<div class="tabBox2" style="display: none;">
+							<a href="#"><img src="img/tab02_02.jpg" /></a>
+						</div>
+						<div class="tabBox2" style="display: none;">
+							<a href="#"><img src="img/tab02_03.jpg" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="endDDgoods01" class="endDDgoods">
+
+		</div>
+		<div id="salesDDgoods01" class="salesDDgoods">
+
+		</div>
+		<div id="DDbook" class="DDbook">
+
+		</div>
+
+		<div id="footer">
+
+		</div>
+
+	</body>
+
+</html>

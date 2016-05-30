@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/slick.css"/>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/slick.min.js"></script>
+		<style>
+		* { margin: 0; padding: 0;}
+		.slick { width: 600px; margin: 0 auto;}
+		.slick-prev:before, .slick-next:before { position: absolute; left: 0; top: 1px; color: #ccc;}
+		.slick-prev { left: 0px;}
+		.slick-next { right: 0px;}
+		.slick-dots { bottom: 0px;}
+		</style>
+
+	</head>
+	<body>
+		<div class="slick">
+			<div><a href="javascript:;"><img src="images/1.jpg" alt=""></a></div>
+			<div><a href="javascript:;"><img src="images/2.jpg" alt=""></a></div>
+			<div><a href="javascript:;"><img src="images/3.jpg" alt=""></a></div>
+			<div><a href="javascript:;"><img src="images/4.jpg" alt=""></a></div>
+			<div><a href="javascript:;"><img src="images/5.jpg" alt=""></a></div>
+		</div>
+		<script>
+		$(function(){
+			$('.slick').slick({
+				dots: true,
+				autoplay:true
+			});
+		});
+		</script>
+
+	</body>
+</html>

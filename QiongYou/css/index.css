@@ -1,0 +1,506 @@
+@charset "utf-8";
+	 body,div,header,footer,label,hr,input,dl,dt,dd,nav,button,h1,h2,h3,h4,p,ul,li{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		width: 100%;
+		height: 100%;
+		font-family: "微软雅黑";
+		font-size: 0.24rem;/*让下面的继承*/
+		background: #f3f4f4;
+	}
+	ul,li{list-style: none;}
+	a{text-decoration: none;}
+	img{
+		display: block;
+		max-width:100%;
+		border:none;
+	}
+	.clearfix:after{/*Bootstrap常用的一种清除浮动的方法 */
+		content:'.';
+		display: block;
+		clear: both;
+		height: 0;
+		visibility: hidden;
+	}
+	.none{display: none;}
+	div,section,img{
+		box-sizing: border-box;
+	}
+
+
+/*----头部-----------------------------------------*/
+	.qui-page{
+		width: 100%;
+	}
+	.qh{
+		width: 100%;
+		height: .9rem;
+		background: #2bab79;
+	}
+	.qh1{
+		width: 1.5rem;
+		height: .4rem;
+		text-indent: -9999px;
+		margin: .25rem 0 0 .2rem;
+		float: left;
+	}
+	.qh2{
+		width: 1.3rem;
+		height: .54rem;
+		float: right;
+		margin-top: .18rem;
+		margin-right: .15rem;
+	}
+	.qh2 i{
+		width: .55rem;
+		height: .55rem;
+		display: block;
+		background:white;
+		border-radius: 50%;
+		float: left;
+		margin-right: .15rem;
+	}
+	.qh2 i img{
+		width: .35rem;
+		height: .35rem;
+		margin: .08rem auto 0;
+	}
+	.qh2 span{
+		display: block;
+		float: left;
+		font-size: .26rem;
+		line-height: .55rem;
+		color: white;
+	}
+/*----轮播图-----------------------------------------*/
+	.qban{
+		width: 100%;
+		position: relative;
+	}
+	.swiper-container {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    .swiper-slide {
+        font-size: .18rem;
+        background: #fff;
+         /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+/*----搜索-----------------------------------------*/
+	.qs{
+		width: 100%;
+		padding: .2rem;
+		border-bottom: 1px solid #e6e8ea;
+		text-align: center;
+	}
+	.qs-search{
+		width: 80%;
+		margin: 0 auto;
+		border-radius: .08rem;
+		border: 1px solid #ced1d5;
+		color: #9ea3ab;
+		background:#FFFFFF url(../img/search.png)no-repeat .4rem .18rem;
+		background-size:.33rem ;
+		padding: .2rem .2rem .2rem .9rem;
+		font-size: .24rem;
+		outline: none;
+	}
+
+/*----导航-----------------------------------------*/
+	@font-face {font-family: 'iconfont';
+	    src: url('../iconfont/iconfont.eot'); /* IE9*/
+	    src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	    url('../iconfont/iconfont.woff') format('woff'), /* chrome、firefox */
+	    url('../iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+	    url('../iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+	}
+	.iconfont{
+		font-family:"iconfont";
+		font-size:.45rem;
+		font-style:normal;
+		color: white;
+		width: .55rem;
+		height: .55rem;
+		line-height:.75rem;
+	}
+	
+	
+	.qn{
+		width: 100%;
+		border-bottom: 1px solid #e6e8ea;
+		padding-top: .2rem;
+		overflow: hidden;
+	}
+	.qn li{
+		width: 25%;
+		height: 1.2rem;
+		float: left;
+		margin-bottom: .3rem;
+	}
+	.qul-hide{
+		display: none;
+	}
+	.qn a{
+		display: block;
+		overflow: hidden;
+	}
+	.qla{
+		width: 1.2rem;
+		height: 1.2rem;
+		border-radius: .08rem !important;
+		margin: 0 auto;
+		font-size: .16rem;
+		color: white;
+	}
+	.qla0{
+		background-color: #ffbd56;
+	}
+	.qla1{
+		background-color: #25d9b2;
+	}
+	.qla2{
+		background-color: #5dcce7;
+	}
+	.qla3{
+		background-color: #fb9388;
+	}
+	.qla4{
+		background-color: #5ca1e6;
+	}
+	.qla5{
+		background-color: #ffa070;
+	}
+	.qla6{
+		background-color: #fbcb00;
+	}
+	.qla7{
+		background-color: #b893fd;
+	}
+	.qla8{
+		background-color: #febd55;
+	}
+	.qla9{
+		background-color: #9ade25;
+	}
+	.qla10{
+		background-color: #23d984;
+	}
+	.qla11,.qla12{
+		background-color: #cdd1d4;
+	}
+	
+	
+	.qlas{
+		display: block;
+		width: 100%;
+		height: 65%;
+		text-align: center;
+	}
+/*----第一个li---------------------------------*/	
+	.qlas01{
+		display: block;
+		position:relative;
+	}
+	.icf01{
+		display: block;
+		margin: 0 auto;
+		position: absolute;
+		top: -.15rem;
+		left: 25%;
+		animation: icf01 4s linear 0s normal forwards infinite;
+		-moz-animation: icf01 4s linear 0s normal forwards infinite;	/* Firefox */
+		-webkit-animation: icf01 4s linear 0s normal forwards infinite;	/* Safari 和 Chrome */
+		-o-animation: icf01 4s linear 0s normal forwards infinite;	/* Opera */
+	}
+	@keyframes icf01
+	{
+		0%   {top: -.15rem;}
+		50%  {top: 0rem;}
+		100% {top: -.15rem;}
+	}
+	.qlades{
+		margin: 0 auto;
+		line-height: 1.24rem;
+	}
+	.qladir0{
+		display: block;
+		width: 100%;
+		height: 35%;
+		text-align: center;
+		line-height:250%;
+		background:url(../img/qo1.png) no-repeat;
+		background-size:100%;
+	}
+
+	.qladir{
+		display: block;
+		width: 100%;
+		height: 35%;
+		text-align: center;
+		line-height:250%;
+		background-color:rgba(0,0,0,0.1);
+	}
+
+/*----最世界商城---------------------------------*/	
+	.qzsjsc{
+		width: 100%;
+		background: white;
+	}
+	.qzsj-title{
+		font-size: .26rem;
+		font-weight: normal;
+		line-height: .8rem;
+		text-align: center;
+		position: relative;
+		border-bottom: 1px solid #e6e8ea;
+	}
+	.qzsj-title a{
+		display: block;
+		position: absolute;
+		right: 0rem;
+		color: #25d9b2;
+		font-size: .16rem;
+		padding-right: .6rem;
+		background: url(../img/more.png)no-repeat 0.5rem center;
+		background-size:.24rem;
+	}
+/*----最世界商城   左边------------*/	
+	.qzsj-conLeft{
+		width: 37.5%;
+		height: 4.41rem;
+		float: left;
+		border-bottom: 1px solid #e6e8ea;
+		padding: .2rem .1rem;
+	}
+	.conLest-img{
+		margin: 0 auto;
+	}
+	.cL-cdown{
+		height: .4rem;
+		color: #ff7466;
+		margin-bottom: .1rem;
+	}
+	.cL-des{
+		padding:.1rem .1rem 0;
+		color: #9ea3ab;
+	}
+	.cL-price{
+		font-size: .14rem;
+		color:#9ea3ab;
+		text-align: right;
+		margin-right: .1rem;
+	}
+	.cL-price em{
+		font-style: normal;
+		font-size: .28rem;
+		color: #ff7466;
+		margin-right: .05rem;
+	}
+	.cL-order{
+		width: 85%;
+		margin: .1rem auto 0;
+		text-align: center;
+		display: block;
+		padding: .08rem;
+		border-radius:.05rem;
+		background: gainsboro;
+		color: white;
+	}
+	
+/*----最世界商城   右边------------*/	
+	.qzsj-conRight{
+		width: 62.5%;
+		height: 4.4rem;
+		background:white;
+		float: right;
+	}
+	.qzsj-cR-li{
+		width: 50%;
+		height: 50%;
+		float: left;
+	}
+	.qzsj-cR-li a{
+		display: block;
+		width: 100%;
+		height: 100%;
+		border-bottom: 1px solid #e6e8ea;
+		border-left: 1px solid #e6e8ea;
+	}
+	.qzsj-cR-li-a0{
+		background: url(../img/lm-ticket.png)no-repeat right bottom;
+		background-size:1.51rem ;
+	}
+	.qzsj-cR-li-a1{
+		background: url(../img/lm-sale.png)no-repeat right bottom;
+		background-size:1.73rem ;
+	}
+	.qzsj-cR-li-a2{
+		background: url(../img/lm-visa.png)no-repeat right bottom;
+		background-size:1.35rem ;
+	}
+	.qzsj-cR-li-a3{
+		background: url(../img/lm-wifi.png)no-repeat right bottom;
+		background-size:1.1rem ;
+	}
+	.qzsj-cR-p0{
+		font-size: .26rem;
+		color: #fb9388;
+		line-height: .6rem;
+		padding-left: .26rem;
+	}
+	.cR-p01{
+		color:#5dcce7;
+	}
+	.cR-p02{
+		color:#ffbd56;
+	}
+	.cR-p03{
+		color:#25d9b2;
+	}
+	.qzsj-cR-p1{
+		font-size: .14rem;
+		color: #ced1d5;;
+		padding-left: .26rem;
+	}
+
+/*----游记与话题---------------------------------*/		
+	.qyh{
+		border-top: 1px solid #e6e8ea;
+		margin-top: .2rem;
+		background: white;
+		padding-bottom: .2rem;
+	}
+	.qyh-title{
+		font-size: .26rem;
+		font-weight: normal;
+		line-height: .8rem;
+		text-align: center;
+		position: relative;
+		margin-bottom: .1rem;
+	}
+	.qyh-title a{
+		display: block;
+		position: absolute;
+		right: 0rem;
+		color: #25d9b2;
+		font-size: .16rem;
+		padding-right: .6rem;
+		background: url(../img/more.png)no-repeat 0.5rem center;
+		background-size:.24rem;
+	}
+	.qyh-con{
+		padding: 0 .2rem;
+		
+	}
+	.qyh-con li:after{/*Bootstrap常用的一种清除浮动的方法 */
+		content: '.';
+		display: block;
+		clear: both;
+		height: 0;
+		visibility: hidden;
+	}
+	.qyh-con li{
+		width: 100%;
+		margin-bottom: .2rem;
+	}
+	.qyh-img{
+		width: 36%;
+		border-radius: .05rem;
+		overflow: hidden;
+		float: left;
+	}
+	.qyh-des{
+		width: 64%;
+		float: left;
+		padding: .1rem 0 0 .2rem;
+	}
+	.qyh-des p{
+		font-size: .24rem;
+		color: #9ea3ab;
+		margin-bottom: .15rem;
+		/*东京用的经典方法：让段落文字不超过  1行  2行的方法  设置下面的4个属性*/
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	.des-toux{
+		width: .52rem;
+		border-radius: 50%;
+		float: left;
+		margin-right: .1rem;
+	}
+	.des-nc{
+		display: inline-block;
+		color: #ced1d5;
+		font-size: .28rem;
+		line-height: .5rem;
+	}
+	.des-sex{
+		width: .24rem;
+		height: .24rem;
+		display: inline-block;
+	}
+	.des-zan{
+		display: inline-block;
+		float: right;
+		color: gainsboro;
+	}
+	.des-zan .zan-icf{
+		color: thistle;
+		font-size: .25rem;
+		line-height: .5rem;
+		color:gainsboro;
+	}
+	.qyh-con-more{
+		width: 90%;
+		font-size: .28rem;
+		border: 1px solid #e6e8ea;
+		border-radius: .15rem;
+		display: block;
+		color: #8dabbb;
+		text-align: center;
+		padding: .15rem 0;
+		margin: 0 auto;
+	}
+	
+/*----尾部---------------------------------*/	
+	footer{
+		width: 100%;
+	}
+	.qf-p0{
+		height: .15rem;
+		background: #2bab79;
+	}
+	.qf-p1,.qf-p2{
+		background:#2d3741;
+		text-align: center;
+		padding:.2rem 0;
+		color: #656669;
+		border-bottom: 1px solid #656669;
+	}
+	.qf-p1 a{
+		font-size: .26rem;
+		color: #9ea3ab;
+		padding:0 .2rem;
+	}
+
+
+
+

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/plugins/jquery-2.2.1.min.js"></script>
+		<script>
+			$(function() {
+				$.ajax({
+					type: "get",
+					url: "top_Public2.html",
+					async: false,
+					success: function(e) {
+						$('#header').html(e);
+					}
+				});
+				$.ajax({
+					type: "get",
+					url: "footer_Public.html",
+					async: true,
+					success: function(e) {
+						$('#footer').html(e);
+					}
+				});
+			})
+		</script>
+		<style>
+			html,
+			body,
+			div,
+			span,
+			applet,
+			object,
+			iframe,
+			b h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			p,
+			blockquote,
+			pre,
+			a,
+			abbr,
+			acronym,
+			address,
+			big,
+			cite,
+			code,
+			del,
+			dfn,
+			em,
+			font,
+			img,
+			ins,
+			kbd,
+			q,
+			s,
+			samp,
+			small,
+			strike,
+			strong,
+			sub,
+			sup,
+			tt,
+			var,
+			b,
+			u,
+			i,
+			center,
+			dl,
+			dt,
+			dd,
+			ol,
+			ul,
+			li,
+			fieldset,
+			form,
+			label,
+			legend,
+			table,
+			caption,
+			tbody,
+			tfoot,
+			thead,
+			tr,
+			th,
+			td {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				outline: 0;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			#header {
+				position: relative;
+				z-index: 999;
+			}
+			
+			#myDD_topnav {
+				width: 100%;
+				height: 34px;
+				background: #F5F5F5;
+			}
+			
+			.myDD_topnav_ul {
+				width: 960px;
+				height: 34px;
+				margin: 0 auto;
+				line-height: 34px;
+			}
+			
+			.myDD_topnav_li {
+				float: left;
+				padding-right: 15px;
+				height: 34px;
+			}
+			
+			.myDD_topnav_li a {
+				font-size: 12px;
+				color: gray;
+			}
+			
+			.myDD_topnav_li a:hover {
+				color: #E10010;
+				text-decoration: underline;
+			}
+			
+			#profile_crumbs {
+				width: 960px;
+				margin: 0 auto;
+				padding: 10px 0;
+				font-size: 12px;
+			}
+			
+			#profile_crumbs a {
+				font-size: 12px;
+				color: gray;
+			}
+			
+			#profile_crumbs a:hover {
+				color: #E10010;
+				text-decoration: underline;
+			}
+			
+			.big_sign {
+				padding: 0 5px;
+			}
+			
+			#profile_content {
+				width: 960px;
+				min-height: 1000px !important;
+				margin: 0 auto;
+			}
+			
+			.profile_left {
+				width: 170px;
+				height: 698px;
+				float: left;
+			}
+			
+			.profile_left h4 {
+				padding: 0 10px;
+				font-size: 14px;
+				width: 148px;
+				height: 28px;
+				border: 1px solid gainsboro;
+				border-top: 3px solid #999999;
+				background: #F7F7F7;
+				line-height: 28px;
+			}
+			
+			.profile_left h4 a {
+				display: inline-block;
+				float: right;
+				font-size: 12px;
+			}
+			
+			.profile_left_menu dt {
+				background: #F7F7F7;
+				padding: 0 10px;
+				font-size: 14px;
+				font-weight: bold;
+				width: 148px;
+				height: 28px;
+				border: 1px solid gainsboro;
+				line-height: 28px;
+			}
+			
+			.menu_dt_span {
+				margin: 6px 5px 0 0;
+				display: inline-block;
+				float: right;
+				width: 15px;
+				height: 15px;
+				background: #F7F7F7 url(img/mydangdang_icon.png) no-repeat 3px 4px;
+			}
+			
+			.span_change {
+				background-position: -14px 4px;
+			}
+			
+			.profile_left_menu dd {
+				border-left: 1px solid gainsboro;
+				border-right: 1px solid gainsboro;
+			}
+			.profile_left_menu .menu_enddd{border-bottom: 1px solid gainsboro;}
+			
+			.profile_left_menu dd span {
+				padding-left: 20px;
+				display: block;
+				width: 148px;
+				height: 23px;
+				line-height: 23px;
+			}
+			
+			.profile_left_menu dd span a {
+				font-size: 12px;
+				color: gray;
+			}
+			.menu_dd_personalA{color:#009C74 !important;font-weight: bold;}
+			.profile_left_menu dd span a:hover{color:#009C74; text-decoration: underline;}
+			
+			.profile_right{width:780px;min-height: 500px;float: right;}
+			.profile_right_top{width: 760px; height:28px; margin-bottom: 5px; border-top:3px solid #999999; background: #F7F7F7; font-size: 12px;line-height: 28px;padding-left: 20px;}
+			.change_face{width:726px;height: 330px; border:2px solid #EEEEEE;padding:20px 0 0 50px;}
+			.bigface{width:104px;height:102px; margin-right: 20px; border:1px solid gainsboro; float: left; text-align: center;padding-top: 2px;}
+			.bigface img{width:96px;height: 96px;}
+			.right_faceBox{float:left; width: 500px;height:330px;}
+			.right_faceBox_p01{width:444px; height: 20px;line-height: 20px;font-size: 12px;}
+			.right_faceBox_p01 span{display:inline-block; float: right;color: grey;}
+			.smallpic_tabUl{width: 445px;height: 20px;background: #F7F7F7;border-top: 1px solid gainsboro;border-left: 1px solid gainsboro;}
+			.smallpic_tabUl .smallpic_tabli{float: left;width: 110px;height: 20px; text-align: center;line-height: 20px; font-size: 12px; border-right: 1px solid gainsboro;border-bottom: 1px solid gainsboro;}
+			.activeli{background: #F4FEFF;height: 21px !important;border: 1px solid cadetblue !important; border-bottom: none !important;}
+			.smallpic_conBox{width: 444px;height:174px; border:1px solid cadetblue;margin-top: 1px;}
+			.smallpic_conBox li{float: left; margin:20px 0 0 30px;width: 50px;height: 50px; border: 1px solid gainsboro;}
+			.smallpic_conBox li:hover img{border: 1px solid orange;}
+			.right_faceBox_btn{width: 445px;height:50px;line-height: 30px;border-bottom: 1px dashed gainsboro;}
+			
+			
+			.profile_right em{color: red; margin-right: 5px;}
+			.profile_right p{display: inline-block; font-size: 10px;}
+			.Pright_p01{width:106px;text-align: right;}
+			.Pright_p02{width: 507px;}
+			.change_box{margin-bottom: 10px;padding:10px;width: 760;}
+			.change_nick .Pright_p02{height: 28px;}
+			.change_nick .Pright_p02 span{display: inline-block;width:250px; margin-left: 10px;}
+			.change_birthday{border-top: 1px dashed gainsboro;}
+			.save_btn{text-align: center;}
+		</style>
+		<script>
+			$(function() {
+				$('.menu_dt_span').click(function() {
+					
+					if ($(this).parent().next().css('display') == "none") {
+						$(this).css('background','url(img/mydangdang_icon.png) no-repeat 3px 4px');
+						$(this).parent().next().show();
+						
+					} else {
+						$(this).css('background','url(img/mydangdang_icon.png) no-repeat -14px 4px');
+						$(this).parent().next().hide();
+					}
+				})
+				
+				$('.smallpic_tabli').mouseover(function(){
+					var index=$(this).index();
+					$('.smallpic_tabli').removeClass('activeli');
+					$('.smallpic_conBox').css('display','none');
+					$(this).addClass('activeli');
+					$('.smallpic_conBox').eq(index).css('display','block');
+				})
+				
+				$('.smallpic_conBox').find('img').click(function(){
+					console.info($('.smallpic_conBox').find('img'));
+					console.info($(this).attr("src"));
+					var src=$(this).attr("src");
+					$('.bigface').find('img').attr('src',src);
+					
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<div id="header"></div>
+		<div id="myDD_topnav">
+			<ul class="myDD_topnav_ul">
+				<li class="myDD_topnav_li"><a href="#">图书畅销榜</a></li>
+				<li class="myDD_topnav_li"><a href="#">童书榜</a></li>
+				<li class="myDD_topnav_li"><a href="#">女士服装</a></li>
+				<li class="myDD_topnav_li"><a href="#">男士服装</a></li>
+				<li class="myDD_topnav_li"><a href="#">童装</a></li>
+				<li class="myDD_topnav_li"><a href="#">运动户外</a></li>
+				<li class="myDD_topnav_li"><a href="#">鞋靴</a></li>
+				<li class="myDD_topnav_li"><a href="#">箱包皮具</a></li>
+				<li class="myDD_topnav_li"><a href="#">奶粉</a></li>
+				<li class="myDD_topnav_li"><a href="#">美妆</a></li>
+				<li class="myDD_topnav_li"><a href="#">生鲜</a></li>
+				<li class="myDD_topnav_li"><a href="#">玩具童车</a></li>
+			</ul>
+		</div>
+		<div id="profile_crumbs">您现在的位置：<a href="#">当当</a><span class="big_sign">&gt;</span><a href="#">我的当当</a><span class="big_sign">&gt;</span><span>个人档案</span></div>
+		<div id="profile_content">
+			<div class="profile_left">
+				<h4>我的常用链接<a href="#">设置</a></h4>
+				<dl class="profile_left_menu">
+					<dt class="menu_dt">我的交易<span class="menu_dt_span"></span></dt>
+					<dd>
+						<span><a href="#">我的订单</a></span>
+						<span><a href="#">电子书</a></span>
+						<span><a href="#">我的账单</a></span>
+					</dd>
+					<dt class="menu_dt">我的收藏<span class="menu_dt_span"></span></dt>
+					<dd>
+						<span><a href="#">商品收藏</a></span>
+						<span><a href="#">店铺收藏</a></span>
+					</dd>
+					<dt class="menu_dt">我的钱包<span class="menu_dt_span"></span></dt>
+					<dd>
+						<span><a href="#">我的礼品卡</a></span>
+						<span><a href="#">我的礼券</a></span>
+						<span><a href="#">我的余额</a></span>
+						<span><a href="#">我的积分</a></span>
+					</dd>
+					<dt class="menu_dt">售后服务<span class="menu_dt_span"></span></dt>
+					<dd>
+						<span><a href="#">申请/查询退换货</a></span>
+						<span><a href="#">补开/合并发票</a></span>
+					</dd>
+					<dt class="menu_dt">个人中心<span class="menu_dt_span"></span></dt>
+					<dd>
+						<span><a class="menu_dd_personalA" href="#">个人信息</a></span>
+						<span><a href="#">安全中心</a></span>
+						<span><a href="#">收货地址</a></span>
+						<span><a href="#">一键购买地址</a></span>
+						<span><a href="#">邮件/短信订阅</a></span>
+					</dd>
+					<dt class="menu_dt">社区<span class="menu_dt_span"></span></dt>
+					<dd class="menu_enddd">
+						<span><a href="#">评论/晒单</a></span>
+						<span><a href="#">提问/回答</a></span>
+						<span><a href="#">好友关注</a></span>
+						<span><a href="#">我的书架</a></span>
+						<span><a href="#">我的留言板</a></span>
+					</dd>
+				</dl>
+			</div>
+		
+			<div class="profile_right">
+				<div class="profile_right_top">编辑个人档案 (带<span style="color: red;">*</span>号的项目为必填项)</div>
+				<div class="change_face">
+					<div class="bigface"><img src="http://customer.dangdang.com/profile/images/pic_head_26.gif"/></div>
+					<div class="right_faceBox">
+						<p class="right_faceBox_p01">您可以在下方选择自己喜欢的头像：<span>(更新后的头像将稍后显示在其它页面)</span></p>
+						<div class="smallpic">
+							<ul class="smallpic_tabUl">
+								<li class="smallpic_tabli activeli">美男</li>
+								<li class="smallpic_tabli">酷女</li>
+								<li class="smallpic_tabli">萌宠</li>
+								<li class="smallpic_tabli">个性</li>
+							</ul>
+							<div>
+								<ul class="smallpic_conBox pic_conBox01" style="display: block;">
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_1_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_2_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_3_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_4_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_5_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_6_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_7_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_8_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_9_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_10_s.gif"/></li>
+								</ul>
+								<ul class="smallpic_conBox pic_conBox02" style="display: none;">
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_11_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_12_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_13_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_14_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_15_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_16_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_17_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_18_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_19_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_20_s.gif"/></li>
+								</ul>
+								<ul class="smallpic_conBox pic_conBox03" style="display:none;">
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_21_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_22_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_23_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_24_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_25_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_26_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_27_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_28_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_29_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_30_s.gif"/></li>
+								</ul>
+								<ul class="smallpic_conBox pic_conBox04" style="display:none;">
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_31_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_32_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_33_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_34_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_35_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_36_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_37_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_38_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_39_s.gif"/></li>
+									<li><img src="http://customer.dangdang.com/profile/images/pic_head_40_s.gif"/></li>
+								</ul>
+							</div>
+						</div>
+						<div class="right_faceBox_btn"><button>保存头像</button></div>
+						<div class="">
+							<p>或从您的电脑中上传图片作为头像：<span style="color:gray;">(建议尺寸96*96像素，300k以内)</span></p>
+							<p><button>选择文件</button><input type="text" value="未选择任何文件"/><button>上传</button></p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="change_box change_nick">
+					<p class="Pright_p01"><em>*</em>昵称:</p>
+					<p class="Pright_p02"><input type="text"/><span>您的昵称可以由小写英文字母、中文、数字组成，长度4－20个字符，一个汉字为两个字符</span></p>
+					<p class="Pright_p03">公开</p>
+				</div>
+				<div class="change_box change_add">
+					<p class="Pright_p01"><em>*</em>居住地:</p>
+					<p class="Pright_p02"><span></span><span></span><span>较多的用户居住在以下地区(可直接选取)：</span></p>
+					<p class="Pright_p03">公开</p>
+				</div>
+				<div class="change_box change_sex">
+					<p class="Pright_p01"><em>*</em>性别:</p>
+					<p class="Pright_p02"><input type="radio"/>男<input type="radio"/>女</p>
+					<p class="Pright_p03"><input type="radio"/>公开<input type="radio"/>保密</p>
+				</div>
+				<div class="change_box change_identity">
+					<p class="Pright_p01"><em>*</em>身份:</p>
+					<p class="Pright_p02"><input type="radio"/>在校学生<input type="radio"/>教师<input type="radio"/>上班族<input type="radio"/>自由职业</p>
+					<p class="Pright_p03"><input type="radio"/>公开<input type="radio"/>保密</p>
+				</div>
+				
+				<div class="change_box change_birthday">
+					<p class="Pright_p01">生日:</p>
+					<p class="Pright_p02"><span>年</span><span>月</span><span>日</span></p>
+					<p class="Pright_p03">公开</p>
+				</div>
+				<div class="change_box change_blogs">
+					<p class="Pright_p01">博客:</p>
+					<p class="Pright_p02"><input type="text" value="http://"/></p>
+					<p class="Pright_p03">公开</p>
+				</div>
+				<div class="change_box change_state">
+					<p class="Pright_p01">居住状态:</p>
+					<p class="Pright_p02"><input type="checkbox"/>独居<input type="checkbox"/>和伴侣<input type="checkbox"/>和室友<input type="checkbox"/>和父母<input type="checkbox"/>和朋友<input type="checkbox"/>和宠物</p>
+					<p class="Pright_p03">公开</p>
+				</div>
+				<div class="change_box change_hobby">
+					<p class="Pright_p01">爱好兴趣:</p>
+					<p class="Pright_p02"><textarea rows="3" cols="20">不同项目之间请用空格隔开，例如“旅行 阅读 瑜伽”</textarea></p>
+					<p class="Pright_p03">公开</p>
+				</div>
+				<div class="change_box change_likepeople">
+					<p class="Pright_p01">喜欢或欣赏的人:</p>
+					<p class="Pright_p02"><textarea rows="3" cols="20">不同人名之间请用空格隔开，例如“金庸 周杰伦 姚明”</textarea></p>
+					<p class="Pright_p03">公开</p>
+				</div>
+				<div class="change_box change_hobby">
+					<p class="Pright_p01">自我介绍:</p>
+					<p class="Pright_p02"><textarea rows="3" cols="20"></textarea></p>
+					<p class="Pright_p03">公开</p>
+				</div>
+				<div class="change_box save_btn"><button>保存基本信息</button></div>
+			</div>
+		</div>
+
+		<div id="footer"></div>
+	</body>
+
+</html>

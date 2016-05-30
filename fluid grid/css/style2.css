@@ -1,0 +1,390 @@
+@charset "utf-8";
+	body,h1,h2,h3,p,ul,ol,form,fieldset,figure{
+		margin: 0;
+		padding: 0;
+	}
+	div,figure,img,input,button{
+		box-sizing: border-box;
+	}
+	body{
+		background-color:#f5f5f5 ;
+		font-family: "微软雅黑";
+	}
+	ul,ol{list-style: outside none none;}
+	a{text-decoration: none;}
+	img{
+		display: block;
+		max-width:100%;
+		border:none;
+	}
+	.clearfix:after{/*Bootstrap常用的一种清除浮动的方法 */
+		content:'.';
+		display: block;
+		clear: both;
+		height: 0;
+		visibility: hidden;
+	}
+	.none{display: none;}
+
+/*-----头部导航 header--------------------------------*/
+	#header {
+		width: 100%;
+		height: 70px;
+		background-color: #333;
+		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+		position: fixed;
+		top: 0;
+		z-index: 9999;
+	}
+	#header .center {
+		max-width: 1263px;
+		height: 70px;
+		margin: 0 auto;
+	}
+	#header .logo {
+		width: 30%;
+		height: 70px;
+		background: url(../img2/logo.png) no-repeat;
+		text-indent: -9999px;
+		float: left;
+	}
+	#header .link {
+		width: 55%;
+		height: 70px;
+		line-height: 70px;
+		color: #eee;
+		float: right;
+	}
+	#header .link li {
+		width:20%;
+		text-align: center;
+		float: left;
+	}
+	#header .link a {
+		color: #eee;
+		display: block;
+	}
+	#header .link a:hover, 
+	#header .active a {
+		background-color: #000;
+	}	
+	
+/*-----头部大图和搜索  headPic--------------------------------*/	
+	#headPic{
+		max-width: 1920px;
+		margin: 0 auto;
+		padding: 70px 0 0 0 ;
+		position: relative;
+	}
+	#headPic .centerBox{
+		width: 50%;
+		height: 50px;
+		background: #000000;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: 0px 0 0 -25%;
+		opacity: 0.6;
+		border-radius: 10px;
+	}
+	#headPic .copy{
+		background-color: transparent;
+		opacity: 1;
+		padding: 3px 3px 0 3px;
+	}
+	#headPic .search{
+		width:75%;
+		height: 42px;
+		background: #EEEEEE;
+		color: #666666;
+		border: 1px solid #666666;
+		border-radius: 10px;
+		font-size: 18px;
+		padding: 0 10px;
+		outline: none;
+		font-family: "微软雅黑";
+		display: block;
+		float: left;
+	}
+	#headPic .btn{
+		width: 25%;
+		height: 44px;
+		background: #EEEEEE;
+		color: #666666;
+		border: 1px solid #333;
+		border-left-width: 3px;
+		border-radius: 10px;
+		font-size: 18px;
+		outline: none;
+		cursor: pointer;
+		font-weight: bold;
+		font-family: "微软雅黑";
+		display: block;
+		float: right;
+	}
+
+/*-----中间热门旅游部分  tour--------------------------------*/	
+	#tour {
+		max-width: 1263px;
+		height: 1150px;
+		/*background-color: #ccc;*/
+		margin: 30px auto;
+		text-align: center;
+	}
+	#tour .center h2 {
+		font-size: 45px;
+		letter-spacing: 2px;
+		color: #666;
+		margin: 10px 0;
+	}
+	#tour .center p {
+		color: #666;
+		margin: 10px 10px;
+		font-size: 16px;
+	}
+	#tour figure {
+		border: 1px solid #ddd;
+		display: block;
+		padding: 4px;
+		border-radius: 4px;
+		margin: 15px 0.4%;
+		width: 32.4%;
+		text-align: left;
+		position: relative;
+		float: left;
+	}
+	#tour figure img {
+		vertical-align: middle;
+	}
+	#tour figcaption {
+		color: #777;
+		line-height: 1.5;
+		letter-spacing: 1px;
+		font-size: 14px;
+		padding: 7px 0 5px 0;
+	}
+	#tour .info {
+		padding: 5px 0 0 0;
+	}
+	#tour .tour_title{
+		height: 40px;
+		overflow: hidden;
+	}
+	#tour .title {
+		color: #333;
+		font-weight: normal;
+	}
+	#tour .sat {
+		float: right;
+		font-size: 13px;
+		color: #999;
+		font-style: normal;
+		position: relative;
+		top: 5px;
+		right: 5px;
+	}
+	#tour .price {
+		color: #f60;
+		font-size: 14px;
+	}
+	#tour .price strong {
+		font-size: 20px;
+		letter-spacing: 1px;
+	}
+	#tour .type {
+		width: 90px;
+		height: 25px;
+		line-height: 25px;
+		font-size: 14px;
+		text-align: center;
+		color: #fff;
+		background-color: #59b200;
+		position: absolute;
+		top: 4px;
+		left: 4px;
+	}
+/*-----footer 尾部 --------------------------------*/	
+	#footer {
+		background-color: #222;
+		clear: both;
+		position: relative;
+		top: 20px;
+	}
+	#footer .top {
+		max-width: 1263px;
+		height: 281px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	#footer .block {
+		width:33.33%;
+		height: 280px;
+		display: inline-block;
+		text-align: left;
+		color: #ccc;
+		
+		display: block;
+		float: left;
+	}
+	#footer h2 {
+		font-size: 24px;
+		font-weight: normal;
+		padding: 20px 0 0 20px;
+	}
+	#footer hr {
+		width: 90%;
+		border: 1px dashed #333;
+	}
+	#footer ul {
+		font-size: 18px;
+		color: #777;
+		text-indent: 20px;
+		line-height: 2;
+	}
+	#footer .version{
+		text-align: center;
+		color:#777777;
+		padding: 10px 0;
+	}
+	#footer .version2{
+		display: none;
+	}
+	#footer .bottom {
+		padding: 15px 0;
+		text-align: center;
+		color: #777;
+		background-color: #000;
+		border-top: 1px solid #444;
+	}
+
+/*-----媒体查询 做响应式--------------------------------*/		
+	/*媒体查询，参考部分Bootstrop 框架*/
+	/*当页面大于1200px 时，大屏幕，主要是PC端*/
+	@media (min-width:1200px ) {
+		
+	}
+	/*当页面在992px 和 1199px 之间的屏幕里 时，中等屏幕，分辨率低的PC端*/
+	@media (min-width:992px ) and (max-width:1199px) {
+		#tour .center h2{
+			font-size: 40px;
+		}
+	}
+	/*当页面在768px 和 991px 之间的屏幕里 时，小屏幕，主要是Pad端*/
+	@media (min-width:768px ) and (max-width:991px) {
+		#headPic .centerBox{
+			width: 60%;
+			margin: 0px 0 0 -30%;
+		}
+		#headPic .search, #headPic .btn{
+			font-size: 16px;
+		}
+		#tour .center h2{
+			font-size: 35px;
+		}
+	}
+	/*当页面在480px 和 767px 之间的屏幕里 时，超小屏幕，主要是手机端*/
+	@media (min-width:480px ) and (max-width:767px) {
+		#header,#header .center,#header .link{
+			height: 45px;
+		}
+		#header .logo, .sm-hidden{
+			display: none;
+		}
+		#header .link{
+			width: 100%;
+			line-height: 45px;
+		}
+		#headPic{
+			padding: 45px 0 0 0 ;
+		}
+		#headPic .centerBox{
+			width: 70%;
+			height: 42px;
+			margin: 0px 0 0 -35%;
+		}
+		#headPic .search, #headPic .btn{
+			font-size: 14px;
+			height: 37px;
+		}
+		#footer .version2{
+			display: block;
+		}
+		#footer .bottom, #footer .version{
+			font-size: 13px;
+		}
+		#tour .center h2{
+			font-size: 30px;
+		}
+		#tour .center p{
+			font-size: 14px;
+		}
+		#tour figure{
+			width: 49.2%;
+		}
+		
+	}
+	/*当页面小于480px 的屏幕里 时，微小屏幕，更低分辨率的手机端*/
+	@media (max-width:479px) {
+		#header,#header .center,#header .link{
+			height: 45px;
+		}
+		#header .logo, .yc-hidden, .sm-hidden{
+			display: none;
+		}
+		#header .link{
+			width: 100%;
+			line-height: 45px;
+		}
+		#header .link li{
+			width: 25%;
+		}
+		#headPic{
+			padding: 45px 0 0 0 ;
+		}
+		#headPic .centerBox{
+			width: 80%;
+			height: 38px;
+			margin: 0px 0 0 -40%;
+		}
+		#headPic .search, #headPic .btn{
+			font-size: 14px;
+			height: 32px;
+		}
+		#footer .version2{
+			display: block;
+		}
+		#footer .bottom, #footer .version{
+			font-size: 13px;
+		}
+		#tour .center h2{
+			font-size: 24px;
+		}
+		#tour .center p{
+			font-size: 12px;
+		}
+		#tour figure{
+			width: 99%;
+			
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			img {
+				border: 0;
+			}
+			
+			#salesGoods {
+				width: 1200px;
+				height: 492px;
+				margin: 20px auto 0;
+			}
+			
+			#sales_left {
+				width: 996px;
+				height: 492px;
+				float: left;
+			}
+			
+			#sales_right {
+				width: 204px;
+				height: 492px;
+				float: left;
+			}
+			
+			.sales_leftTiltle,
+			.sales_rightTiltle {
+				height: 34px;
+				border-bottom: 2px solid #FF2832;
+			}
+			
+			.sales_leftTiltle h3,.sales_rightTiltle h3 {
+				color: #FF2832 !important;
+				float: left;
+			}
+			.leftTiltle_ul,.rightTiltle_ul {
+				float: right;
+			}
+			
+			.leftTiltle_ul_li,.rightTiltle_ul_li{
+				width: 14px;
+				height: 14px;
+				background: gray;
+				border-radius: 50%;
+				float: left;
+				margin: 10px 12px 0 0;
+			}
+			.li_acrive {
+				background: #FF2832 !important;
+			}
+			
+			.sales_leftCon {
+				height: 456px;
+				border-left: 1px solid gainsboro;
+			}
+			
+			.leftCon_li {
+				float: left;
+				position: relative;
+				width: 198px;
+				height: 227px;
+				border-bottom: 1px solid gainsboro;
+				border-right: 1px solid gainsboro;
+			}
+			
+			.leftCon_li .leftConA {
+				display: inline-block;
+				width: 198px;
+				height: 170px;
+				text-align: center;
+			}
+			
+			.leftCon_li .leftConA .leftConA_span {
+				display: inline-block;
+				vertical-align: middle;
+				width: 0;
+				height: 100%;
+				overflow: hidden;
+			}
+			
+			.leftCon_li .leftConA .leftConA_img {
+				display: inline-block;
+				vertical-align: middle;
+			}
+			
+			.leftCon_li .leftConLi_p01 {
+				position: absolute;
+				bottom: 60px;
+				width: 120px!important;
+				height: 20px!important;
+				background: url(img/leftConLi_p01.png)no-repeat;
+			}
+			
+			.leftCon_li .leftConLi_p02 {
+				margin-left: 10px;
+				width: 170px;
+				height: 30px;
+				color: darkslategrayy;
+				font-size: 10px;
+				line-height: 16px;
+			}
+			
+			.leftCon_li .leftConLi_p03 {
+				margin-left: 10px;
+				width: 50px;
+				height: 25px;
+				color: red;
+				font-size: 20px;
+				line-height: 25px;
+			}
+			
+			.rightCon_li{border-bottom:1px solid gainsboro;border-right:1px solid gainsboro; width:203px;height:113px;}
+			.rightConA_img:hover{margin-left:1px;}
+			
+			
+		</style>
+		<script src="js/plugins/jquery-2.2.1.min.js"></script>
+		<script>
+			$(function() {
+				$.ajax({
+					type: "get",
+					url: "js/salesgoods.json",
+					async: true,
+					success: function(str) {
+						console.info(str);//返回的数据
+						var goods1Str = str.goods1;//第一个  ul
+						var ul = "<ul class='leftCon_ul'>";
+						$.each(goods1Str, function(i, val) {
+							var li = "<li class='leftCon_li'>" + "<a class='leftConA' href='#'><span class='leftConA_span'></span><img class='leftConA_img' src='" + val.src + "'/></a>" + "<p class='leftConLi_p01'></p>" + "<p class='leftConLi_p02'>" + val.describe + "</p>" + "<p class='leftConLi_p03'>" + val.price + "</p>";
+							ul += li;
+						});
+						ul += "</ul>";
+						$('#leftCon01').append(ul);
+						
+						var goods2Str = str.goods2;//第二个 ul
+						var ul = "<ul class='leftCon_ul'>";
+						$.each(goods2Str, function(i, val) {
+							var li = "<li class='leftCon_li'>" + "<a class='leftConA' href='#'><span class='leftConA_span'></span><img class='leftConA_img' src='" + val.src + "'/></a>" + "<p class='leftConLi_p01'></p>" + "<p class='leftConLi_p02'>" + val.describe + "</p>" + "<p class='leftConLi_p03'>" + val.price + "</p>";
+							ul += li;
+						});
+						ul += "</ul>";
+						$('#leftCon02').append(ul);
+						
+						var goods3Str = str.goods3;//第三个 ul
+						var ul = "<ul class='leftCon_ul'>";
+						$.each(goods3Str, function(i, val) {
+							var li = "<li class='leftCon_li'>" + "<a class='leftConA' href='#'><span class='leftConA_span'></span><img class='leftConA_img' src='" + val.src + "'/></a>" + "<p class='leftConLi_p01'></p>" + "<p class='leftConLi_p02'>" + val.describe + "</p>" + "<p class='leftConLi_p03'>" + val.price + "</p>";
+							ul += li;
+						});
+						ul += "</ul>";
+						$('#leftCon03').append(ul);
+						
+						var goods4Str = str.goods4;//右边 第一个 ul
+						console.info(goods4Str);
+						var ul = "<ul class='rightCon_ul'>";
+						$.each(goods4Str, function(i, val) {
+							var li = "<li class='rightCon_li'>" + "<a class='rightConA' href='#'><img class='rightConA_img' src='" + val.src + "'/></a>";
+							ul += li;
+						});
+						ul += "</ul>";
+						$('.rightCon01').append(ul);
+						
+						var goods5Str = str.goods5;//右边 第二个 ul
+						console.info(goods5Str);
+						var ul = "<ul class='rightCon_ul'>";
+						$.each(goods5Str, function(i, val) {
+							var li = "<li class='rightCon_li'>" + "<a class='rightConA' href='#'><img class='rightConA_img' src='" + val.src + "'/></a>";
+							ul += li;
+						});
+						ul += "</ul>";
+						$('.rightCon02').append(ul);
+					}
+				});
+				
+				
+				//左边tab+自动轮播
+				var index_num = 0;
+				var timer = setInterval(showGoods, 2000);
+				var LTli = $('.leftTiltle_ul_li');
+
+				function showGoods() {
+					index_num = index_num % 3; //0-1-2
+					LTli.removeClass('li_acrive');
+					LTli.eq(index_num).addClass('li_acrive');
+					$('.leftCon').css({
+						'display': 'none'
+					});
+					$('.leftCon').eq(index_num).css({
+						'display': 'block'
+					});
+					index_num++;
+				}
+				LTli.mouseover(function() {
+					clearInterval(timer);
+					timer = setInterval(showGoods, 2000);
+					var index = $(this).index();
+					LTli.removeClass('li_acrive');
+					$(this).addClass('li_acrive');
+					$('.leftCon').css({
+						'display': 'none'
+					});
+					$('.leftCon').eq(index).css({
+						'display': 'block'
+					});
+				})
+				
+				//右边tab+自动轮播
+				var index_num2 = 0;
+				var timer2 = setInterval(show2Goods, 2000);
+				var RTli = $('.rightTiltle_ul_li');
+
+				function show2Goods() {
+					index_num2 = index_num2 % 2; //0-1
+					RTli.removeClass('li_acrive');
+					RTli.eq(index_num2).addClass('li_acrive');
+					$('.rightCon').css({
+						'display': 'none'
+					});
+					$('.rightCon').eq(index_num2).css({
+						'display': 'block'
+					});
+					index_num2++;
+				}
+				RTli.mouseover(function() {
+					clearInterval(timer2);
+					timer2 = setInterval(show2Goods, 2000);
+					var index = $(this).index();
+					RTli.removeClass('li_acrive');
+					$(this).addClass('li_acrive');
+					$('.rightCon').css({
+						'display': 'none'
+					});
+					$('.rightCon').eq(index).css({
+						'display': 'block'
+					});
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<div id="salesGoods">
+			<div id="sales_left">
+				<div class="sales_leftTiltle">
+					<h3>畅品今日闪购</h3>
+					<ul class="leftTiltle_ul">
+						<li class="leftTiltle_ul_li li_acrive"></li>
+						<li class="leftTiltle_ul_li "></li>
+						<li class="leftTiltle_ul_li "></li>
+					</ul>
+				</div>
+				<div class="sales_leftCon">
+					<div id="leftCon01" class="leftCon leftCon01" style="display: block;">
+						<!--<ul class="leftCon_ul">
+							<li class="leftCon_li">
+								<a class="leftConA" href="#"><span class="leftConA_span"></span><img class="leftConA_img" src="img/Lcon01.jpg"/></a>
+								<p class="leftConLi_p01"></p>
+								<p class="leftConLi_p02">海飞丝 丝质柔滑500ml,100ml*2 +80ml自营 货到付款</p>
+								<p class="leftConLi_p03">¥199.00</p>
+							</li>
+						</ul>-->
+					</div>
+					<div id="leftCon02" class="leftCon leftCon02" style="display: none;"></div>
+					<div id="leftCon03" class="leftCon leftCon03" style="display: none;"></div>
+				</div>
+			</div>
+
+			<div id="sales_right">
+				<div class="sales_rightTiltle">
+					<h3>厂商周</h3>
+					<ul class="rightTiltle_ul">
+						<li class="rightTiltle_ul_li li_acrive"></li>
+						<li class="rightTiltle_ul_li "></li>
+					</ul>
+				</div>	
+				<div class="sales_rightCon">
+					<div class="rightCon rightCon01" style="display: block;">
+						<!--<ul class="rightCon_ul">
+							<li class="rightCon_li">
+								<a class="rightConA" href="#"><img class="rightConA_img" src="img/fffe.jpg"/></a>
+							</li>
+						</ul>-->
+					</div>
+					<div class="rightCon rightCon02" style="display: none;"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

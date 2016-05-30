@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/plugins/jquery-2.2.1.min.js"></script>
+		<script>
+			$(function(){
+				var index=0;
+				//点击换肤  header的高度从0到288px
+				$('.changeA').click(function(){
+					$('.header').animate({height:'288px'},1000);
+				});
+				//点击收起  header的高度回到0
+				$('.p2').click(function(){
+					$('.header').animate({height:'0px'},1000);
+				});
+				//鼠标划过左边的图片时，右边就显示相应 背景 ，点击的时候body的背景换成相应的背景
+				$('.all_bg img').mouseover(function(){
+					index=$(this).index();
+					$('.right_bg').css('background','url(bg_img/bg'+index+'.jpg)');
+					$('.right_bg').css('background-size','264px 180px');
+				}).click(function(){
+					$('body').css('background','url(bg_img/bg'+index+'.jpg)');
+				});
+			})
+			
+			function connect_home(){
+				window.location.href='index.html';
+			}
+			
+		</script>
+		
+		
+		<script>
+			$(function() {
+				function Pointer(x, y) {//鼠标坐标
+					this.x = x ;
+					this.y = y ;
+				}
+				function Position(left, top) {//定位
+					this.left = left ;
+					this.top = top ;
+				}
+				$(".item_content .item").each(function(i) {//循环9个div
+					this.init = function() { // 初始化
+						this.box = $(this).parent() ; //.item 的父元素是li
+						$(this).attr("index", i).css({ //.item 给它添加索引  并重新定位position
+							position : "absolute",
+							left : this.box.offset().left, //position 后的left等于父元素li的left
+							top : this.box.offset().top  //position 后的top等于父元素li的top
+						}).appendTo(".item_content") ;   //重新定位后 插入到 ul的父元素中
+						this.drag() ;
+					},
+					this.move = function(callback) {  // 移动
+						$(this).stop(true).animate({
+							left : this.box.offset().left,
+							top : this.box.offset().top
+						}, 500, function() {
+							if(callback) {
+								callback.call(this) ;
+							}
+						}) ;
+					},
+					this.collisionCheck = function() {
+						var currentItem = this ;
+						var direction = null ;
+						$(this).siblings(".item").each(function() {
+							if(
+								currentItem.pointer.x > this.box.offset().left &&
+								currentItem.pointer.y > this.box.offset().top &&
+								(currentItem.pointer.x < this.box.offset().left + this.box.width()) &&
+								(currentItem.pointer.y < this.box.offset().top + this.box.height())
+							) {
+								// 返回对象和方向
+								if(currentItem.box.offset().top < this.box.offset().top) {
+									direction = "down" ;
+								} else if(currentItem.box.offset().top > this.box.offset().top) {
+									direction = "up" ;
+								} else {
+									direction = "normal" ;
+								}
+								this.swap(currentItem, direction) ;
+							}
+						}) ;
+					},
+					this.swap = function(currentItem, direction) { // 交换位置
+						if(this.moveing) return false ;
+						var directions = {
+							normal : function() {
+								var saveBox = this.box ;
+								this.box = currentItem.box ;
+								currentItem.box = saveBox ;
+								this.move() ;
+								$(this).attr("index", this.box.index()) ;
+								$(currentItem).attr("index", currentItem.box.index()) ;
+							},
+							down : function() {
+								// 移到上方
+								var box = this.box ;
+								var node = this ;
+								var startIndex = currentItem.box.index() ;
+								var endIndex = node.box.index(); ;
+								for(var i = endIndex; i > startIndex ; i--) {
+									var prevNode = $(".item_content .item[index="+ (i - 1) +"]")[0] ;
+									node.box = prevNode.box ;
+									$(node).attr("index", node.box.index()) ;
+									node.move() ;
+									node = prevNode ;
+								}
+								currentItem.box = box ;
+								$(currentItem).attr("index", box.index()) ;
+							},
+							up : function() {
+								// 移到上方
+								var box = this.box ;
+								var node = this ;
+								var startIndex = node.box.index() ;
+								var endIndex = currentItem.box.index(); ;
+								for(var i = startIndex; i < endIndex; i++) {
+									var nextNode = $(".item_content .item[index="+ (i + 1) +"]")[0] ;
+									node.box = nextNode.box ;
+									$(node).attr("index", node.box.index()) ;
+									node.move() ;
+									node = nextNode ;
+								}
+								currentItem.box = box ;
+								$(currentItem).attr("index", box.index()) ;
+							}
+						}
+						directions[direction].call(this) ;
+					},
+					this.drag = function() { // 拖拽
+						var oldPosition = new Position() ;
+						var oldPointer = new Pointer() ;
+						var isDrag = false ;
+						var currentItem = null ;
+						$(this).mousedown(function(e) {//鼠标按下时的坐标
+							e.preventDefault() ;
+							oldPosition.left = $(this).position().left ;
+							oldPosition.top =  $(this).position().top ;
+							oldPointer.x = e.clientX ;
+							oldPointer.y = e.clientY ;
+							isDrag = true ;
+							currentItem = this ;
+						}) ;
+						$(document).mousemove(function(e) {//鼠标移动后  被移动div的position:left和top值
+							var currentPointer = new Pointer(e.clientX, e.clientY) ;
+							if(!isDrag) return false ;
+							$(currentItem).css({
+								"opacity" : "0.8",
+								"z-index" : 999
+							}) ;
+							var left = currentPointer.x - oldPointer.x + oldPosition.left ;//left值
+							var top = currentPointer.y - oldPointer.y + oldPosition.top ;//top值
+							$(currentItem).css({
+								left : left,
+								top : top
+							}) ;
+							currentItem.pointer = currentPointer ;
+							// 开始交换位置
+							currentItem.collisionCheck() ;
+						}) ;
+						$(document).mouseup(function() {
+							if(!isDrag) return false ;
+							isDrag = false ;
+							currentItem.move(function() {
+								$(this).css({
+									"opacity" : "1",
+									"z-index" : 0
+								}) ;
+							}) ;
+						}) ;
+					}
+					this.init() ;
+				}) ;
+			}) ;
+		</script>
+		
+		
+		<style>
+			html,body,div,img,p,a{margin: 0;padding: 0;}
+			body{width: 100%;height: 100%;background: url(bg_img/bg0.jpg);}
+			a{text-decoration: none;}
+			li{list-style: none;}
+			.changeA{position: absolute;color: white;margin-top: 10px;margin-left: 20%;}
+			.top_blackbar{width: 100%; height:35px; background:black;}
+			.header{z-index: 99999; width: 100%;height: 0;background: #fff;position: fixed;left: 0;top: 0;border-bottom:1px solid #E3E3E3;overflow: hidden;}
+			.title{width: 900px;height: 45px;margin: 0 auto;}
+			.menu{width: 100%;height: 45px;border-bottom: 1px solid #E3E3E3;}
+			.p1,.p2{width: 50px;height: 45px;background:black; float: left; font-weight: bold;color: white;text-align: center;line-height: 45px;}
+			.p2{float: right !important;cursor: pointer;}
+			.body_bg{width: 900px;height: 205px;margin: 25px auto;}
+			.all_bg{width: 590px;height: 190px;float: left;}
+			.all_bg img{width: 97px;height: 59px;display: block;float: left;margin-right: 1px;margin-bottom: 1px;}
+			.all_bg img.big_bg{width: 195px;height: 119px;}
+			.all_bg img.last_bg{position: relative; top: -60px;}
+			.right_bg{width: 264px;height: 180px;float: right;background: url(bg_img/bg1s.jpg);background-size:294px ;}
+			
+			.item_content{width: 780px;height: 500px;margin:100px auto 0;}
+			.item_li{width:200px;height: 120px;float: left;margin:18px;}
+			.item{width: 200px;height: 120px;text-align: center;cursor: pointer;}
+			.item img{width:200px;height: 120px;border-radius: 5px;}
+		
+		
+		
+		</style>
+		
+	</head>
+	<body>
+		<a class="changeA" href="#">换肤</a>
+		<div class="top_blackbar"></div>
+		<div class="header">
+			<div class="menu">
+				<div class="title">
+					<p class="p1">热门</p>
+					<p class="p2">收起</p>
+				</div>
+				<div class="body_bg">
+					<div class="all_bg">
+						<img class="big_bg" src="bg_img/bg0s.jpg" />
+						<img src="bg_img/bg1s.jpg" />
+						<img src="bg_img/bg2s.jpg" />
+						<img src="bg_img/bg3s.jpg" />
+						<img src="bg_img/bg4s.jpg" />
+						<img src="bg_img/bg5s.jpg" />
+						<img class="big_bg" src="bg_img/bg6s.jpg" />
+						<img src="bg_img/bg7s.jpg" />
+						<img src="bg_img/bg8s.jpg" />
+						<img class="last_bg" src="bg_img/bg9s.jpg" />
+						<img class="last_bg" src="bg_img/bg10s.jpg" />
+						<img class="last_bg" src="bg_img/bg11s.jpg" />
+					</div>
+					<div class="right_bg">
+						<img src="bg_img/small_bg.png" />
+					</div>
+					
+				</div>
+				
+				
+			</div>
+		</div>
+		
+		
+		<div id="item_box">
+			<div class="item_content">
+				<ul class="item_ul">
+					<li class="item_li">
+						<div class="item"><img ondblclick="connect_home();" src="img/ddang01.png"/></div>
+					</li>
+					<li class="item_li">
+						<div class="item"><img src="img/ddang02.png"/></div>
+					</li>
+					<li class="item_li">
+						<div class="item"><img src="img/youku.png"/></div>
+					</li>
+					<li class="item_li">
+						<div class="item"><img src="img/360.png"/></div>
+					</li>
+					<li class="item_li">
+						<div class="item"><img src="img/souhu.png"/></div>
+					</li>
+					<li class="item_li">
+						<div class="item"><img src="img/fenghuan.png"/></div>
+					</li>
+					<li class="item_li">
+						<div class="item"><img src="img/taobao.png"/></div>
+					</li>
+					<li class="item_li">
+						<div class="item"><img src="img/wangyi.png"/></div>
+					</li>
+					<li class="item_li">
+						<div class="item"><img src="img/renren.png"/></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

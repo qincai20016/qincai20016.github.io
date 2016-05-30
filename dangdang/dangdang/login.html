@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html,
+			body,
+			div,
+			span,
+			applet,
+			object,
+			iframe,
+			b h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			p,
+			blockquote,
+			pre,
+			a,
+			abbr,
+			acronym,
+			address,
+			big,
+			cite,
+			code,
+			del,
+			dfn,
+			em,
+			font,
+			img,
+			ins,
+			kbd,
+			q,
+			s,
+			samp,
+			small,
+			strike,
+			strong,
+			sub,
+			sup,
+			tt,
+			var,
+			b,
+			u,
+			i,
+			center,
+			dl,
+			dt,
+			dd,
+			ol,
+			ul,
+			li,
+			fieldset,
+			form,
+			label,
+			legend,
+			table,
+			caption,
+			tbody,
+			tfoot,
+			thead,
+			tr,
+			th,
+			td {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				outline: 0;
+			}
+			
+			body {
+				width: 100%;
+				height: 100%;
+				background: #F6F9FB;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			.lo_head,
+			#Form1,
+			.public_footer {
+				width: 865px;
+				margin: 0 auto;
+			}
+			
+			.lo_head {
+				height: 116px;
+			}
+			
+			.lo_head img {
+				margin-top: 50px;
+				margin-left: 15px;
+				float: left;
+			}
+			
+			.lo_head ul {
+				float: right;
+				height: 60px;
+				width: 234px;
+				margin-top: 40px;
+				margin-right: 15px;
+			}
+			
+			.lo_head li {
+				float: left;
+				margin-left: 30px;
+			}
+			
+			.lo_head li a {
+				float: left;
+				font-size: 12px;
+				color: #666;
+				line-height: 106px;
+				display: block;
+				width: 48px;
+				height: 60px;
+				background: url(img/login_icon.png)no-repeat top left;
+			}
+			
+			.lo_head li.n2 a {
+				background-position: top center;
+			}
+			
+			.lo_head li.n3 a {
+				background-position: top right;
+			}
+			
+			#Form1 {
+				height: 446px;
+			}
+			
+			#Form1 .lo_warn_box {
+				width: 865px;
+				height: 30px;
+			}
+			
+			#Form1 .lo_warn {
+				float: right;
+				width: 552px;
+				height: 24px;
+				border: 1px solid #FEDBD1;
+				font-size: 12px;
+				color: #828282;
+				line-height: 24px;
+				padding-left: 25px;
+				background: #FEF7F5 url(img/warn_tip.png)no-repeat 5px center;
+			}
+			
+			#Form1 .lo_content_box {
+				width: 833px;
+				height: 380px;
+				background: white;
+				border: 1px solid #EEF2F4;
+				padding: 15px;
+			}
+			
+			#Form1 .lo_left_pic {
+				float: left;
+				margin-right: 32px;
+			}
+			
+			#Form1 .lo_rightDiv {
+				float: left;
+				width: 314px;
+				height: auto;
+				margin-top: 32px;
+			}
+			
+			#Form1 .lo_rightDiv .name_box,
+			.pass_box,
+			.picpass_box {
+				display: block;
+				width: 310px;
+				height: 36px;
+				position: relative;
+				margin-bottom: 30px;
+			}
+			
+			#Form1 .lo_rightDiv .lo_input {
+				width: 270px;
+				height: 34px;
+				border: 1px solid gainsboro;
+				border-radius: 4px;
+				padding-left: 30px;
+				outline: 0;
+			}
+			
+			#Form1 .lo_rightDiv .lo_inputColor {
+				border: 1px solid gray;
+			}
+			
+			#Form1 .lo_rightDiv .lo_inputColor_red {
+				border: 1px solid red;
+			}
+			
+			#Form1 .lo_rightDiv #lo_picpass {
+				width: 120px;
+			}
+			
+			#Form1 .lo_rightDiv .picpass_box {
+				position: relative;
+			}
+			
+			#Form1 .lo_rightDiv .lopicarea {
+				display: inline-block;
+				position: absolute;
+				top: 1px;
+				width: 70px;
+				height: 35px;
+				background: gainsboro;
+				margin-right: 5px;
+				text-align: center;
+				line-height: 35px;
+			}
+			
+			#Form1 .lo_rightDiv .lopic_a {
+				margin-left: 75px;
+			}
+			
+			#Form1 .lo_rightDiv .loerror-info {
+				width: 302px;
+				height: 25px;
+				line-height: 25px;
+				font-size: 10px;
+				font-weight: normal;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				top: 37px;
+				color: #828282;
+			}
+			
+			#Form1 .lo_rightDiv .loerror-info_red {
+				color: red;
+			}
+			
+			#Form1 .lo_rightDiv #lo_nameIco,
+			#lo_passIco,
+			#lo_picpassIco {
+				display: block;
+				width: 30px;
+				height: 30px;
+				position: absolute;
+				top: 2px;
+				left: 2px;
+			}
+			
+			#lo_nameIco {
+				background: url(img/icon_more.png)no-repeat 7px -113px;
+			}
+			
+			#lo_passIco {
+				background: url(img/icon_more.png)no-repeat 7px -153px;
+			}
+			
+			#lo_picpassIco {
+				background: url(img/icon_more.png)no-repeat 7px -192px;
+			}
+			
+			#Form1 .lo_rightDiv #empty_loName {
+				display: none;
+				width: 15px;
+				height: 15px;
+				position: absolute;
+				top: 10px;
+				right: 15px;
+				background: red;
+				background: url(img/icon_more.png)no-repeat 1px -229px;
+			}
+			
+			#Form1 .lo_rightDiv #empty_loName:hover {
+				background: red;
+				background: url(img/icon_more.png)no-repeat -30px -229px;
+			}
+			
+			#Form1 .lo_rightDiv .lo_sevenDay {
+				width: 310px;
+				height: 13px;
+				margin-bottom: 10px;
+			}
+			
+			#Form1 .lo_rightDiv .sevenDay_checkbox {
+				margin-right: 5px;
+				float: left;
+			}
+			
+			#Form1 .lo_rightDiv .lo_sevenDay span {
+				display: block;
+				float: left;
+				font-size: 12px;
+			}
+			
+			#Form1 .lo_rightDiv .lo_sevenDay a {
+				display: inline-block;
+				font-size: 12px;
+				float: right;
+			}
+			
+			#Form1 .lo_rightDiv .lo_sevenDay a:hover {
+				text-decoration: underline;
+			}
+			
+			#Form1 .lo_login_btn {
+				width: 310px;
+				height: 44px;
+				position: relative;
+				margin-bottom: 12px;
+			}
+			
+			#Form1 .lo_login_btn input {
+				background: #F01923;
+				color: white;
+				font-size: 24px;
+				width: 310px;
+				height: 44px;
+				text-align: center;
+				line-height: 44px;
+				border: 1px solid gainsboro;
+				border-radius: 4px;
+			}
+			
+			#Form1 .lo_login_btn a {
+				display: block;
+				color: gray;
+				font-size: 12px;
+				position: absolute;
+				right: 0;
+				bottom: -24px;
+			}
+			
+			#Form1 .lo_login_btn a:hover {
+				text-decoration: underline;
+			}
+			
+			#Form1 .lo_rightDiv .lo_more_box {
+				width: 310px;
+				height: 40px;
+			}
+			
+			#Form1 .lo_rightDiv .lo_more_box p {
+				font-size: 12px;
+				margin-bottom: 6px;
+			}
+			
+			#Form1 .lo_rightDiv .lo_more_box dt {
+				width: 20px;
+				height: 20px;
+				float: left;
+				margin-right: 5px;
+			}
+			
+			#Form1 .lo_rightDiv .lo_more_box dt a {
+				display: block;
+				width: 20px;
+				height: 20px;
+				background: url(img/icon_more.png) no-repeat left -260px;
+			}
+			
+			#Form1 .lo_rightDiv .lo_more_box dt a.wx {
+				background-position: left -280px;
+			}
+			
+			#Form1 .lo_rightDiv .lo_more_box dt a.wb {
+				background-position: left -300px;
+			}
+			
+			#Form1 .lo_rightDiv .lo_more_box dt a.alpay {
+				background-position: left -320px;
+			}
+			
+			#Form1 .lo_rightDiv .lo_more_box dd .more {
+				display: block;
+				float: left;
+				width: 36px;
+				height: 15px;
+				line-height: 25px;
+				margin-left: 10px;
+				font-size: 12px;
+				color: grey;
+				background: url(img/icon_more.png) no-repeat 28px -340px;
+			}
+			
+			.public_footer {
+				height: 120px;
+				text-align: center;
+			}
+			
+			.public_footer .lo_copyright {
+				font-size: 10px;
+				color: #666666;
+				margin-top: 42px;
+			}
+			
+			.public_footer .lo_copyright_pic a {
+				display: inline-block;
+				width: 128px;
+				height: 48px;
+				margin-top: 12px;
+				margin-left: 9px;
+				margin-right: 9px;
+			}
+		</style>
+		<style>
+			.alert_modal {
+				position: absolute;
+				background: black;
+				opacity: 0.3;
+				height: 100%;
+				width: 100%;
+				top: 0;
+				left: 0;
+			}
+			
+			.alert_win {
+				z-index: 9999;
+				background: white;
+				width: 492px;
+				height: 185px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;
+				bottom: 0;
+				margin: auto;
+				box-shadow: 5px 5px 10px 2px gray;
+				border-radius: 5px;
+				overflow: hidden;
+			}
+			
+			.alert_win div {
+				padding: 20px 40px;
+				font-size: 12px;
+				color: gray;
+				font-weight: bold;
+				line-height: 20px;
+			}
+			
+			.alert_win div button {
+				margin-left: 155px;
+				width: 100px;
+				height: 25px;
+				background: #FF2832;
+				border-radius: 10px;
+				border: none;
+				color: white;
+				font-weight: bold;
+				outline: 0;
+			}
+			
+			.alert_win_title {
+				width: 492px;
+				height: 40px;
+				background: gainsboro;
+				text-align: center;
+				line-height: 40px;
+				font-weight: bold;
+			}
+		</style>
+		<script src="js/plugins/jquery-2.2.1.min.js"></script>
+		<script src="js/lo_alertwin.js"></script>
+		<script>
+			//弹框
+			$(function() {
+					$('#lo_alertWin').click(function() {
+							$.alert({
+								word: '当当<span style="color:#FF2832">不会以订单异常、系统升级等为由，要求您点击链接进行退款或重新支付，小心骗纸！</span>当当客服电话400-106-6666，0527-80878888。',
+								//sure:function(){alert('是的，删掉')},
+								//cancel:function(){alert('不，点错了')}
+							});
+						})
+						//$('#box').click();
+					$('#lo_alertWin').trigger('click');
+				})
+				//登录
+			function login() {
+				ckloName();
+				ckloPass();
+				if ($('#lo_userName').val().trim() == '') {
+					$('#lonameError').html('请输入邮箱/昵称/手机号码').addClass('loerror-info_red');
+				}
+				if ($('#lo_pass').val().trim() == '') {
+					$('#lopassError').html('请输入您的登录密码').addClass('loerror-info_red');
+				}
+				if ($('#lo_picpass').val().trim() == '') {
+					$('#lopicpassError').html('请输入图形验证码').addClass('loerror-info_red');
+				}
+				var vloName = $('#lo_userName').val();
+				var vloPass = $('#lo_pass').val();
+				if (vloName == loStr.data[0].name && vloPass == loStr.data[0].pass || vloName == loStr.data[1].name && vloPass == loStr.data[1].pass) {
+					window.location = 'index.html';
+				} else {
+					$('#lonameError').html('用户名或密码输入错误，请核对后重新输入').addClass('loerror-info_red');
+				}
+				if ($(".loerror-info_red").size() > 0) {
+					return;
+				}
+			}
+			//验证
+			$(function() {
+				//input边框
+				$('.lo_input').focus(function() {
+					$(this).addClass('lo_inputColor');
+				})
+				$('.lo_input').blur(function() {
+						$(this).removeClass('lo_inputColor');
+					})
+					//用户名输入文字的时候 发生 打叉按钮出现
+				$('#lo_userName').keydown(function() {
+						$('#empty_loName').show();
+					})
+					//点击叉按钮时，清空名称 ，自己消失
+				$('#empty_loName').click(function() {
+						$('#lo_userName').val('');
+						$('#empty_loName').hide();
+					})
+					//用户名
+				$('#lo_userName').focus(function() {
+					$('#lonameError').html('请输入邮箱/昵称/手机号码').removeClass('loerror-info_red');
+				})
+				$('#lo_userName').blur(function() {
+						$('#lonameError').html('');
+						ckloName();
+					})
+					//密码
+				$('#lo_pass').focus(function() {
+					$('#lopassError').html('请填写长度为6-20个字符的密码').removeClass('loerror-info_red');
+				})
+				$('#lo_pass').blur(function() {
+						$('#lopassError').html('');
+						ckloPass()
+					})
+					//验证码
+					/*$('#lo_picpass').focus(function(){
+						$('#lopicpassError').html('请填写图片中的字符，不区分大小写').removeClass('loerror-info_red');
+						
+					})
+					$('#lo_picpass').blur(function(){
+						$('#lopicpassError').html('');
+					})*/
+					//图形验证码
+				$('#lo_picpass').focus(function() {
+					$('#lopicpassError').html('请填写图片中的字符，不去分大小写');
+					var vloPicpass = $(this).val();
+					var vloFourCode = $('.lopicarea').html();
+					//输入内容跟验证码一致：再点击输入框 ，内容不清空
+					//输入内容跟验证码不一致：再点击输入框 ，内容清空
+					if (vloPicpass.toLowerCase() == vloFourCode.toLowerCase()) {
+						$('#lopicpassError').html('');
+					} else {
+						$('#lo_picpass').val('');
+						$('#lopicpassError').html('请填写图片中的字符，不区分大小写').removeClass('loerror-info_red');
+					}
+				})
+				$('#lo_picpass').blur(function() {
+						$('#picpassError').html('');
+						//图形验证码输入错误，请重新输入
+						var vloPicpass = $(this).val();
+						var vloFourCode = $('.lopicarea').html();
+						if (!vloPicpass.toLowerCase() == vloFourCode.toLowerCase()) {
+							$('#lopic_a').click();
+							$('#lopicpassError').html('图形验证码输入错误，请重新输入').addClass('error_color_red');
+						} else {
+							$('#lopicpassError').html('');
+						}
+					})
+					//点击换一张的时候，重新获取新是验证码
+				$('.lopic_a').click(function() {
+					ckloPicpass();
+				})
+				$('.lopic_a').trigger('click');
+			})
+
+			function ckloName() {
+				var vloName = $('#lo_userName').val();
+				var regEmail = /^\w+@\w+\.(com)(\.cn)?$/; //正则里 ? 表示前面的正则可以出现0次或者1次
+				var regPhone = /^[1]\d{10}$/;
+				var regnick = /^[\u4e00-\u9fa5]+\w+$/; //昵称(可中文可英文也可组合)
+				var lonameReg = /(^\w+@\w+\.(com)(\.cn)?$)|(^[1]\d{10}$)|(^[\u4e00-\u9fa5]+\w+$)/;
+				if (!lonameReg.test(vloName)) {}
+				if (vloName == "" || undefined || null) {
+					$('#lonameError').html('');
+				} else {
+					if (!lonameReg.test(vloName)) {
+						$('#lonameError').html('用户名或密码输入错误，请核对后重新输入').addClass('loerror-info_red');
+					} else {
+						$('#lonameError').html('');
+					}
+				}
+			}
+
+			function ckloPass() {
+				var vloPass = $('#pass').val();
+				var regloPass = /^.{6,20}$/;
+				if (!regloPass.test(vloPass)) {
+					$('#lopassError').html('请输入您的登录密码').addClass('loerror-info_red');
+				} else {
+					$('#lopassError').html('');
+				}
+			}
+			var loStr = '';
+			$.ajax({
+				type: 'get',
+				url: 'js/registerJson.json',
+				async: true,
+				success: function(str) {
+					console.info(str);
+					loStr = str;
+				}
+			});
+
+			function ckloPicpass() {
+				var count = 0; //个数
+				var fourCode = ''; //保存字符串
+				//取范围是所有的数组，大小写字母
+				var picpassArr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+					'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'n', 'm',
+					'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B',
+					'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+					'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+				];
+				//4个字符
+				for (var i = 0; i < 4; i++) {
+					//数组的随机索引
+					var iCode = Math.floor(Math.random() * 62);
+					//验证是否是数字
+					var regNum = /^\d$/;
+					if (regNum.test(picpassArr[iCode])) {
+						count++;
+					}
+					fourCode += picpassArr[iCode];
+				}
+				if (count == 2 && fourCode.length == 4) {
+					$('.lopicarea').html(fourCode);
+				} else {
+					ckloPicpass();
+				}
+			}
+			ckloPicpass();
+		</script>
+	</head>
+
+	<body>
+		<div id="lo_alertWin"></div>
+		<div class="lo_head">
+			<a href="index.html">
+				<img src="img/login_logo.png" />
+			</a>
+			<ul class="nav_ul">
+				<li class="n1"><a href="javascript:void(0);">货到付款</a></li>
+				<li class="n2"><a href="javascript:void(0);">正品保障</a></li>
+				<li class="n3"><a href="javascript:void(0);">上门退款</a></li>
+			</ul>
+
+		</div>
+		<form id="Form1">
+			<div class="lo_warn_box">
+				<div class="lo_warn">由于近期网络邮箱信息泄露事件频发，建议您勿设置与邮箱密码相同的登录和支付密码，<a href="#">谨防诈骗</a>！</div>
+			</div>
+			<div class="lo_content_box">
+				<div class="lo_left_pic">
+					<a href="http://www.dangdang.com"><img src="img/lo_left_pic.jpg" /></a>
+				</div>
+
+				<div class="lo_rightDiv">
+					<div class="name_box">
+						<span id="lo_nameIco"></span>
+						<span id="empty_loName"></span>
+						<input id="lo_userName" name="lo_userName" class="lo_input" type="text" value placeholder="邮箱/昵称/手机号码" />
+						<p id='lonameError' class='loerror-info'></p>
+					</div>
+					<div class="pass_box">
+						<span id="lo_passIco"></span>
+						<input id="lo_pass" name="lo_pass" type="password" class="lo_input" value placeholder="密码" />
+						<p id='lopassError' class='loerror-info'></p>
+					</div>
+					<div class="picpass_box">
+						<span id="lo_picpassIco"></span>
+						<input id="lo_picpass" name="lo_picpass" type="text" class="lo_input" value placeholder="验证码" />
+						<span class="lopicarea"></span><a class="lopic_a" href="#">换张图</a>
+						<p id='lopicpassError' class='loerror-info'></p>
+					</div>
+					<div class="lo_sevenDay">
+						<input class="sevenDay_checkbox" type="checkbox"><span>七天内自动登录</span>
+						<a href="#">忘记密码</a>
+					</div>
+					<div class="lo_login_btn">
+						<input type="button" onclick="login();" value="登录" />
+						<a href="register.html">立即注册</a>
+					</div>
+
+					<div class="lo_more_box">
+						<p>使用合作网站登录</p>
+						<dl>
+							<dt><a class="qq" id="qqShare" href="javascript:void(0)"></a></dt>
+							<dt><a class="wx" id="wxShare" href="javascript:void(0)"></a></dt>
+							<dt><a class="wb" id="wbShare" href="javascript:void(0)"></a></dt>
+							<dt><a class="alpay" id="alipayShare" href="javascript:void(0)"></a></dt>
+							<dd>
+								<a class="more" href="javascript:void(0)">更多<em></em></a>
+								<ul id="shareMore" style="display: none;">
+									<li class="arrow"></li>
+									<li><a id="doubanShare" href="javascript:void(0)">豆瓣</a></li>
+									<li><a id="baiduShare" href="javascript:void(0)">百度</a></li>
+									<li><a id="fetionShare" href="javascript:void(0)">飞信</a></li>
+									<li class="mr0"><a id="renrenShare" href="javascript:void(0)">人人网</a></li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+				</div>
+
+			</div>
+
+		</form>
+
+		<div class="public_footer">
+			<p class="lo_copyright">Copyright (C) 当当网 2004-2012, All Rights Reserved | 京ICP证041189号音像制品经营许可证 京音网8号</p>
+			<p class="lo_copyright_pic">
+				<a href="#"><img src="img/validate.gif" /></a>
+				<a href="#"><img src="img/knetseallogo.png" /></a>
+			</p>
+		</div>
+	</body>
+
+</html>

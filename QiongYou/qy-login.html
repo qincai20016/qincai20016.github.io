@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		<title></title>
+		<script src="js/rem.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/login.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+	</head>
+	<body>
+		<section class="login-page">
+			<header class="loh">
+				<a class="back-home" href="index.html"><i class="iconfont">&#xe696;</i></a>
+				登录
+				<a class="reg" href="register.html">注册</a>
+			</header>
+			<section class="reg-tabs">
+				<div class="reg-tab tab-active">账号登录</div>
+				<div class="reg-tab">短信快捷登录</div>
+			</section>
+			<section class="reg-forms">
+				<div class="reg-form" style="display: block;">
+					<div class="input-group">
+					 	<label class="reg-lab"><i class="iconfont lab-icf">&#xe617;</i></label>
+					 	<input class="reg-input" type="text" placeholder="手机号 / 邮箱" />
+					</div>
+					<div class="input-group">
+					 	<label class="reg-lab"><i class="iconfont lab-icf">&#xe692;</i></label>
+					 	<input class="reg-input" type="password" placeholder="密码" />
+					</div>
+					<div class="forget-pass"><a href="javascript:;">忘记密码？</a></div>
+					<button class="reg-btn">登录</button>
+				</div>
+				<div class="reg-form" style="display: none;">
+					<div class="input-group">
+					 	<label class="reg-lab reg-lab2">+86</label>
+					 	<input class="reg-input" type="text" placeholder="手机号" />
+					</div>
+					<div class="input-group input-group-pic">
+					 	<label class="reg-lab"><i class="iconfont lab-icf">&#xe692;</i></label>
+					 	<input class="reg-input" type="password" placeholder="图形验证码" />
+					</div>
+					<span class="reg-picpass">HNLU</span>
+					<button class="reg-btn reg-btn2">发送验证码</button>
+				</div>
+			</section>
+			<section class="second-login">
+				<a href="javascript:;">用户名登录</a>|<a href="javascript:;">境外手机登录</a>
+			</section>
+			<section class="third-login">
+				<p>第三方帐号登录</p>
+					<div>
+						<a href="javascript:;"><i class="iconfont third-icf-01">&#xe65b;</i></a>
+					</div>
+					<div>
+						<a href="javascript:;"><i class="iconfont third-icf-02">&#xe688;</i></a>
+					</div>
+			</section>
+		</section>
+	</body>
+</html>

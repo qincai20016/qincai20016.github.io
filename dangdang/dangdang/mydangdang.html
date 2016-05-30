@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/plugins/jquery-2.2.1.min.js"></script>
+		<script>
+			$(function(){
+				$.ajax({
+					type:"get",
+					url:"top_Public2.html",
+					async:false,
+					success:function(e){
+						$('#header').html(e);
+					}
+				});
+				
+				$.ajax({
+					type:"get",
+					url:"footer_Public.html",
+					async:true,
+					success:function(e){
+						$('#footer').html(e);
+					}
+				});
+				
+				$(function(){
+					console.info($('.Rdiv01_rightdiv_li a:eq(0)'));
+					$('.Rdiv01_rightdiv_li').mouseover(function(){
+						$('.Rdiv01_rightdiv_a01').removeClass('a01_hover');
+						$(this).find('.Rdiv01_rightdiv_a01').addClass('a01_hover');
+					})
+				})
+			})
+		</script>
+		<style>
+			html, body, div, span, applet, object, iframe, b h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, 
+			fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+				margin: 0;padding: 0;border: 0;outline:0;
+			}
+			li{list-style:none;}
+			a{text-decoration: none;}
+			#header{position: relative;z-index: 999;}
+			#myDD_topnav{width: 100%;height: 34px;background: #F5F5F5;}
+			.myDD_topnav_ul{width: 1200px;height: 34px;margin: 0 auto; line-height: 34px;}
+			.myDD_topnav_li{float: left;padding:0 15px;height: 34px;}
+			.myDD_topnav_li a{font-size: 12px;color:gray;}
+			.myDD_topnav_li a:hover{color: #E10010; text-decoration: underline;}
+			#myDD_top_pic{width: 1200px;height: 80px;margin: 10px auto;}
+			
+			#myDD_con{width: 1200px; height: 960px; margin: 0 auto;}
+			.myDDcon_left{width: 200px;height: 960px; float: left;}
+			.myDDcon_left_title{width: 200px;height:62px;border: 1px solid gainsboro; text-align: center;line-height: 62px; background: url(http://myhome.dangdang.com/static/images/icon_menu.png)no-repeat 37px 23px;}
+			.myDDcon_left_title a{color: gray;}
+			.myDDcon_left_title a:hover{color: #E10010; text-decoration: underline;}
+			.myDD_menuList{width:150px;height:870px; padding: 20px 0 0 42px; border:1px solid gainsboro; border-top: none 0;margin-left: 3px;}
+			.myDD_menuList dt{padding-left:15px; margin: 8px 0; line-height: 18px; font-size: 16px; font-weight: bold; color:gray; background: url(http://myhome.dangdang.com/static/images/icon_menu.png) no-repeat 0px -35px;}
+			.myDD_menuList dd{font-size: 14px; line-height: 30px; padding-left: 15px;}
+			.myDD_menuList dd a{ color:silver;}
+			.myDD_menuList dd a:hover{color: gray; text-decoration: underline;}
+			
+			.myDDcon_right{width: 990px;height: 960px;float: right;}
+			.myDDcon_right_div{margin-bottom:15px ;}
+			.Rdiv01{width: 990px;height:168px; position:relative;}
+			.Rdiv02{width: 990px;min-height:166px !important;}
+			
+			.Rdiv01_semicircle{width:1px;height:1px; border:83px solid #FD7F78; border-radius: 50%;float: left;}
+			.Rdiv01_rectangle{width:100px;height: 167px; background:#FD7F78; position: absolute;top:0;left:75px;}
+			.Rdiv01_semicircle2{text-align:center; line-height: 100px; width:100px;height: 100px;border: 2px solid gainsboro; border-radius: 50%;position: absolute;top:15px;left:45px;background:white url(img/photo_mask.png)no-repeat -9px -9px;}
+			.Rdiv01_centerdiv{padding:20px; width:350px;height: 111px; background:lavender; float: left; margin-top: 8px;border-top-right-radius:15px;border-bottom-right-radius:15px;border-right: 1px dashed white;}
+			.Rdiv01_rightdiv{padding:10px ;width: 412px;height: 131px; background:lavender; float: left;margin-top: 8px;border-radius:15px;}
+			.Rdiv01_rightdiv li{float: left;margin:0 20px; height: 130px;}
+			.Rdiv01_rightdiv a{display: block;width: 60px;text-align: center; color: gray;}
+			.Rdiv01_rightdiv_a01{margin-top:10px; margin-bottom: 10px; width: 60px;height: 60px;background: url(http://myhome.dangdang.com/static/images/icon.png)no-repeat 0px -373px;}
+			.aa02{background-position: 0 -433px; margin-bottom: 10px;}
+			.aa03{background-position: 0 -493px; margin-bottom: 10px;}
+			.aa04{background-position: 0 -553px; margin-bottom: 10px;}
+			.a01_hover{margin-top:2px;margin-bottom: 18px;}
+			
+			
+			.myDDcon_right_title{width: 988px;height:33px; padding-top: 15px; border: 1px solid gainsboro; background: #FAFAFA;}
+			.myDDcon_right_title_ul{float: right; font-size: 12px;}
+			.myDDcon_right_title_ul li{float: left; padding:0 20px;}
+			.myDDcon_right_title_ul li a{color: gray; display: inline-block;height: 20px; }
+			.myDDcon_right_title_ul li a:hover{color: #E10010; border-bottom: 2px solid #E10010;}
+			.myDDcon_right_title_span{ border-left:2px solid #FD7F78; margin-left: 20px; padding-left: 15px; font-size: 14px;font-weight: bold;}
+			.myDDcon_right_conBox{min-height:115px !important; width: 990px; border: 1px solid gainsboro; border-top:none; font-size: 12px;border-collapse: collapse;}
+			.myDDcon_right_conBox td{padding-left: 10px;}
+			.myDDcon_right_tr{height: 115px;border: 1px solid gainsboro; border-top:none;}
+			.myDDcon_right_tr2{height: 198px;}
+			.myDDcon_right_tr2 a{width: 190px;height: 198px; display: inline-block; text-align: center;float: left; font-size: 14px; color:gray;}
+			.myDDcon_right_tr2 a:hover{border-left: 1px solid gainsboro;border-right: 1px solid gainsboro;}
+			.myDDcon_right_tr2 a img{margin:10px 0;}
+			
+		</style>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div id="myDD_topnav">
+			<ul class="myDD_topnav_ul">
+				<li class="myDD_topnav_li"><a href="#">图书畅销榜</a></li>
+				<li class="myDD_topnav_li"><a href="#">童书榜</a></li>
+				<li class="myDD_topnav_li"><a href="#">女士服装</a></li>
+				<li class="myDD_topnav_li"><a href="#">男士服装</a></li>
+				<li class="myDD_topnav_li"><a href="#">童装</a></li>
+				<li class="myDD_topnav_li"><a href="#">运动户外</a></li>
+				<li class="myDD_topnav_li"><a href="#">鞋靴</a></li>
+				<li class="myDD_topnav_li"><a href="#">箱包皮具</a></li>
+				<li class="myDD_topnav_li"><a href="#">奶粉</a></li>
+				<li class="myDD_topnav_li"><a href="#">美妆</a></li>
+				<li class="myDD_topnav_li"><a href="#">生鲜</a></li>
+				<li class="myDD_topnav_li"><a href="#">玩具童车</a></li>
+			</ul>
+		</div>
+		<div id="myDD_top_pic"><a href="#"><img src="http://a.dangdang.com/api/data/cpx/img/40820001/1"/></a></div>
+		<div id="myDD_con">
+			<div class="myDDcon_left">
+				<h3 class="myDDcon_left_title"><a href="mydangdang.html">我的当当</a></h3>
+				<dl class="myDD_menuList">
+					<dt>我的交易</dt>
+					<dd><a href="#">我的订单</a></dd>
+					<dd><a href="#">电子书</a></dd>
+					<dd><a href="#">我的账单</a></dd>
+					<dt>我的收藏</dt>
+					<dd><a href="#">商品收藏</a></dd>
+					<dd><a href="#">店铺收藏</a></dd>
+					<dt>我的钱包</dt>
+					<dd><a href="#">我的礼品卡</a></dd>
+					<dd><a href="#">我的礼券</a></dd>
+					<dd><a href="#">我的余额</a></dd>
+					<dd><a href="#">我的积分</a></dd>
+					<dt>售后服务</dt>
+					<dd><a href="#">申请/查询退换货</a></dd>
+					<dd><a href="#">补开/合并发票</a></dd>
+					<dt>个人中心</dt>
+					<dd><a href="#">个人信息</a></dd>
+					<dd><a href="#">安全中心</a></dd>
+					<dd><a href="#">收货地址</a></dd>
+					<dd><a href="#">一键购买地址</a></dd>
+					<dd><a href="#">邮件/短信订阅</a></dd>
+					<dt>社区</dt>
+					<dd><a href="#">评论/晒单</a></dd>
+					<dd><a href="#">提问/回答</a></dd>
+					<dd><a href="#">好友关注</a></dd>
+					<dd><a href="#">我的书架</a></dd>
+					<dd><a href="#">我的留言板</a></dd>
+					
+				</dl>
+			</div>
+			<div class="myDDcon_right">
+				<div class="myDDcon_right_div Rdiv01">
+					<div class="Rdiv01_semicircle"></div>
+					<div class="Rdiv01_rectangle"></div>
+					<div class="Rdiv01_semicircle2"><a href="myDD_profile.html">编辑资料</a></div>
+					<div class="Rdiv01_centerdiv">
+						<p><a href="#">普通会员</a></p>
+						<p>账户安全: 中</p>
+						<p><a href="#">手机已设置 </a><a href="#"> 邮箱未设置</a><a href="#"> 支付密码未设置</a></p>
+					</div>
+					<div class="Rdiv01_rightdiv">
+						<ul>
+							<li class="Rdiv01_rightdiv_li">
+								<a class="Rdiv01_rightdiv_a01" href="#"></a>
+								<a href="#">礼品卡</a>
+								<a href="#">0</a>
+							</li>
+							<li class="Rdiv01_rightdiv_li">
+								<a class="Rdiv01_rightdiv_a01 aa02" href="#"></a>
+								<a href="#">余额</a>
+								<a href="#">0</a>
+							</li>
+							<li class="Rdiv01_rightdiv_li">
+								<a class="Rdiv01_rightdiv_a01 aa03" href="#"></a>
+								<a href="#">礼券</a>
+								<a href="#">0张</a>
+							</li>
+							<li class="Rdiv01_rightdiv_li">
+								<a class="Rdiv01_rightdiv_a01 aa04" href="#"></a>
+								<a href="#">积分</a>
+								<a href="#">0分</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="myDDcon_right_div Rdiv02">
+					<div class="myDDcon_right_title">
+						<span class="myDDcon_right_title_span">我的订单</span>
+						<ul class="myDDcon_right_title_ul">
+							<li><a href="#">待付款</a></li>
+							<li><a href="#">待收货</a></li>
+							<li><a href="#">待评价</a></li>
+							<li><a href="#">全部订单</a></li>
+						</ul>
+					</div>
+					<table class="myDDcon_right_conBox">
+						<tr class="myDDcon_right_tr">
+							<td>
+								<a href="#"><img src="http://img30.ddimg.cn/36/13/21037140-1_x.jpg"/></a>
+								<a href="#"><img src="http://img36.ddimg.cn/21/10/23491236-1_x.jpg"/></a>
+								<a href="#"><img src="http://img38.ddimg.cn/17/16/23721308-1_x.jpg"/></a>
+							</td>
+							<td>共3件商品 2016-3-29 9:07:17</td>
+							<td>￥52.20货到付款</td>
+							<td>等待收货 您的订单已经打包完成,开始出库</td>
+							<td>查看</td>
+						</tr>
+						<tr class="myDDcon_right_tr">
+							<td>
+								<a href="#"><img src="http://img31.ddimg.cn/15/24/1079455821-1_x.jpg"/></a>
+								<a href="#"><img src="http://img31.ddimg.cn/15/24/1079455821-1_x.jpg"/></a>
+							</td>
+							<td>共2件商品 2016-3-29 9:07:17</td>
+							<td>￥1080.00货到付款</td>
+							<td>等待收货 您的订单已经打包完成,开始出库</td>
+							<td>查看</td>
+						</tr>
+						<tr class="myDDcon_right_tr">
+							<td>
+								<a href="#"><img src="http://img38.ddimg.cn/83/10/23612078-1_x.jpg"/></a>
+								<a href="#"><img src="http://img38.ddimg.cn/83/10/23612078-1_x.jpg"/></a>
+								<a href="#"><img src="http://img38.ddimg.cn/83/10/23612078-1_x.jpg"/></a>
+								<a href="#"><img src="http://img38.ddimg.cn/83/10/23612078-1_x.jpg"/></a>
+							</td>
+							<td>共4件商品 2016-3-29 9:07:17</td>
+							<td>￥1080.00货到付款</td>
+							<td>等待收货 您的订单已经打包完成,开始出库</td>
+							<td>查看</td>
+						</tr>
+					</table>
+				</div>
+			
+				<div class="myDDcon_right_div Rdiv02">
+					<div class="myDDcon_right_title">
+						<span class="myDDcon_right_title_span">商品收藏</span>
+						<ul class="myDDcon_right_title_ul">
+							<li><a href="#">降价商品</a></li>
+							<li><a href="#">促销商品</a></li>
+							<li><a href="#">新到货商品</a></li>
+							<li><a href="#">查看更多</a></li>
+						</ul>
+					</div>
+					<table class="myDDcon_right_conBox">
+						<tr class="myDDcon_right_tr2">
+							<td class="myDDcon_right_td">
+								<a href="#"><img src="http://img36.ddimg.cn/88/36/23845426-1_l.jpg"/><span>￥21.40</span></a>
+								<a href="#"><img src="http://img36.ddimg.cn/45/19/23915376-1_l.jpg"/><span>￥21.40</span></a>
+								<a href="#"><img src="http://img32.ddimg.cn/34/12/23927542-1_l.jpg"/><span>￥21.40</span></a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			
+			
+			
+			</div>
+		</div>
+		
+		<div id="footer"></div>
+	</body>
+</html>
